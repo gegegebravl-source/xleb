@@ -33,8 +33,8 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
         {
             base.Awake();
 
-            GameManager.TryGetSystem(out clockSystem);
-            GameManager.TryGetSystem(out playerSystem);
+            SystemsUtility.TryGetSystem(out clockSystem);
+            SystemsUtility.TryGetSystem(out playerSystem);
         }
 
         protected override void OnEnable()

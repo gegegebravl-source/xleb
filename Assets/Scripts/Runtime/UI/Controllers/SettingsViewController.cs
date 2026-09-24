@@ -9,6 +9,7 @@ using UABPetelnia.GGJ2025.Runtime.Systems.Input;
 using UABPetelnia.GGJ2025.Runtime.Systems.Pausing;
 using UABPetelnia.GGJ2025.Runtime.Systems.Settings;
 using UABPetelnia.GGJ2025.Runtime.UI.Views;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
@@ -54,11 +55,11 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
 
             Instance = this;
 
-            GameManager.TryGetSystem(out audioSystem);
-            GameManager.TryGetSystem(out inputSystem);
-            GameManager.TryGetSystem(out settingsSystem);
-            GameManager.TryGetSystem(out cursorSystem);
-            GameManager.TryGetSystem(out pauseSystem);
+            SystemsUtility.TryGetSystem(out audioSystem);
+            SystemsUtility.TryGetSystem(out inputSystem);
+            SystemsUtility.TryGetSystem(out settingsSystem);
+            SystemsUtility.TryGetSystem(out cursorSystem);
+            SystemsUtility.TryGetSystem(out pauseSystem);
         }
 
         protected override void OnEnable()

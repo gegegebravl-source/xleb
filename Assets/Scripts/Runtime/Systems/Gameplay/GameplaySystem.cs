@@ -6,6 +6,7 @@ using UABPetelnia.GGJ2025.Runtime.Systems.Clock;
 using UABPetelnia.GGJ2025.Runtime.Systems.Players;
 using UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States;
 using UABPetelnia.GGJ2025.Runtime.Systems.Scenes;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay
@@ -90,8 +91,8 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay
             shiftClosed = true;
             CleanupStateMachine();
 
-            var playerSystem = GameManager.GetSystem<IPlayerSystem>();
-            var sceneSystem = GameManager.GetSystem<ISceneSystem>();
+            SystemsUtility.TryGetSystem<IPlayerSystem>(out var playerSystem);
+            SystemsUtility.TryGetSystem<ISceneSystem>(out var sceneSystem);
             var player = playerSystem != null ? playerSystem.Player : default;
 
             if (sceneSystem == null || player == default)
@@ -138,12 +139,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay
         {
             // Старые состояния могли остаться подписанными на события — снимаем подписки
             // ДО входа в новое состояние, иначе отдача товара обрабатывается дважды.
-            foreach (var state in states)
-            {
-                state.Dispose();
-            }
-
-            states.Clear();
+            CleanupStateMachine();
 
             var spawnState = new ShopperSpawnState(gameplaySettings);
             var moveToKioskState = new ShopperMoveState(ShopperMoveState.MoveTo.KioskPoint);
@@ -201,14 +197,15 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay
 
         private void CleanupStateMachine()
         {
+            // Exit the active state once, then dispose every state's message subscriptions.
+            State = default;
+
             foreach (var state in states)
             {
                 state.Dispose();
             }
 
             states.Clear();
-
-            State = default;
         }
     }
 }

@@ -2,6 +2,7 @@ using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables;
 using UABPetelnia.GGJ2025.Runtime.Systems.Interaction;
 using UnityEngine;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 
 namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables
 {
@@ -17,8 +18,8 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables
 
         private void OnEnable()
         {
-            GameManager.AddListener<InteractorHoveredEnteredMessage>(OnHoverEntered);
-            GameManager.AddListener<InteractorHoveredExitedMessage>(OnHoverExited);
+            SystemsUtility.TryAddListener<InteractorHoveredEnteredMessage>(OnHoverEntered);
+            SystemsUtility.TryAddListener<InteractorHoveredExitedMessage>(OnHoverExited);
 
             // Взятый в руку товар не должен светиться рамкой: рамка — только признак наведения.
             var interactable = GetComponentInChildren<Interactable>(true);
@@ -33,8 +34,8 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables
 
         private void OnDisable()
         {
-            GameManager.RemoveListener<InteractorHoveredEnteredMessage>(OnHoverEntered);
-            GameManager.RemoveListener<InteractorHoveredExitedMessage>(OnHoverExited);
+            SystemsUtility.TryRemoveListener<InteractorHoveredEnteredMessage>(OnHoverEntered);
+            SystemsUtility.TryRemoveListener<InteractorHoveredExitedMessage>(OnHoverExited);
 
             var interactable = GetComponentInChildren<Interactable>(true);
             if (interactable != null)

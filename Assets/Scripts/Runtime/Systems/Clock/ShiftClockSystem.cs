@@ -2,6 +2,7 @@ using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
 using UABPetelnia.GGJ2025.Runtime.Settings;
 using UABPetelnia.GGJ2025.Runtime.Systems.Scenes;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.Systems.Clock
@@ -73,7 +74,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Clock
             // The clock system survives collection changes. A finished shift must therefore be
             // reset when the player starts the next gameplay collection, otherwise IsShiftOver
             // remains true and the second run is frozen at the previous closing time.
-            if (GameManager.TryGetSystem<ISceneSystem>(out var sceneSystem) == false)
+            if (SystemsUtility.TryGetSystem<ISceneSystem>(out var sceneSystem) == false)
             {
                 return;
             }
@@ -125,7 +126,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Clock
 
         public void StartNextDay()
         {
-            day++;
+            day = day >= int.MaxValue ? int.MaxValue : day + 1;
             hour = GetStartHour();
             isShiftOver = false;
             isGameplayScene = true;

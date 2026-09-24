@@ -10,6 +10,10 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
     /// </summary>
     internal static class ShopOrderRules
     {
+        // Protect both the economy and the delivery box from a malformed UI event requesting
+        // billions of physical units. This is intentionally generous for a kiosk order.
+        public const int MaxLineQuantity = 10000;
+
         public static bool TryAddQuantity(
             int currentQuantity,
             int requestedQuantity,
@@ -20,7 +24,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
             result = currentQuantity;
             error = default;
 
-            if (currentQuantity < 0 || requestedQuantity <= 0)
+            if (currentQuantity < 0 || currentQuantity > MaxLineQuantity || requestedQuantity <= 0)
             {
                 error = "bad_quantity";
                 return false;
@@ -33,6 +37,13 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
             }
 
             result = currentQuantity + requestedQuantity;
+            if (result > MaxLineQuantity)
+            {
+                result = currentQuantity;
+                error = "bad_quantity";
+                return false;
+            }
+
             return true;
         }
 
@@ -76,7 +87,8 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
             for (var index = 0; index < lines.Count; index++)
             {
                 var line = lines[index];
-                if (line == null || line.Product == null || line.Quantity <= 0 || line.Product.PurchasePrice <= 0)
+                if (line == null || line.Product == null || line.Quantity <= 0
+                    || line.Quantity > MaxLineQuantity || line.Product.PurchasePrice <= 0)
                 {
                     error = "bad_cost";
                     return false;

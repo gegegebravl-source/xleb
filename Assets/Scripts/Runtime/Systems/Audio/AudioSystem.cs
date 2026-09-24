@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
 using CHARK.ScriptableAudio;
@@ -63,19 +63,28 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Audio
 
         public void LoadBanks()
         {
+            if (bankLoader == false)
+            {
+                Debug.LogWarning("[Audio] StudioBankLoader не назначен — игра продолжит работу без FMOD-банков.", this);
+                return;
+            }
+
             bankLoader.Load();
         }
 
         public void UnLoadBanks()
         {
-            bankLoader.Unload();
+            if (bankLoader != false)
+            {
+                bankLoader.Unload();
+            }
         }
 
         public override void OnInitialized()
         {
             base.OnInitialized();
             EnsureAudioListener();
-            settingsSystem = GameManager.GetSystem<ISettingsSystem>();
+            GameManager.TryGetSystem(out settingsSystem);
         }
 
         private void Start()
@@ -114,7 +123,9 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Audio
 
         public float GetVolume(VolumeType type)
         {
-            var settings = settingsSystem.Settings;
+            var settings = settingsSystem != null
+                ? settingsSystem.Settings
+                : SettingsData.CreateDefault(0.5f, 1f, 1f, 1f);
             var volume = type switch
             {
                 VolumeType.Master => settings.MasterVolume,
@@ -129,20 +140,25 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Audio
         public void SetVolume(VolumeType type, float volume)
         {
             var clampedVolume = GetNormalizedVolume(volume);
+            if (settingsSystem == null)
+            {
+                return;
+            }
+
             var settings = settingsSystem.Settings;
 
             switch (type)
             {
                 case VolumeType.Master:
-                    globalMasterVolumeParameter.SetParameterValue(clampedVolume);
+                    globalMasterVolumeParameter?.SetParameterValue(clampedVolume);
                     settings.MasterVolume = clampedVolume;
                     break;
                 case VolumeType.Music:
-                    globalMusicVolumeParameter.SetParameterValue(clampedVolume);
+                    globalMusicVolumeParameter?.SetParameterValue(clampedVolume);
                     settings.MusicVolume = clampedVolume;
                     break;
                 case VolumeType.SFX:
-                    globalSfxVolumeParameter.SetParameterValue(clampedVolume);
+                    globalSfxVolumeParameter?.SetParameterValue(clampedVolume);
                     settings.SfxVolume = clampedVolume;
                     break;
                 default:
@@ -198,9 +214,9 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Audio
 
         private void InitializeGlobalVolumeParameters()
         {
-            globalMasterVolumeParameter.SetParameterValue(GetVolume(VolumeType.Master));
-            globalMusicVolumeParameter.SetParameterValue(GetVolume(VolumeType.Music));
-            globalSfxVolumeParameter.SetParameterValue(GetVolume(VolumeType.SFX));
+            globalMasterVolumeParameter?.SetParameterValue(GetVolume(VolumeType.Master));
+            globalMusicVolumeParameter?.SetParameterValue(GetVolume(VolumeType.Music));
+            globalSfxVolumeParameter?.SetParameterValue(GetVolume(VolumeType.SFX));
 
             ApplyBusVolumes();
         }

@@ -91,22 +91,12 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States
             var request = PickAvailableRequest(shopper);
             var player = playerSystem?.Player;
 
-            if (request == null)
+            if (request == null || request.IsEmpty)
             {
-                // Nothing the shopper wanted is out on the shelves right now. They leave without
-                // buying, and without taking a swing at the shopkeeper.
+                // Missing/empty dialogue data is a refusal, not a wrong-item mistake. A malformed
+                // shopper asset must never damage the player or deadlock the queue.
                 StartRanting(refusalState);
-
                 GameManager.Publish(new SaleRefusedMessage());
-
-                return;
-            }
-
-            // The keyword contained no goods at all: the shopper only came to rant.
-            if (request.IsEmpty)
-            {
-                StartRanting(failureState);
-
                 player?.ShowPurchase(request);
                 return;
             }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -60,7 +60,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Sockets
             if (socketedCount >= sockets.Count)
             {
                 OnSocketed?.Invoke();
-                onSocketed.Invoke();
+                onSocketed?.Invoke();
 
                 Destroy(this);
             }

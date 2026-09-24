@@ -3,6 +3,7 @@ using UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables;
 using UABPetelnia.GGJ2025.Runtime.Settings;
 using UABPetelnia.GGJ2025.Runtime.Systems.Interaction;
 using UABPetelnia.GGJ2025.Runtime.Systems.Shop;
+using System;
 using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.Actors
@@ -50,7 +51,8 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
                     continue;
                 }
 
-                for (var unit = 0; unit < line.Quantity; unit++)
+                var quantity = Math.Min(line.Quantity, ShopOrderRules.MaxLineQuantity);
+                for (var unit = 0; unit < quantity; unit++)
                 {
                     contents.Add(line.Product.Item);
                 }
@@ -74,11 +76,25 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
             return contents.Remove(item);
         }
 
+        /// <summary>Rollback a failed hand-off without exposing the internal list.</summary>
+        public void RestoreItem(ItemData item)
+        {
+            if (item)
+            {
+                contents.Add(item);
+            }
+        }
+
         /// <summary>
         /// Список позиций коробки без повторов: товар и сколько его осталось.
         /// </summary>
         public void CollectStacks(List<ItemData> items, List<int> counts)
         {
+            if (items == null || counts == null)
+            {
+                return;
+            }
+
             items.Clear();
             counts.Clear();
 

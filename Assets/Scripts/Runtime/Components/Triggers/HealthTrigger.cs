@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Actors;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.Components.Triggers
@@ -12,12 +13,12 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Triggers
 
         private void OnEnable()
         {
-            GameManager.AddListener<PlayerHealthChanged>(OnPlayerHealthChanged);
+            SystemsUtility.TryAddListener<PlayerHealthChanged>(OnPlayerHealthChanged);
         }
 
         private void OnDisable()
         {
-            GameManager.RemoveListener<PlayerHealthChanged>(OnPlayerHealthChanged);
+            SystemsUtility.TryRemoveListener<PlayerHealthChanged>(OnPlayerHealthChanged);
         }
 
         private void OnPlayerHealthChanged(PlayerHealthChanged message)
@@ -29,7 +30,13 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Triggers
                 return;
             }
 
-            var health = message.Player.Health;
+            if (message.Player == null
+                || message.Player is UnityEngine.Object playerObject && playerObject == false)
+            {
+                return;
+            }
+
+            var health = Mathf.Max(0, message.Player.Health);
 
             for (var index = 0; index < hearts.Count; index++)
             {

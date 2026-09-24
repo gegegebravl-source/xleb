@@ -1,4 +1,4 @@
-﻿using UnityEngine.InputSystem;
+using UnityEngine.InputSystem;
 
 namespace UABPetelnia.GGJ2025.Runtime.Components.Input
 {
@@ -14,7 +14,8 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Input
 
         protected override float ReadValue()
         {
-            return InputAction.ReadValue<float>();
+            var action = InputAction;
+            return action != null ? action.ReadValue<float>() : 0f;
         }
     }
 }

@@ -71,14 +71,14 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Progress
 
         public void NotifyOrderPlaced()
         {
-            stats.Orders++;
+            stats.Orders = SafeIncrement(stats.Orders);
 
             Evaluate();
         }
 
         public void NotifyTamagotchiPlayed()
         {
-            stats.TamagotchiPlays++;
+            stats.TamagotchiPlays = SafeIncrement(stats.TamagotchiPlays);
 
             Evaluate();
         }
@@ -103,9 +103,9 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Progress
 
         private void OnSaleCompleted(SaleCompletedMessage message)
         {
-            stats.UnitsSold++;
-            stats.ShoppersServed++;
-            stats.CentsEarned += Mathf.Max(0, message.Cents);
+            stats.UnitsSold = SafeIncrement(stats.UnitsSold);
+            stats.ShoppersServed = SafeIncrement(stats.ShoppersServed);
+            stats.CentsEarned = SafeAdd(stats.CentsEarned, Mathf.Max(0, message.Cents));
             stats.RegisterSale();
 
             var id = message.Item ? message.Item.Id : string.Empty;
@@ -119,7 +119,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Progress
 
         private void OnSaleFailed(SaleFailedMessage message)
         {
-            stats.Mistakes++;
+            stats.Mistakes = SafeIncrement(stats.Mistakes);
             stats.ResetStreak();
 
             Evaluate();
@@ -127,7 +127,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Progress
 
         private void OnSaleRefused(SaleRefusedMessage message)
         {
-            stats.Refusals++;
+            stats.Refusals = SafeIncrement(stats.Refusals);
 
             Evaluate();
         }
@@ -224,6 +224,10 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Progress
             }
 
             var json = PlayerPrefs.GetString(SaveKey);
+            if (string.IsNullOrWhiteSpace(json))
+            {
+                return;
+            }
             ProgressSave save;
 
             try
@@ -247,27 +251,57 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Progress
             {
                 foreach (var id in save.UnlockedIds)
                 {
-                    unlockedIds.Add(id);
+                    if (string.IsNullOrWhiteSpace(id) == false)
+                    {
+                        unlockedIds.Add(id);
+                    }
                 }
             }
 
-            if (save.Stats == null)
+            if (save.Stats != null)
             {
-                return;
+                var loaded = save.Stats;
+
+                stats.UnitsSold = NonNegative(loaded.UnitsSold);
+                stats.ShoppersServed = NonNegative(loaded.ShoppersServed);
+                stats.CentsEarned = NonNegative(loaded.CentsEarned);
+                stats.Mistakes = NonNegative(loaded.Mistakes);
+                stats.Refusals = NonNegative(loaded.Refusals);
+                stats.Orders = NonNegative(loaded.Orders);
+                stats.TamagotchiPlays = NonNegative(loaded.TamagotchiPlays);
+                stats.BreadSold = NonNegative(loaded.BreadSold);
+                stats.CleanStreak = NonNegative(loaded.CleanStreak);
+                stats.BestCleanStreak = Mathf.Max(NonNegative(loaded.BestCleanStreak), stats.CleanStreak);
             }
 
-            var loaded = save.Stats;
+            // CreateAchievements runs before Load. Restore the public status objects too; otherwise
+            // the journal says "locked" and Evaluate publishes the same unlock toast again.
+            SyncAchievementStatuses();
+        }
 
-            stats.UnitsSold = loaded.UnitsSold;
-            stats.ShoppersServed = loaded.ShoppersServed;
-            stats.CentsEarned = loaded.CentsEarned;
-            stats.Mistakes = loaded.Mistakes;
-            stats.Refusals = loaded.Refusals;
-            stats.Orders = loaded.Orders;
-            stats.TamagotchiPlays = loaded.TamagotchiPlays;
-            stats.BreadSold = loaded.BreadSold;
-            stats.CleanStreak = loaded.CleanStreak;
-            stats.BestCleanStreak = loaded.BestCleanStreak;
+        private void SyncAchievementStatuses()
+        {
+            foreach (var achievement in achievements)
+            {
+                achievement.IsUnlocked = unlockedIds.Contains(achievement.Id);
+            }
+        }
+
+        private static int NonNegative(int value)
+        {
+            return Mathf.Max(0, value);
+        }
+
+        private static int SafeIncrement(int value)
+        {
+            return value >= int.MaxValue ? int.MaxValue : NonNegative(value) + 1;
+        }
+
+        private static int SafeAdd(int left, int right)
+        {
+            left = NonNegative(left);
+            right = NonNegative(right);
+            return right > int.MaxValue - left ? int.MaxValue : left + right;
         }
 
         [Serializable]

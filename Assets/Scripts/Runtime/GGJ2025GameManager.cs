@@ -65,6 +65,15 @@ namespace UABPetelnia.GGJ2025.Runtime
 
         protected override void OnBeforeInitializeSystems()
         {
+            audioSystem = EnsureSystem(audioSystem);
+            cursorSystem = EnsureSystem(cursorSystem);
+            inputSystem = EnsureSystem(inputSystem);
+            pauseSystem = EnsureSystem(pauseSystem);
+            settingsSystem = EnsureSystem(settingsSystem);
+            sceneSystem = EnsureSystem(sceneSystem);
+            shopperSystem = EnsureSystem(shopperSystem);
+            gameplaySystem = EnsureSystem(gameplaySystem);
+
             AddSystem(audioSystem);
             AddSystem(cursorSystem);
             AddSystem(inputSystem);
@@ -77,12 +86,18 @@ namespace UABPetelnia.GGJ2025.Runtime
             AddSystem(shopperSystem);
 
             // Registered before the shelves: the products read their stock from the shop.
-            AddSystem(EnsureSystem(shopSystem));
-            AddSystem(EnsureSystem(productSystem));
-            AddSystem(EnsureSystem(progressSystem));
+            shopSystem = EnsureSystem(shopSystem);
+            productSystem = EnsureSystem(productSystem);
+            progressSystem = EnsureSystem(progressSystem);
+            shiftClockSystem = EnsureSystem(shiftClockSystem);
+            courierSystem = EnsureSystem(courierSystem);
+
+            AddSystem(shopSystem);
+            AddSystem(productSystem);
+            AddSystem(progressSystem);
             AddSystem(gameplaySystem);
-            AddSystem(EnsureSystem(shiftClockSystem));
-            AddSystem(EnsureSystem(courierSystem));
+            AddSystem(shiftClockSystem);
+            AddSystem(courierSystem);
             AddSystem(new InteractionSystem());
         }
 

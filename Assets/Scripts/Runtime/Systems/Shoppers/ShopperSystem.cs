@@ -22,9 +22,16 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shoppers
 
         private IReadOnlyCollection<ItemData> wantedItems = Array.Empty<ItemData>();
 
-        public bool IsShoppersAvailable => availableShoppers.Count > 0;
+        public bool IsShoppersAvailable
+        {
+            get
+            {
+                RemoveDeadActors();
+                return availableShoppers.Count > 0;
+            }
+        }
 
-        public bool IsAwaitingItem => wantedItems.Count > 0;
+        public bool IsAwaitingItem => wantedItems != null && wantedItems.Count > 0;
 
         public Vector3 RandomSpawnPoint
         {
@@ -35,7 +42,8 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shoppers
                     return Vector3.zero;
                 }
 
-                var spawnPoints = destinations.OfType<ShopperSpawnPointActor>().ToList();
+                RemoveDeadActors();
+                var spawnPoints = destinations.OfType<ShopperSpawnPointActor>().Where(point => point).ToList();
                 if (spawnPoints.Count <= 0)
                 {
                     return Vector3.zero;
@@ -51,7 +59,8 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shoppers
         {
             get
             {
-                var kioskDestination = destinations.FirstOrDefault(destination => destination is KioskPointActor);
+                RemoveDeadActors();
+                var kioskDestination = destinations.FirstOrDefault(destination => destination is KioskPointActor && IsAlive(destination));
                 if (kioskDestination == default)
                 {
                     return Vector3.zero;
@@ -77,7 +86,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shoppers
 
         public bool IsItemWanted(ItemData item)
         {
-            return item && wantedItems.Contains(item);
+            return item && wantedItems != null && wantedItems.Contains(item);
         }
 
         public override void OnInitialized()
@@ -94,6 +103,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shoppers
 
         public bool TryGetShopper(out IShopperActor shopper)
         {
+            RemoveDeadActors();
             shopper = spawnedShoppers.FirstOrDefault();
             return shopper != default;
         }
@@ -139,7 +149,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shoppers
 
         public void AddShopper(IShopperActor shopper)
         {
-            if (spawnedShoppers.Contains(shopper))
+            if (IsAlive(shopper) == false || spawnedShoppers.Contains(shopper))
             {
                 return;
             }
@@ -154,7 +164,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shoppers
 
         public void AddDestination(IDestinationActor destination)
         {
-            if (destinations.Contains(destination))
+            if (IsAlive(destination) == false || destinations.Contains(destination))
             {
                 return;
             }
@@ -185,7 +195,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shoppers
         private void OnSceneLoadEntered(SceneLoadEnteredMessage message)
         {
             availableShoppers.Clear();
-            availableShoppers = gameplaySettings != false
+            availableShoppers = gameplaySettings != false && gameplaySettings.AvailableShoppers != null
                 ? gameplaySettings.AvailableShoppers
                     .Where(data => data != null)
                     .Select(data => data.Copy())
@@ -193,6 +203,22 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shoppers
                 : new List<ShopperData>();
 
             StopAwaitingItem();
+        }
+
+        private void RemoveDeadActors()
+        {
+            spawnedShoppers.RemoveAll(shopper => IsAlive(shopper) == false);
+            destinations.RemoveAll(destination => IsAlive(destination) == false);
+        }
+
+        private static bool IsAlive(object actor)
+        {
+            if (actor == null)
+            {
+                return false;
+            }
+
+            return actor is not Object unityObject || unityObject != false;
         }
     }
 }

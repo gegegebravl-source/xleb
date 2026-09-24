@@ -1,4 +1,5 @@
-﻿using System.Collections;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
+using System.Collections;
 using CHARK.GameManagement;
 using CHARK.ScriptableScenes.Events;
 using UABPetelnia.GGJ2025.Runtime.Systems.Audio;
@@ -69,12 +70,12 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
 
         private void OnEnable()
         {
-            GameManager.AddListener<SceneLoadEnteredMessage>(OnSceneLoaded);
+            SystemsUtility.TryAddListener<SceneLoadEnteredMessage>(OnSceneLoaded);
         }
 
         private void OnDisable()
         {
-            GameManager.RemoveListener<SceneLoadEnteredMessage>(OnSceneLoaded);
+            SystemsUtility.TryRemoveListener<SceneLoadEnteredMessage>(OnSceneLoaded);
             StopMusic();
         }
 
@@ -119,7 +120,7 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
 
         private static float GetMasterVolume()
         {
-            return GameManager.TryGetSystem(out IAudioSystem audioSystem)
+            return SystemsUtility.TryGetSystem(out IAudioSystem audioSystem)
                 ? audioSystem.GetVolume(VolumeType.Master)
                 : 1f;
         }

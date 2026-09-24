@@ -1,4 +1,4 @@
-﻿using CHARK.GameManagement;
+using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Settings;
 using UABPetelnia.GGJ2025.Runtime.Systems.Products;
 using UnityEngine;
@@ -69,6 +69,12 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
         private void OnDisable()
         {
+            if (magnetRoutine != null)
+            {
+                StopCoroutine(magnetRoutine);
+                magnetRoutine = null;
+            }
+
             productSystem?.Unregister(this);
         }
 
@@ -119,6 +125,10 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
                 // размера живут в системе товаров, чтобы мелочь не терялась, а гигант не заслонял полку.
                 var system = ResolveProductSystem();
                 Height = system != null ? system.ResolveDisplayHeight(item.DisplayHeight) : item.DisplayHeight;
+                if (IsFinite(Height) == false || Height <= 0f)
+                {
+                    Height = 0.25f;
+                }
 
                 transform.localScale = Vector3.one * Height;
 
@@ -174,7 +184,15 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
         /// </summary>
         public void Consume()
         {
-            productSystem?.Consume(this);
+            var system = ResolveProductSystem();
+            if (system != null)
+            {
+                system.Consume(this);
+                return;
+            }
+
+            // A broken standalone scene must not leave a sold product available for a second sale.
+            Destroy(gameObject);
         }
 
         /// <summary>
@@ -236,7 +254,11 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
             var system = ResolveProductSystem();
 
             if (system != null
-                && system.TryFindFreeShelfPoint(transform.position, lookDirection, magnetRadius, out var shelfPoint)
+                && system.TryFindFreeShelfPoint(
+                    transform.position,
+                    lookDirection,
+                    IsFinite(magnetRadius) ? Mathf.Max(0.05f, magnetRadius) : 0.3f,
+                    out var shelfPoint)
                 && IsGoodPlacement(shelfPoint, lookDirection))
             {
                 StartMagnet(shelfPoint);
@@ -282,6 +304,12 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
         private void StartMagnet(ProductShelfPointActor shelfPoint)
         {
+            if (shelfPoint == false)
+            {
+                SetKinematic(false);
+                return;
+            }
+
             if (magnetRoutine != null)
             {
                 StopCoroutine(magnetRoutine);
@@ -292,6 +320,12 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
         private System.Collections.IEnumerator MagnetRoutine(ProductShelfPointActor shelfPoint)
         {
+            if (shelfPoint == false)
+            {
+                SetKinematic(false);
+                yield break;
+            }
+
             SetKinematic(true);
 
             var startPosition = transform.position;
@@ -300,11 +334,13 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
             var targetRotation = shelfPoint.Rotation;
             var elapsed = 0f;
 
-            while (elapsed < magnetDuration)
+            var duration = IsFinite(magnetDuration) ? Mathf.Max(0.01f, magnetDuration) : 0.16f;
+
+            while (elapsed < duration)
             {
                 elapsed += Time.deltaTime;
 
-                var t = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(elapsed / magnetDuration));
+                var t = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(elapsed / duration));
                 transform.SetPositionAndRotation(
                     Vector3.Lerp(startPosition, targetPosition, t),
                     Quaternion.Slerp(startRotation, targetRotation, t)
@@ -315,7 +351,18 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
             magnetRoutine = null;
 
+            if (shelfPoint == false)
+            {
+                SetKinematic(false);
+                yield break;
+            }
+
             PlaceOn(shelfPoint);
+        }
+
+        private static bool IsFinite(float value)
+        {
+            return float.IsNaN(value) == false && float.IsInfinity(value) == false;
         }
 
         private void SetKinematic(bool isKinematic)

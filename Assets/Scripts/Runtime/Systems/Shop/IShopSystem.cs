@@ -14,7 +14,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
         public ShopProduct(ItemData item, int purchasePrice)
         {
             Item = item;
-            PurchasePrice = purchasePrice;
+            PurchasePrice = Math.Max(0, purchasePrice);
         }
 
         public ItemData Item { get; }
@@ -24,20 +24,54 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
         /// </summary>
         public int PurchasePrice { get; }
 
-        public int SalePrice => Item ? Item.Cents : 0;
+        public int SalePrice => Item ? Math.Max(0, Item.Cents) : 0;
 
         /// <summary>
         /// Units in the back room. Taking a delivered unit for manual restocking decrements it;
         /// sales consume the physical shelf item instead.
         /// </summary>
-        public int Stock { get; internal set; }
+        private int stock;
+
+        public int Stock
+        {
+            get => stock;
+            internal set => stock = Math.Max(0, value);
+        }
 
         /// <summary>
         /// Units already paid for and currently on the road.
         /// </summary>
-        public int InTransit { get; internal set; }
+        private int inTransit;
+
+        public int InTransit
+        {
+            get => inTransit;
+            internal set => inTransit = Math.Max(0, value);
+        }
 
         public bool IsInStock => Stock > 0;
+    }
+
+    internal static class ShopMath
+    {
+        public static int CalculateCost(ShopProduct product, int quantity)
+        {
+            if (product == null || quantity <= 0 || product.PurchasePrice <= 0)
+            {
+                return 0;
+            }
+
+            return quantity > int.MaxValue / product.PurchasePrice
+                ? int.MaxValue
+                : product.PurchasePrice * quantity;
+        }
+
+        public static int SafeAdd(int left, int right)
+        {
+            left = Math.Max(0, left);
+            right = Math.Max(0, right);
+            return right > int.MaxValue - left ? int.MaxValue : left + right;
+        }
     }
 
     /// <summary>
@@ -55,7 +89,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
 
         public int Quantity { get; }
 
-        public int Cost => Product.PurchasePrice * Quantity;
+        public int Cost => ShopMath.CalculateCost(Product, Quantity);
     }
 
     /// <summary>
@@ -74,7 +108,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
 
         public int Quantity { get; internal set; }
 
-        public int Cost => Product.PurchasePrice * Quantity;
+        public int Cost => ShopMath.CalculateCost(Product, Quantity);
     }
 
     /// <summary>
@@ -91,9 +125,11 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
         )
         {
             Id = id;
-            Lines = lines;
-            Cost = cost;
-            ArrivalTimeSeconds = arrivalTimeSeconds;
+            Lines = lines ?? Array.Empty<ShopDeliveryLine>();
+            Cost = Math.Max(0, cost);
+            ArrivalTimeSeconds = float.IsNaN(arrivalTimeSeconds) || float.IsInfinity(arrivalTimeSeconds)
+                ? UnityEngine.Time.time
+                : arrivalTimeSeconds;
         }
 
         public string Id { get; }
@@ -115,7 +151,13 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
 
                 for (var index = 0; index < Lines.Count; index++)
                 {
-                    total += Lines[index].Quantity;
+                    var line = Lines[index];
+                    if (line == null)
+                    {
+                        continue;
+                    }
+
+                    total = ShopMath.SafeAdd(total, line.Quantity);
                 }
 
                 return total;
@@ -135,10 +177,15 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
             for (var index = 0; index < Lines.Count; index++)
             {
                 var line = Lines[index];
+                if (line == null || line.Product == null)
+                {
+                    continue;
+                }
+
                 parts.Add($"{UABPetelnia.GGJ2025.Runtime.UI.Views.DeliveryRowView.Prettify(line.Product.Item?.Id)} ×{line.Quantity}");
             }
 
-            return string.Join(", ", parts);
+            return parts.Count == 0 ? "Пустой заказ" : string.Join(", ", parts);
         }
     }
 

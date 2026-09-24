@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables;
 using UABPetelnia.GGJ2025.Runtime.Systems.Progress;
 using UnityEngine;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 
 namespace UABPetelnia.GGJ2025.Runtime.Actors
 {
@@ -79,7 +80,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
         {
             block = new MaterialPropertyBlock();
 
-            GameManager.TryGetSystem(out progressSystem);
+            SystemsUtility.TryGetSystem(out progressSystem);
 
             homePosition = transform.position;
             homeRotation = transform.rotation;

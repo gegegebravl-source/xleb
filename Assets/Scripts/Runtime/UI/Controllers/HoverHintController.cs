@@ -130,7 +130,7 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
 
         private bool HasItemInHand()
         {
-            if (GameManager.TryGetSystem<IPlayerSystem>(out var players) == false)
+            if (SystemsUtility.TryGetSystem<IPlayerSystem>(out var players) == false)
             {
                 return false;
             }

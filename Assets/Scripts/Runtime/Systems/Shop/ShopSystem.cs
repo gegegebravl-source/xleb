@@ -114,13 +114,15 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
             }
         }
 
-        public float DeliveryTravelSeconds => deliveryTravelSeconds;
+        public float DeliveryTravelSeconds => IsFiniteNonNegative(deliveryTravelSeconds)
+            ? deliveryTravelSeconds
+            : 0f;
 
         public event Action Changed;
 
         public override void OnInitialized()
         {
-            playerSystem = GameManager.GetSystem<IPlayerSystem>();
+            GameManager.TryGetSystem(out playerSystem);
 
             GameManager.AddListener<SceneLoadEnteredMessage>(OnSceneLoadEntered);
         }
@@ -157,13 +159,13 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
                 // Товар приехал: он лежит в коробке курьера и на полки сам не попадает.
                 for (var lineIndex = 0; lineIndex < order.Lines.Count; lineIndex++)
                 {
-                    var line = order.Lines[lineIndex];
+                    var line = order.Lines == null ? null : order.Lines[lineIndex];
                     if (line == null || line.Product == null || line.Quantity <= 0)
                     {
                         continue;
                     }
 
-                    line.Product.Stock += line.Quantity;
+                    line.Product.Stock = ShopMath.SafeAdd(line.Product.Stock, line.Quantity);
                     line.Product.InTransit = Mathf.Max(0, line.Product.InTransit - line.Quantity);
                 }
 
@@ -310,7 +312,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
             }
 
             var player = playerSystem?.Player;
-            if (player == null)
+            if (player == null || player is UnityEngine.Object playerObject && playerObject == false)
             {
                 error = "no_player";
                 return false;
@@ -327,13 +329,29 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
                 return false;
             }
 
+            // Validate the entire transaction before changing money or stock. This keeps a
+            // malformed line from charging the player and then failing halfway through.
+            foreach (var cartLine in cart)
+            {
+                if (cartLine == null || cartLine.Product == null || cartLine.Quantity <= 0
+                    || cartLine.Quantity > ShopOrderRules.MaxLineQuantity
+                    || cartLine.Quantity > int.MaxValue - cartLine.Product.InTransit)
+                {
+                    error = "bad_quantity";
+                    return false;
+                }
+            }
+
             player.Cents -= total;
 
             var lines = new List<ShopDeliveryLine>(cart.Count);
 
             foreach (var cartLine in cart)
             {
-                cartLine.Product.InTransit += cartLine.Quantity;
+                cartLine.Product.InTransit = ShopMath.SafeAdd(
+                    cartLine.Product.InTransit,
+                    cartLine.Quantity
+                );
                 lines.Add(new ShopDeliveryLine(cartLine.Product, cartLine.Quantity));
             }
 
@@ -341,13 +359,14 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
 
             orders.Add(
                 new ShopDeliveryOrder(
-                    id: $"order-{nextOrderId++}",
+                    id: $"order-{nextOrderId}",
                     lines: lines,
                     cost: total,
-                    arrivalTimeSeconds: Time.time + deliveryTravelSeconds
+                    arrivalTimeSeconds: Time.time + DeliveryTravelSeconds
                 )
             );
 
+            nextOrderId = nextOrderId >= int.MaxValue ? 0 : nextOrderId + 1;
             Changed?.Invoke();
 
             return true;
@@ -422,6 +441,16 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
 
             isCatalogueBuilt = true;
 
+            if (gameplaySettings.AvailableItems == null)
+            {
+                isCatalogueBuilt = true;
+                return;
+            }
+
+            var factor = IsFiniteNonNegative(purchasePriceFactor)
+                ? Mathf.Clamp(purchasePriceFactor, 0.05f, 1f)
+                : 0.5f;
+
             foreach (var item in gameplaySettings.AvailableItems)
             {
                 if (item == false || item.Cents <= 0)
@@ -431,7 +460,10 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
                     continue;
                 }
 
-                var purchasePrice = Mathf.Max(1, Mathf.RoundToInt(item.Cents * purchasePriceFactor));
+                var purchasePrice = (int)Math.Min(
+                    int.MaxValue,
+                    Math.Max(1d, Math.Round(item.Cents * (double)factor))
+                );
 
                 products.Add(new ShopProduct(item, purchasePrice)
                 {
@@ -442,6 +474,11 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
             Debug.Log($"[Shop] Каталог собран: товаров {products.Count}, запас по {initialStock} шт.");
 
             Changed?.Invoke();
+        }
+
+        private static bool IsFiniteNonNegative(float value)
+        {
+            return value >= 0f && float.IsNaN(value) == false && float.IsInfinity(value) == false;
         }
     }
 }

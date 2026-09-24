@@ -1,7 +1,8 @@
-﻿using CHARK.GameManagement;
+using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Settings;
 using UABPetelnia.GGJ2025.Runtime.Systems.Players;
 using UnityEngine;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 
 namespace UABPetelnia.GGJ2025.Runtime.Actors
 {
@@ -68,7 +69,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
         {
             block = new MaterialPropertyBlock();
 
-            GameManager.TryGetSystem(out playerSystem);
+            SystemsUtility.TryGetSystem(out playerSystem);
         }
 
         private void LateUpdate()

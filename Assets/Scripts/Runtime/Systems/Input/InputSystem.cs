@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
@@ -94,13 +94,20 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Input
 
         public override void OnInitialized()
         {
-            settingsSystem = GameManager.GetSystem<ISettingsSystem>();
-            playerInput.onControlsChanged += OnControlsChanged;
+            GameManager.TryGetSystem(out settingsSystem);
+
+            if (playerInput != false)
+            {
+                playerInput.onControlsChanged += OnControlsChanged;
+            }
         }
 
         public override void OnDisposed()
         {
-            playerInput.onControlsChanged -= OnControlsChanged;
+            if (playerInput != false)
+            {
+                playerInput.onControlsChanged -= OnControlsChanged;
+            }
         }
 
         private void OnControlsChanged(PlayerInput input)
@@ -194,12 +201,22 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Input
 
         private float GetLookSensitivity()
         {
+            if (settingsSystem == null)
+            {
+                return GetNormalizedSensitivity(GeneralSettings.MinLookSensitivity);
+            }
+
             var settings = settingsSystem.Settings;
             return GetNormalizedSensitivity(settings.LookSensitivity);
         }
 
         private void SetLookSensitivity(float newLookSensitivity)
         {
+            if (settingsSystem == null)
+            {
+                return;
+            }
+
             var settings = settingsSystem.Settings;
             settings.LookSensitivity = GetNormalizedSensitivity(newLookSensitivity);
 

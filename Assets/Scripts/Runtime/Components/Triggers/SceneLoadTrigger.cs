@@ -1,6 +1,7 @@
-﻿using CHARK.GameManagement;
+using CHARK.GameManagement;
 using CHARK.ScriptableScenes;
 using UABPetelnia.GGJ2025.Runtime.Systems.Scenes;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.Components.Triggers
@@ -14,7 +15,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Triggers
 
         private void Awake()
         {
-            sceneSystem = GameManager.GetSystem<ISceneSystem>();
+            SystemsUtility.TryGetSystem(out sceneSystem);
         }
 
         public void Trigger()
@@ -24,7 +25,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Triggers
                 return;
             }
 
-            sceneSystem.LoadScene(sceneCollection);
+            sceneSystem?.LoadScene(sceneCollection);
         }
     }
 }

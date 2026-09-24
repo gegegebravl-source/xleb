@@ -142,10 +142,15 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
                     return false;
                 }
 
+                if (agent.enabled == false || agent.isOnNavMesh == false)
+                {
+                    return false;
+                }
+
                 var dist = agent.remainingDistance;
                 return float.IsPositiveInfinity(dist)
                     || agent.pathStatus != NavMeshPathStatus.PathComplete
-                    || agent.remainingDistance != 0;
+                    || dist > 0.05f;
             }
         }
 
@@ -167,7 +172,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
         private void Awake()
         {
-            shopperSystem = GameManager.GetSystem<IShopperSystem>();
+            SystemsUtility.TryGetSystem(out shopperSystem);
             mainCamera = Camera.main;
         }
 
@@ -189,7 +194,12 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
         private void OnEnable()
         {
             // shopperSystem может быть не получен, если Awake отработал раньше инициализации
-            // GameManager (edge-случай редактора) — не роняем объект из-за этого.
+            // GameManager (edge-случай редактора). Повторный поиск делает lifecycle безопасным.
+            if (shopperSystem == null)
+            {
+                SystemsUtility.TryGetSystem(out shopperSystem);
+            }
+
             shopperSystem?.AddShopper(this);
         }
 
@@ -251,7 +261,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
         public void Move(Vector3 position)
         {
-            if (agent == false)
+            if (agent == false || agent.enabled == false || agent.isOnNavMesh == false)
             {
                 return;
             }

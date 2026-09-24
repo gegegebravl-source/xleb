@@ -24,7 +24,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Settings
         private static UniversalRenderPipelineAsset runtimeAsset;
 
         /// <summary>Камеры, которым уже выставили постэффекты.</summary>
-        private static readonly HashSet<EntityId> configuredCameras = new();
+        private static readonly HashSet<Camera> configuredCameras = new();
 
         /// <summary>Параметры одного пресета качества.</summary>
         internal readonly struct Preset
@@ -178,8 +178,12 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Settings
             for (var index = 0; index < cameras.Length; index++)
             {
                 var camera = cameras[index];
+                if (camera == false)
+                {
+                    continue;
+                }
 
-                if (configuredCameras.Contains(camera.GetEntityId()))
+                if (configuredCameras.Contains(camera))
                 {
                     continue;
                 }
@@ -189,7 +193,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Settings
                     cameraData.renderPostProcessing = enabled;
                 }
 
-                configuredCameras.Add(camera.GetEntityId());
+                configuredCameras.Add(camera);
             }
         }
 
@@ -198,7 +202,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Settings
         /// </summary>
         private static void EnsureRuntimeAsset()
         {
-            if (runtimeAsset != null)
+            if (runtimeAsset != false)
             {
                 return;
             }

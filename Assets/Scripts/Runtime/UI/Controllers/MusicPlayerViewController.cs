@@ -4,6 +4,7 @@ using CHARK.SimpleUI;
 using UABPetelnia.GGJ2025.Runtime.Systems.Cursors;
 using UABPetelnia.GGJ2025.Runtime.Systems.Pausing;
 using UABPetelnia.GGJ2025.Runtime.UI.Views;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
@@ -36,8 +37,8 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
         {
             base.Awake();
 
-            GameManager.TryGetSystem(out cursorSystem);
-            GameManager.AddListener<GamePausedMessage>(OnGamePaused);
+            SystemsUtility.TryGetSystem(out cursorSystem);
+            SystemsUtility.TryAddListener<GamePausedMessage>(OnGamePaused);
 
             audioSource = GetComponent<AudioSource>();
             if (audioSource == false)
@@ -51,7 +52,7 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
 
         private void OnDestroy()
         {
-            GameManager.RemoveListener<GamePausedMessage>(OnGamePaused);
+            SystemsUtility.TryRemoveListener<GamePausedMessage>(OnGamePaused);
         }
 
         protected override void OnEnable()

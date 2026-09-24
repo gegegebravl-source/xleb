@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using CHARK.GameManagement;
 using CHARK.GameManagement.Messaging;
 using CHARK.GameManagement.Systems;
@@ -59,6 +59,20 @@ namespace UABPetelnia.GGJ2025.Runtime.Utilities
             {
                 GameManager.RemoveListener(listener);
 
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>Опубликовать сообщение без падения у изолированного prefab.</summary>
+        public static bool TryPublish<TMessage>(TMessage message) where TMessage : IMessage
+        {
+            try
+            {
+                GameManager.Publish(message);
                 return true;
             }
             catch (Exception)

@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using CHARK.GameManagement;
 using CHARK.SimpleUI;
 using UABPetelnia.GGJ2025.Runtime.Systems.Progress;
 using UABPetelnia.GGJ2025.Runtime.UI.Views;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
@@ -66,7 +67,7 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
         {
             base.OnEnable();
 
-            GameManager.AddListener<AchievementUnlockedMessage>(OnAchievementUnlocked);
+            SystemsUtility.TryAddListener<AchievementUnlockedMessage>(OnAchievementUnlocked);
 
             // На случай горячей перезагрузки: считаем, что тост изначально скрыт,
             // чтобы не поймать ложное "спрятался" на первом кадре.
@@ -77,7 +78,7 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
         {
             base.OnDisable();
 
-            GameManager.RemoveListener<AchievementUnlockedMessage>(OnAchievementUnlocked);
+            SystemsUtility.TryRemoveListener<AchievementUnlockedMessage>(OnAchievementUnlocked);
 
             pending.Clear();
             wasVisible = false;

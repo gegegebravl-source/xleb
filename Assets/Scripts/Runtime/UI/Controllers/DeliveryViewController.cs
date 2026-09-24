@@ -10,6 +10,7 @@ using UABPetelnia.GGJ2025.Runtime.Systems.Products;
 using UABPetelnia.GGJ2025.Runtime.Systems.Progress;
 using UABPetelnia.GGJ2025.Runtime.Systems.Shop;
 using UABPetelnia.GGJ2025.Runtime.UI.Views;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
@@ -78,13 +79,13 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
         {
             base.Awake();
 
-            GameManager.TryGetSystem(out inputSystem);
-            GameManager.TryGetSystem(out shopSystem);
-            GameManager.TryGetSystem(out playerSystem);
-            GameManager.TryGetSystem(out productSystem);
-            GameManager.TryGetSystem(out cursorSystem);
-            GameManager.TryGetSystem(out pauseSystem);
-            GameManager.TryGetSystem(out progressSystem);
+            SystemsUtility.TryGetSystem(out inputSystem);
+            SystemsUtility.TryGetSystem(out shopSystem);
+            SystemsUtility.TryGetSystem(out playerSystem);
+            SystemsUtility.TryGetSystem(out productSystem);
+            SystemsUtility.TryGetSystem(out cursorSystem);
+            SystemsUtility.TryGetSystem(out pauseSystem);
+            SystemsUtility.TryGetSystem(out progressSystem);
 
             if (shopSystem != null)
             {
@@ -93,7 +94,7 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
 
             // Меню паузы забирает курсор — панель заказов должна закрыться,
             // иначе она останется за паузой с мёртвым указателем.
-            GameManager.AddListener<GamePausedMessage>(OnGamePaused);
+            SystemsUtility.TryAddListener<GamePausedMessage>(OnGamePaused);
         }
 
         protected override void OnEnable()
@@ -117,7 +118,7 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
                 shopSystem.Changed -= OnShopChanged;
             }
 
-            GameManager.RemoveListener<GamePausedMessage>(OnGamePaused);
+            SystemsUtility.TryRemoveListener<GamePausedMessage>(OnGamePaused);
 
             catalogueBuffer.Clear();
         }
@@ -180,7 +181,7 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
         /// </summary>
         public void OpenPanel()
         {
-            if (!TryGetPlayerPosition(out var playerPosition))
+            if (View == null || !TryGetPlayerPosition(out var playerPosition))
             {
                 return;
             }

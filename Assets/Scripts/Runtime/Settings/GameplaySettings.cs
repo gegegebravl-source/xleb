@@ -68,33 +68,41 @@ namespace UABPetelnia.GGJ2025.Runtime.Settings
 
         public IReadOnlyCollection<ItemData> AvailableItems => availableItems ?? System.Array.Empty<ItemData>();
 
-        public float SpawnDelaySeconds => Random.Range(spawnDelayRange.x, spawnDelayRange.y);
+        public float SpawnDelaySeconds => RandomRange(spawnDelayRange, fallback: 2f);
 
-        public float RantDurationSeconds => Random.Range(rantDurationRange.x, rantDurationRange.y);
+        public float RantDurationSeconds => RandomRange(rantDurationRange, fallback: 2f);
 
         /// <summary>
         /// How long the shopper stands at the counter waiting for the ordered product before
         /// giving up. Without this a sale that cannot be completed would stall the whole loop.
         /// </summary>
-        public float PatienceDurationSeconds => patienceDurationSeconds;
+        public float PatienceDurationSeconds => IsFinite(patienceDurationSeconds)
+            ? Mathf.Max(0f, patienceDurationSeconds)
+            : 20f;
 
         /// <summary>Час открытия ларька.</summary>
-        public float ShiftStartHour => shiftStartHour;
+        public float ShiftStartHour => IsFinite(shiftStartHour) ? Mathf.Clamp(shiftStartHour, 0f, 23f) : 9f;
 
         /// <summary>Час закрытия: на нём смена заканчивается.</summary>
-        public float ShiftEndHour => shiftEndHour;
+        public float ShiftEndHour => IsFinite(shiftEndHour)
+            ? Mathf.Clamp(shiftEndHour, Mathf.Min(24f, ShiftStartHour + 0.1f), 24f)
+            : Mathf.Min(24f, ShiftStartHour + 11f);
 
         /// <summary>Сколько игровых минут проходит за одну реальную секунду.</summary>
         public float GameMinutesPerRealSecond => Mathf.Max(0.1f, gameMinutesPerRealSecond);
 
         /// <summary>Общий множитель размера товара на полке.</summary>
-        public float ProductSizeMultiplier => productSizeMultiplier;
+        public float ProductSizeMultiplier => IsFinite(productSizeMultiplier)
+            ? Mathf.Max(0.01f, productSizeMultiplier)
+            : 1f;
 
         /// <summary>Минимальная высота товара в метрах.</summary>
-        public float MinProductHeight => minProductHeight;
+        public float MinProductHeight => IsFinite(minProductHeight) ? Mathf.Max(0.01f, minProductHeight) : 0.26f;
 
         /// <summary>Максимальная высота товара в метрах.</summary>
-        public float MaxProductHeight => maxProductHeight;
+        public float MaxProductHeight => IsFinite(maxProductHeight)
+            ? Mathf.Max(MinProductHeight, maxProductHeight)
+            : MinProductHeight;
 
         /// <summary>
         /// Высота товара на полке: размер из ассета, умноженный на общий множитель и
@@ -102,9 +110,27 @@ namespace UABPetelnia.GGJ2025.Runtime.Settings
         /// </summary>
         public float ResolveProductHeight(float displayHeight)
         {
-            var scaled = displayHeight * productSizeMultiplier;
+            var scaled = (IsFinite(displayHeight) ? displayHeight : MinProductHeight) * ProductSizeMultiplier;
 
-            return Mathf.Clamp(scaled, minProductHeight, Mathf.Max(minProductHeight, maxProductHeight));
+            return Mathf.Clamp(scaled, MinProductHeight, MaxProductHeight);
+        }
+
+        private static float RandomRange(Vector2 range, float fallback)
+        {
+            var min = IsFinite(range.x) ? Mathf.Max(0f, range.x) : fallback;
+            var max = IsFinite(range.y) ? Mathf.Max(0f, range.y) : fallback;
+
+            if (max < min)
+            {
+                (min, max) = (max, min);
+            }
+
+            return Random.Range(min, max);
+        }
+
+        private static bool IsFinite(float value)
+        {
+            return float.IsNaN(value) == false && float.IsInfinity(value) == false;
         }
     }
 }

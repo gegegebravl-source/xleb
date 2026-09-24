@@ -89,7 +89,7 @@ namespace WarmBread
         /// </remarks>
         public static void ApplyToScene(Scene scene)
         {
-            if (scene.IsValid() == false || scene.name.Contains(GameplaySceneNamePart) == false)
+            if (scene.IsValid() == false || scene.isLoaded == false || scene.name.Contains(GameplaySceneNamePart) == false)
             {
                 return;
             }

@@ -8,6 +8,7 @@ using UABPetelnia.GGJ2025.Runtime.Systems.Pausing;
 using UABPetelnia.GGJ2025.Runtime.Systems.Players;
 using UABPetelnia.GGJ2025.Runtime.Systems.Shop;
 using UABPetelnia.GGJ2025.Runtime.UI.Views;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
@@ -40,12 +41,12 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
         {
             base.Awake();
 
-            GameManager.TryGetSystem(out playerSystem);
-            GameManager.TryGetSystem(out shopSystem);
-            GameManager.TryGetSystem(out cursorSystem);
-            GameManager.TryGetSystem(out pauseSystem);
+            SystemsUtility.TryGetSystem(out playerSystem);
+            SystemsUtility.TryGetSystem(out shopSystem);
+            SystemsUtility.TryGetSystem(out cursorSystem);
+            SystemsUtility.TryGetSystem(out pauseSystem);
 
-            GameManager.AddListener<GamePausedMessage>(OnGamePaused);
+            SystemsUtility.TryAddListener<GamePausedMessage>(OnGamePaused);
         }
 
         protected override void OnEnable()
@@ -64,7 +65,7 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
 
         private void OnDestroy()
         {
-            GameManager.RemoveListener<GamePausedMessage>(OnGamePaused);
+            SystemsUtility.TryRemoveListener<GamePausedMessage>(OnGamePaused);
         }
 
         #region Public API
@@ -73,6 +74,11 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
         public void Open(DeliveryBoxActor target)
         {
             if (target == false)
+            {
+                return;
+            }
+
+            if (View == null)
             {
                 return;
             }
@@ -200,24 +206,37 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
 
             // The box and the back-room ledger must move together. A malformed or stale box must
             // not let the player duplicate a delivery unit by taking it when the ledger is empty.
-            if (shopSystem != null
-                && (shopSystem.TryGetProduct(item, out var stockProduct) == false
-                    || stockProduct.Stock <= 0))
+            if (shopSystem == null
+                || shopSystem.TryGetProduct(item, out var stockProduct) == false
+                || stockProduct.Stock <= 0)
+            {
+                view.SetStatus("Склад недоступен или этой позиции уже нет в учёте.");
+
+                return;
+            }
+
+            // Reserve the ledger and the box before creating the physical hand item. If the
+            // player prefab cannot spawn products, both reservations are rolled back.
+            if (shopSystem.TryTakeFromStock(item) == false)
             {
                 view.SetStatus("Этой позиции уже нет в учёте склада.");
+                return;
+            }
 
+            if (box.TryRemoveItem(item) == false)
+            {
+                stockProduct.Stock++;
+                view.SetStatus("Позиция уже была забрана.");
                 return;
             }
 
             if (player.TryCarryItem(item) == false)
             {
-                view.SetStatus("Этот товар уже в руках.");
-
+                box.RestoreItem(item);
+                stockProduct.Stock++;
+                view.SetStatus("Не удалось создать товар в руках.");
                 return;
             }
-
-            box.TryRemoveItem(item);
-            shopSystem?.TryTakeFromStock(item);
 
             if (box.IsEmpty)
             {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using UABPetelnia.GGJ2025.Runtime.Systems.Interaction;
 using UnityEngine;
@@ -88,7 +88,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables
 
         public void Hover(IInteractor interactor)
         {
-            if (IsHoveredBy(interactor))
+            if (interactor == null || IsHoveredBy(interactor))
             {
                 return;
             }
@@ -97,12 +97,12 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables
 
             var args = new InteractableHoverEnteredArgs(interactor);
             OnHoverEntered?.Invoke(args);
-            onHoverEntered.Invoke(args);
+            onHoverEntered?.Invoke(args);
         }
 
         public void UnHover(IInteractor interactor)
         {
-            if (IsHoveredBy(interactor) == false)
+            if (interactor == null || IsHoveredBy(interactor) == false)
             {
                 return;
             }
@@ -111,7 +111,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables
 
             var args = new InteractableHoverExitedArgs(interactor);
             OnHoverExited?.Invoke(args);
-            onHoverExited.Invoke(args);
+            onHoverExited?.Invoke(args);
         }
 
         public void UnHover()
@@ -130,7 +130,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables
 
         public void Select(IInteractor interactor)
         {
-            if (IsSelectedBy(interactor))
+            if (interactor == null || IsSelectedBy(interactor))
             {
                 return;
             }
@@ -139,12 +139,12 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables
 
             var args = new InteractableSelectEnteredArgs(interactor);
             OnSelectEntered?.Invoke(args);
-            onSelectEntered.Invoke(args);
+            onSelectEntered?.Invoke(args);
         }
 
         public void Deselect(IInteractor interactor)
         {
-            if (IsSelectedBy(interactor) == false)
+            if (interactor == null || IsSelectedBy(interactor) == false)
             {
                 return;
             }
@@ -153,7 +153,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables
 
             var args = new InteractableSelectExitedArgs(interactor);
             OnSelectExited?.Invoke(args);
-            onSelectExited.Invoke(args);
+            onSelectExited?.Invoke(args);
         }
 
         public void Deselect()

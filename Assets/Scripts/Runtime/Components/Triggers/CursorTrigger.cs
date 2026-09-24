@@ -1,5 +1,6 @@
-﻿using CHARK.GameManagement;
+using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Systems.Cursors;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.Components.Triggers
@@ -13,14 +14,14 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Triggers
 
         private void Awake()
         {
-            cursorSystem = GameManager.GetSystem<ICursorSystem>();
+            SystemsUtility.TryGetSystem(out cursorSystem);
         }
 
         private void Start()
         {
             if (isLockOnStart)
             {
-                cursorSystem.LockCursor();
+                cursorSystem?.LockCursor();
             }
         }
     }

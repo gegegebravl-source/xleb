@@ -42,9 +42,9 @@ namespace UABPetelnia.GGJ2025.Runtime.Settings
 
         public int MaxHealth => healthStateTextures?.Count ?? 0;
 
-        public float ZoomInSpeed => zoomInSpeed;
+        public float ZoomInSpeed => IsFinite(zoomInSpeed) ? Mathf.Max(0f, zoomInSpeed) : 8f;
 
-        public float ZoomInFov => zoomInFov;
+        public float ZoomInFov => IsFinite(zoomInFov) ? Mathf.Clamp(zoomInFov, 1f, 179f) : 20f;
 
         public float RaycastDistance => data != null ? data.RaycastDistance : 0f;
 
@@ -60,9 +60,14 @@ namespace UABPetelnia.GGJ2025.Runtime.Settings
 
         public Vector3 CameraShakeForce => cameraShakeForce;
 
-        public float MoveSpeed => moveSpeed;
+        public float MoveSpeed => IsFinite(moveSpeed) ? Mathf.Max(0.1f, moveSpeed) : 5f;
 
         public int GoalCents => Mathf.Max(0, goalCents);
+
+        private static bool IsFinite(float value)
+        {
+            return float.IsNaN(value) == false && float.IsInfinity(value) == false;
+        }
 
         public Texture2D GetHealthTexture(int health)
         {

@@ -1,3 +1,4 @@
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Settings;
 using UABPetelnia.GGJ2025.Runtime.Systems.Shoppers;
@@ -20,7 +21,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States
 
         protected override void OnInitialized()
         {
-            shopperSystem = GameManager.GetSystem<IShopperSystem>();
+            SystemsUtility.TryGetSystem(out shopperSystem);
         }
 
         protected override void OnDisposed()

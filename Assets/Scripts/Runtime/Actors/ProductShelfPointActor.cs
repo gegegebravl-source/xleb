@@ -59,11 +59,32 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
         /// <summary>Влезает ли товар такой высоты в этот слот.</summary>
         public bool CanFit(float height)
         {
-            return height <= capacity;
+            return IsFinite(height) && height >= 0f && height <= Capacity;
         }
 
         /// <summary>Максимальная высота товара для этого слота.</summary>
-        public float Capacity => capacity;
+        public float Capacity => IsFinite(capacity) ? Mathf.Max(0.01f, capacity) : 0.55f;
+
+        private static bool IsFinite(float value)
+        {
+            return float.IsNaN(value) == false && float.IsInfinity(value) == false;
+        }
+
+
+        private ProductActor FindChildProduct()
+        {
+            var products = GetComponentsInChildren<ProductActor>(true);
+
+            for (var index = 0; index < products.Length; index++)
+            {
+                if (products[index] != false)
+                {
+                    return products[index];
+                }
+            }
+
+            return default;
+        }
 
 
         private ProductActor FindChildProduct()

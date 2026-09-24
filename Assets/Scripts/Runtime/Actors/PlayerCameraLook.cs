@@ -1,4 +1,4 @@
-﻿using Unity.Cinemachine;
+using Unity.Cinemachine;
 using UABPetelnia.GGJ2025.Runtime.Settings;
 using UABPetelnia.GGJ2025.Runtime.Systems.Input;
 using UABPetelnia.GGJ2025.Runtime.UI.Controllers;
@@ -76,14 +76,22 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
                 return mouseSensitivity;
             }
 
-            var reference = generalSettings != false ? generalSettings.DefaultLookSensitivity : 5f;
+            var reference = generalSettings != false && IsFinite(generalSettings.DefaultLookSensitivity)
+                ? Mathf.Max(0.01f, generalSettings.DefaultLookSensitivity)
+                : 5f;
             var normalized = Mathf.Clamp(
                 inputSystem.LookSensitivity,
                 GeneralSettings.MinLookSensitivity,
                 GeneralSettings.MaxLookSensitivity
             );
 
-            return mouseSensitivity * (normalized / Mathf.Max(0.01f, reference));
+            var baseSensitivity = IsFinite(mouseSensitivity) ? Mathf.Max(0f, mouseSensitivity) : 0.12f;
+            return baseSensitivity * (normalized / reference);
+        }
+
+        private static bool IsFinite(float value)
+        {
+            return float.IsNaN(value) == false && float.IsInfinity(value) == false;
         }
 
         private void Update()

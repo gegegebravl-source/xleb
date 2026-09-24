@@ -84,49 +84,49 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Scenes
 
         public void LoadInitialScene()
         {
-            if (controller == false) return;
+            if (controller == false || controller.IsLoading) return;
             PrepareForSceneLoad();
             controller.LoadInitialSceneCollection();
         }
 
         public void ReloadScene()
         {
-            if (controller == false) return;
+            if (controller == false || controller.IsLoading) return;
             PrepareForSceneLoad();
             controller.ReloadLoadedSceneCollection();
         }
 
         public void LoadMenuScene()
         {
-            if (controller == false || menuSceneCollection == false) return;
+            if (controller == false || menuSceneCollection == false || controller.IsLoading) return;
             PrepareForSceneLoad();
             controller.LoadSceneCollection(menuSceneCollection);
         }
 
         public void LoadGameplayScene()
         {
-            if (controller == false || startingSceneCollection == false) return;
+            if (controller == false || startingSceneCollection == false || controller.IsLoading) return;
             PrepareForSceneLoad();
             controller.LoadSceneCollection(startingSceneCollection);
         }
 
         public void LoadScene(ScriptableSceneCollection collection)
         {
-            if (controller == false || collection == false) return;
+            if (controller == false || collection == false || controller.IsLoading) return;
             PrepareForSceneLoad();
             controller.LoadSceneCollection(collection);
         }
 
         public void LoadGameVictoryScene()
         {
-            if (controller == false || gameVictorySceneCollection == false) return;
+            if (controller == false || gameVictorySceneCollection == false || controller.IsLoading) return;
             PrepareForSceneLoad();
             controller.LoadSceneCollection(gameVictorySceneCollection);
         }
 
         public void LoadGameOverScene()
         {
-            if (controller == false || gameOverSceneCollection == false) return;
+            if (controller == false || gameOverSceneCollection == false || controller.IsLoading) return;
             PrepareForSceneLoad();
             controller.LoadSceneCollection(gameOverSceneCollection);
         }
@@ -141,12 +141,22 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Scenes
         /// </summary>
         private void PrepareForSceneLoad()
         {
-            if (pauseSystem == null || pauseSystem.IsPaused == false)
+            if (pauseSystem == null)
             {
+                // A partially authored bootstrap can still request a scene load. Never let a
+                // missing pause service leave WaitForSeconds frozen at timeScale zero.
+                if (Time.timeScale == 0f)
+                {
+                    Time.timeScale = 1f;
+                }
+
                 return;
             }
 
-            pauseSystem.ResumeGame();
+            if (pauseSystem.IsPaused)
+            {
+                pauseSystem.ResumeGame();
+            }
         }
 
         private static void OnLoadEntered(CollectionLoadEventArgs args)

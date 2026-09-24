@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables;
 using UABPetelnia.GGJ2025.Runtime.Systems.Interaction;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -79,7 +80,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactors
 
         private void Awake()
         {
-            interactionSystem = GameManager.GetSystem<IInteractionSystem>();
+            SystemsUtility.TryGetSystem(out interactionSystem);
         }
 
         private void OnEnable()
@@ -244,7 +245,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactors
         /// </summary>
         protected void Hover(IInteractable interactable)
         {
-            if (IsHovered(interactable) || IsSelected(interactable))
+            if (interactable == null || IsHovered(interactable) || IsSelected(interactable))
             {
                 return;
             }

@@ -1,4 +1,4 @@
-﻿using UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables;
+using UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables;
 using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactors
@@ -94,6 +94,14 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactors
 
         private void UpdateHovering()
         {
+            var settings = Settings;
+            if (settings == null)
+            {
+                raycastHit = default;
+                UnHover();
+                return;
+            }
+
             if (IsSelecting)
             {
                 // Already selected something - busy.
@@ -171,19 +179,32 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactors
         /// </summary>
         private int TryRaycastAll()
         {
+            var settings = Settings;
+            if (settings == null)
+            {
+                return 0;
+            }
+
             var interactorTransform = InteractorTransform;
+            var radius = IsFinite(settings.RaycastRadius) ? Mathf.Max(0f, settings.RaycastRadius) : 0f;
+            var distance = IsFinite(settings.RaycastDistance) ? Mathf.Max(0f, settings.RaycastDistance) : 0f;
 
             // Направление обязано быть нормализованным: Unity 6 сыплет ассертами на
             // «forward * distance», а длину луча и так задаёт maxDistance.
             return Physics.SphereCastNonAlloc(
                 interactorTransform.position,
-                Settings.RaycastRadius,
+                radius,
                 interactorTransform.forward,
                 HitBuffer,
-                Settings.RaycastDistance,
-                Settings.RaycastLayer,
-                Settings.QueryTriggerInteraction
+                distance,
+                settings.RaycastLayer,
+                settings.QueryTriggerInteraction
             );
+        }
+
+        private static bool IsFinite(float value)
+        {
+            return float.IsNaN(value) == false && float.IsInfinity(value) == false;
         }
     }
 }

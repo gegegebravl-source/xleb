@@ -1,10 +1,11 @@
-﻿using CHARK.GameManagement;
+using CHARK.GameManagement;
 using CHARK.SimpleUI;
 using UABPetelnia.GGJ2025.Runtime.Components.Input;
 using UABPetelnia.GGJ2025.Runtime.Systems.Cursors;
 using UABPetelnia.GGJ2025.Runtime.Systems.Pausing;
 using UABPetelnia.GGJ2025.Runtime.Systems.Scenes;
 using UABPetelnia.GGJ2025.Runtime.UI.Views;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
@@ -109,17 +110,17 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
 
         private void EnsureSystems()
         {
-            if (GameManager.TryGetSystem(out ICursorSystem cursor))
+            if (SystemsUtility.TryGetSystem(out ICursorSystem cursor))
             {
                 cursorSystem = cursor;
             }
 
-            if (GameManager.TryGetSystem(out IPauseSystem pause))
+            if (SystemsUtility.TryGetSystem(out IPauseSystem pause))
             {
                 pauseSystem = pause;
             }
 
-            if (GameManager.TryGetSystem(out ISceneSystem scene))
+            if (SystemsUtility.TryGetSystem(out ISceneSystem scene))
             {
                 sceneSystem = scene;
             }

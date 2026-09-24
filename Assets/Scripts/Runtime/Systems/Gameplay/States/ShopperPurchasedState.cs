@@ -1,3 +1,4 @@
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Systems.Players;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States
 
         protected override void OnInitialized()
         {
-            playerSystem = GameManager.GetSystem<IPlayerSystem>();
+            SystemsUtility.TryGetSystem(out playerSystem);
         }
 
         protected override void OnDisposed()
@@ -57,7 +58,9 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States
             }
 
             var saleCents = Mathf.Max(0, item.Cents);
-            player.Cents += saleCents;
+            player.Cents = saleCents > int.MaxValue - player.Cents
+                ? int.MaxValue
+                : player.Cents + saleCents;
 
             // The journal and the achievements both hang off this.
             GameManager.Publish(new SaleCompletedMessage(item, saleCents));

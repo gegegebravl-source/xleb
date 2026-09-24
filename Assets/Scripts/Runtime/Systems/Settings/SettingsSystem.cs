@@ -1,4 +1,4 @@
-﻿using CHARK.GameManagement;
+using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
 using UABPetelnia.GGJ2025.Runtime.Settings;
 using UABPetelnia.GGJ2025.Runtime.Systems.Scenes;
@@ -21,7 +21,13 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Settings
         /// <summary>Состав камер сменился (загрузка сцены): постэффекты надо навесить заново.</summary>
         private bool camerasDirty;
 
-        public SettingsData Settings { get; set; }
+        private SettingsData settings;
+
+        public SettingsData Settings
+        {
+            get => settings;
+            set => settings = Normalize(value);
+        }
 
         private void Awake()
         {
@@ -88,18 +94,18 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Settings
 #endif
 
             GameManager.DeleteData(SettingsPath);
-            Settings = CreateDefaultSettings();
+            Settings = Normalize(CreateDefaultSettings());
         }
 
         private void ReadSettings()
         {
             if (GameManager.TryReadData<SettingsData>(SettingsPath, out var data))
             {
-                Settings = Migrate(data);
+                Settings = Normalize(Migrate(data));
                 return;
             }
 
-            Settings = CreateDefaultSettings();
+            Settings = Normalize(CreateDefaultSettings());
         }
 
         /// <summary>
@@ -139,15 +145,86 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Settings
                 Settings = Migrate(Settings);
             }
 
+            Settings = Normalize(Settings);
             GameManager.SaveData(SettingsPath, Settings);
+        }
+
+        /// <summary>
+        /// Clamp values read from disk as well as values coming from a damaged/hand-edited JSON
+        /// file. Applying settings should never pass NaN, negative resolutions, or an invalid URP
+        /// scale into Unity.
+        /// </summary>
+        private SettingsData Normalize(SettingsData data)
+        {
+            var defaults = CreateDefaultSettings();
+
+            data.LookSensitivity = NormalizeFinite(
+                data.LookSensitivity,
+                defaults.LookSensitivity,
+                GeneralSettings.MinLookSensitivity,
+                GeneralSettings.MaxLookSensitivity
+            );
+            data.MasterVolume = NormalizeFinite(
+                data.MasterVolume,
+                defaults.MasterVolume,
+                GeneralSettings.MinVolume,
+                GeneralSettings.MaxVolume
+            );
+            data.MusicVolume = NormalizeFinite(
+                data.MusicVolume,
+                defaults.MusicVolume,
+                GeneralSettings.MinVolume,
+                GeneralSettings.MaxVolume
+            );
+            data.SfxVolume = NormalizeFinite(
+                data.SfxVolume,
+                defaults.SfxVolume,
+                GeneralSettings.MinVolume,
+                GeneralSettings.MaxVolume
+            );
+
+            data.GraphicsPreset = Mathf.Clamp(data.GraphicsPreset, -1, 2);
+            data.ShadowDistance = NormalizeFinite(data.ShadowDistance, defaults.ShadowDistance, 0f, 10000f);
+            data.ShadowCascades = Mathf.Clamp(data.ShadowCascades, 1, 4);
+            data.RenderScale = NormalizeFinite(data.RenderScale, defaults.RenderScale, 0.5f, 1f);
+            data.ResolutionWidth = Mathf.Clamp(data.ResolutionWidth, 0, 16384);
+            data.ResolutionHeight = Mathf.Clamp(data.ResolutionHeight, 0, 16384);
+            data.SettingsVersion = CurrentSettingsVersion;
+
+            return data;
+        }
+
+        private static float NormalizeFinite(float value, float fallback, float min, float max)
+        {
+            if (float.IsNaN(fallback) || float.IsInfinity(fallback))
+            {
+                fallback = min <= 0f && max >= 1f ? 1f : min;
+            }
+
+            return float.IsNaN(value) || float.IsInfinity(value)
+                ? Mathf.Clamp(fallback, min, max)
+                : Mathf.Clamp(value, min, max);
+        }
+
+        private static bool IsFinite(float value)
+        {
+            return float.IsNaN(value) == false && float.IsInfinity(value) == false;
         }
 
         private SettingsData CreateDefaultSettings()
         {
-            var defaultLookSensitivity = generalSettings != null ? generalSettings.DefaultLookSensitivity : 0.5f;
-            var defaultMasterVolume = generalSettings != null ? generalSettings.DefaultMasterVolume : 1f;
-            var defaultMusicVolume = generalSettings != null ? generalSettings.DefaultMusicVolume : 1f;
-            var defaultSfxVolume = generalSettings != null ? generalSettings.DefaultSfxVolume : 1f;
+            var defaultLookSensitivity = generalSettings != null && IsFinite(generalSettings.DefaultLookSensitivity)
+                ? generalSettings.DefaultLookSensitivity
+                : 0.5f;
+            var defaultMasterVolume = generalSettings != null && IsFinite(generalSettings.DefaultMasterVolume)
+                ? generalSettings.DefaultMasterVolume
+                : 1f;
+            var defaultMusicVolume = generalSettings != null && IsFinite(generalSettings.DefaultMusicVolume)
+                ? generalSettings.DefaultMusicVolume
+                : 1f;
+            var defaultSfxVolume = generalSettings != null && IsFinite(generalSettings.DefaultSfxVolume)
+                ? generalSettings.DefaultSfxVolume
+                : 1f;
 
             return SettingsData.CreateDefault(
                 lookSensitivity: defaultLookSensitivity,

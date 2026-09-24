@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
 using UABPetelnia.GGJ2025.Runtime.Actors;
@@ -95,6 +95,13 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Saves
             isSlotOccupied[slot] = false;
             slots[slot] = default;
 
+            if (ActiveSlot == slot)
+            {
+                ActiveSlot = -1;
+                isPendingLoad = false;
+                pendingLoadData = default;
+            }
+
             GameManager.DeleteData(GetSlotPath(slot));
         }
 
@@ -122,6 +129,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Saves
             }
 
             isPendingLoad = false;
+            pendingLoadData = default;
 
             return true;
         }
@@ -175,13 +183,16 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Saves
 
         private void ReadSlot(int slot)
         {
-            if (GameManager.TryReadData(GetSlotPath(slot), out SaveData data))
+            if (GameManager.TryReadData(GetSlotPath(slot), out SaveData data) && IsValidSave(data))
             {
                 slots[slot] = data;
                 isSlotOccupied[slot] = true;
                 return;
             }
 
+            // Malformed or truncated files must not become a selectable slot. Remove the bad
+            // payload so every subsequent boot takes the same safe path.
+            GameManager.DeleteData(GetSlotPath(slot));
             slots[slot] = default;
             isSlotOccupied[slot] = false;
         }
@@ -229,6 +240,13 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Saves
         private static bool IsValidSlot(int slot)
         {
             return slot >= 0 && slot < SlotCountConstant;
+        }
+
+        private static bool IsValidSave(SaveData data)
+        {
+            return data.Cents >= 0
+                && data.Health > 0
+                && data.SavedAtUtcTicks > 0;
         }
 
         private static string GetSlotPath(int slot)

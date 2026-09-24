@@ -1,5 +1,6 @@
-﻿using CHARK.GameManagement;
+using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Systems.Gameplay;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.Components.Triggers
@@ -10,12 +11,12 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Triggers
 
         private void Awake()
         {
-            gameplaySystem = GameManager.GetSystem<IGameplaySystem>();
+            SystemsUtility.TryGetSystem(out gameplaySystem);
         }
 
         public void StartGameplay()
         {
-            gameplaySystem.StartGameplay();
+            gameplaySystem?.StartGameplay();
         }
     }
 }

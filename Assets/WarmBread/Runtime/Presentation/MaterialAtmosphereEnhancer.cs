@@ -55,6 +55,11 @@ namespace WarmBread
 
         private static void Enhance(Scene scene)
         {
+            if (scene.IsValid() == false || scene.isLoaded == false)
+            {
+                return;
+            }
+
             var roots = scene.GetRootGameObjects();
 
             for (var rootIndex = 0; rootIndex < roots.Length; rootIndex++)

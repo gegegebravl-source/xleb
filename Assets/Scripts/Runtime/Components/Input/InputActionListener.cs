@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -32,7 +32,9 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Input
         /// </summary>
         public T Value => ReadValue();
 
-        protected InputAction InputAction => inputActionReference.action;
+        protected InputAction InputAction => inputActionReference != null
+            ? inputActionReference.action
+            : null;
 
         /// <summary>
         /// Invoked when underlying <see cref="inputActionReference"/> is performed by the user.
@@ -46,8 +48,8 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Input
 
         private void Awake()
         {
-            var action = inputActionReference.action;
-            if (isEnableAutomatically)
+            var action = InputAction;
+            if (isEnableAutomatically && action != null)
             {
                 action.Enable();
             }
@@ -61,6 +63,11 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Input
             }
 
             var action = inputActionReference.action;
+            if (action == null)
+            {
+                return;
+            }
+
             if (isEnableAutomatically)
             {
                 action.Enable();
@@ -78,6 +85,11 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Input
             }
 
             var action = inputActionReference.action;
+            if (action == null)
+            {
+                return;
+            }
+
             action.performed -= HandleOnPerformed;
             action.canceled -= HandleOnCanceled;
         }
@@ -94,7 +106,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Input
                 Debug.Log($"{name}, performed: {value}", this);
             }
 
-            onPerformed.Invoke(value);
+            onPerformed?.Invoke(value);
             OnPerformed?.Invoke(value);
         }
 
@@ -106,7 +118,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Input
                 Debug.Log($"{name}, canceled: {value}", this);
             }
 
-            onCanceled.Invoke(value);
+            onCanceled?.Invoke(value);
             OnCanceled?.Invoke(value);
         }
     }

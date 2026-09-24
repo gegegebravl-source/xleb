@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using CHARK.GameManagement.Systems;
 using UnityEngine;
@@ -48,8 +48,8 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Progress
 
         public void RegisterSale()
         {
-            CleanStreak++;
-            BestCleanStreak = Mathf.Max(BestCleanStreak, CleanStreak);
+            CleanStreak = CleanStreak >= int.MaxValue ? int.MaxValue : Mathf.Max(0, CleanStreak) + 1;
+            BestCleanStreak = Mathf.Max(Mathf.Max(0, BestCleanStreak), CleanStreak);
         }
     }
 

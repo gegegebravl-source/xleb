@@ -1,4 +1,4 @@
-﻿using CHARK.GameManagement;
+using CHARK.GameManagement;
 using CHARK.SimpleUI;
 using UABPetelnia.GGJ2025.Runtime.Actors;
 using UABPetelnia.GGJ2025.Runtime.Systems.Players;
@@ -13,7 +13,7 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
         {
             base.Start();
 
-            if (GameManager.TryGetSystem<IPlayerSystem>(out var playerSystem) &&
+            if (SystemsUtility.TryGetSystem<IPlayerSystem>(out var playerSystem) &&
                 playerSystem.TryGetPlayer(out var player))
             {
                 View.SetMoneyInstant(player.Cents);

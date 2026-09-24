@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace UABPetelnia.GGJ2025.Runtime.Components.Input
@@ -15,7 +15,8 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Input
 
         protected override Vector2 ReadValue()
         {
-            return InputAction.ReadValue<Vector2>();
+            var action = InputAction;
+            return action != null ? action.ReadValue<Vector2>() : Vector2.zero;
         }
     }
 }

@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 using CHARK.GameManagement;
 using CHARK.SimpleUI;
 using CHARK.GameManagement.Systems;
 using UABPetelnia.GGJ2025.Runtime.Systems.Progress;
 using UABPetelnia.GGJ2025.Runtime.Systems.Scenes;
 using UABPetelnia.GGJ2025.Runtime.UI.Views;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 
 namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
 {
@@ -96,7 +97,7 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
         {
             try
             {
-                GameManager.TryGetSystem(out system);
+                SystemsUtility.TryGetSystem(out system);
             }
             catch (Exception)
             {

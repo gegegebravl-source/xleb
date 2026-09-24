@@ -37,7 +37,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Products
 
         public override void OnInitialized()
         {
-            shopSystem = GameManager.GetSystem<IShopSystem>();
+            GameManager.TryGetSystem(out shopSystem);
             if (shopSystem != null)
             {
                 shopSystem.Changed += OnShopChanged;
@@ -270,7 +270,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Products
                 return false;
             }
 
-            if (shopSystem != null && shopSystem.TryTakeFromStock(item) == false)
+            if (shopSystem == null || shopSystem.TryTakeFromStock(item) == false)
             {
                 return false;
             }
@@ -363,7 +363,18 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Products
                 return;
             }
 
-            items.AddRange(gameplaySettings.AvailableItems);
+            if (gameplaySettings.AvailableItems == null)
+            {
+                return;
+            }
+
+            foreach (var item in gameplaySettings.AvailableItems)
+            {
+                if (item)
+                {
+                    items.Add(item);
+                }
+            }
         }
 
         private void OnSceneLoadEntered(SceneLoadEnteredMessage message)

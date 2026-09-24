@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables;
 using UnityEngine;
 using UnityEngine.Events;
@@ -65,12 +65,23 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Sockets
 
         private void OnEnable()
         {
+            if (targetInteractable == false)
+            {
+                enabled = false;
+                return;
+            }
+
             targetInteractable.OnSelectEntered += OnSelectEntered;
             targetInteractable.OnSelectExited += OnSelectExited;
         }
 
         private void OnDisable()
         {
+            if (targetInteractable == false)
+            {
+                return;
+            }
+
             targetInteractable.OnSelectEntered -= OnSelectEntered;
             targetInteractable.OnSelectExited -= OnSelectExited;
         }
@@ -87,7 +98,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Sockets
                 return;
             }
 
-            if (targetInteractable.IsSelected)
+            if (targetInteractable == false || targetInteractable.IsSelected)
             {
                 return;
             }
@@ -151,7 +162,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Components.Interaction.Sockets
                 isSocketing = false;
 
                 OnSocketed?.Invoke();
-                onSocketed.Invoke();
+                onSocketed?.Invoke();
 
                 Destroy(this);
             }

@@ -205,7 +205,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
             set
             {
                 currentCents = Mathf.Max(0, value);
-                GameManager.Publish(new PlayerCentsChanged(this));
+                SystemsUtility.TryPublish(new PlayerCentsChanged(this));
                 onCentsChanged?.Invoke();
             }
         }
@@ -224,12 +224,12 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
                 Debug.LogWarning("[Player] PlayerSettings is not assigned; using fallback health value.", this);
             }
 
-            shopperSystem = GameManager.GetSystem<IShopperSystem>();
-            gameplaySystem = GameManager.GetSystem<IGameplaySystem>();
-            playerSystem = GameManager.GetSystem<IPlayerSystem>();
-            cursorSystem = GameManager.GetSystem<ICursorSystem>();
-            saveSystem = GameManager.GetSystem<ISaveSystem>();
-            inputSystem = GameManager.GetSystem<IInputSystem>();
+            SystemsUtility.TryGetSystem(out shopperSystem);
+            SystemsUtility.TryGetSystem(out gameplaySystem);
+            SystemsUtility.TryGetSystem(out playerSystem);
+            SystemsUtility.TryGetSystem(out cursorSystem);
+            SystemsUtility.TryGetSystem(out saveSystem);
+            SystemsUtility.TryGetSystem(out inputSystem);
 
             // The giving hand lives on an object that is active in the scene, so it has to be
             // hidden before the first frame is rendered and not just on Start().
@@ -1270,7 +1270,8 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
                 return false;
             }
 
-            if (shopperSystem == null || shopperSystem.IsAwaitingItem == false)
+            if (shopperSystem == null || shopperSystem.IsAwaitingItem == false
+                || shopperSystem.IsItemWanted(item) == false)
             {
                 return false;
             }
@@ -1282,6 +1283,11 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
             }
 
             var product = carrySlots[slotIndex].Product;
+            if (product == false || product.Item != item)
+            {
+                return false;
+            }
+
             carrySlots.RemoveAt(slotIndex);
 
             // Активный слот не должен указывать в пустоту после отдачи товара.
@@ -1298,7 +1304,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
             }
 
             PlayGiveAnimation(item);
-            GameManager.Publish(new ItemHandedOverMessage(item));
+            SystemsUtility.TryPublish(new ItemHandedOverMessage(item));
 
             if (product != false)
             {
@@ -1397,7 +1403,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
             Debug.Log($"Health: {Health}", this);
 
-            GameManager.Publish(new PlayerHealthChanged(this));
+            SystemsUtility.TryPublish(new PlayerHealthChanged(this));
 
             onHealthChanged?.Invoke();
         }

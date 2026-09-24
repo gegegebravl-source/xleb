@@ -1,4 +1,5 @@
-﻿using CHARK.GameManagement;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
+using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Systems.Players;
 
 namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States
@@ -9,7 +10,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States
 
         protected override void OnInitialized()
         {
-            playerSystem = GameManager.GetSystem<IPlayerSystem>();
+            SystemsUtility.TryGetSystem(out playerSystem);
         }
 
         protected override void OnDisposed()
