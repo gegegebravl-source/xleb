@@ -1270,8 +1270,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
                 return false;
             }
 
-            if (shopperSystem == null || shopperSystem.IsAwaitingItem == false
-                || shopperSystem.IsItemWanted(item) == false)
+            if (shopperSystem == null || shopperSystem.IsAwaitingItem == false)
             {
                 return false;
             }
