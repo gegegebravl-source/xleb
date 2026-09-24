@@ -765,15 +765,19 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
             }
 
             var moveInput = ReadMoveInput();
-            if (moveInput.magnitude < 0.1f || cinemachineCamera == false || settings == false)
+            if (moveInput.magnitude < 0.1f)
             {
                 // Standing still still has to keep the player glued to the kiosk floor.
                 MovePlayer(GetGroundStickDelta());
                 return;
             }
 
-            var forward = cinemachineCamera.transform.forward;
-            var right = cinemachineCamera.transform.right;
+            var forward = cinemachineCamera != false
+                ? cinemachineCamera.transform.forward
+                : transform.forward;
+            var right = cinemachineCamera != false
+                ? cinemachineCamera.transform.right
+                : transform.right;
             forward.y = 0f;
             right.y = 0f;
             forward = forward.normalized;
@@ -791,7 +795,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
             }
 
             var moveDirection = forward * moveInput.y + right * moveInput.x;
-            var speed = settings.MoveSpeed * GetSpeedMultiplier();
+            var speed = (settings != false ? settings.MoveSpeed : 5f) * GetSpeedMultiplier();
             MovePlayer((moveDirection * speed * Time.deltaTime) + GetGroundStickDelta());
 
             if (moveDirection == Vector3.zero || IsCameraAttachedToPlayer)

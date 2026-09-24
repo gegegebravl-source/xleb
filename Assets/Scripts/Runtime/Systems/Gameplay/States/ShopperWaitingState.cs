@@ -106,9 +106,10 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States
             shopper.ShowRequest(request);
             player?.ShowPurchase(request);
 
-            patienceExpiryTimeSeconds = gameplaySettings
-                ? Time.time + gameplaySettings.PatienceDurationSeconds
-                : 0f;
+            // A missing settings asset must not make a shopper wait forever.
+            patienceExpiryTimeSeconds = Time.time + (gameplaySettings
+                ? gameplaySettings.PatienceDurationSeconds
+                : 20f);
         }
 
         protected override void OnExited(GameplayStateContext context)

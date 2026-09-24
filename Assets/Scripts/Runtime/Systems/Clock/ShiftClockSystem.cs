@@ -98,14 +98,20 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Clock
 
         public void OnUpdated(float deltaTime)
         {
-            if (isShiftOver || isGameplayScene == false || gameplaySettings == false)
+            if (isShiftOver || isGameplayScene == false)
             {
                 return;
             }
 
-            hour += deltaTime * gameplaySettings.GameMinutesPerRealSecond / 60f;
+            // Keep the shift finite even when a partially authored manager has no settings asset.
+            var minutesPerSecond = gameplaySettings != false
+                ? gameplaySettings.GameMinutesPerRealSecond
+                : 2f;
+            var endHour = gameplaySettings != false
+                ? gameplaySettings.ShiftEndHour
+                : 20f;
 
-            var endHour = gameplaySettings.ShiftEndHour;
+            hour += deltaTime * minutesPerSecond / 60f;
             if (hour >= endHour)
             {
                 hour = endHour;
