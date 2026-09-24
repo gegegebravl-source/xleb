@@ -23,29 +23,29 @@ namespace WarmBread
         /// <summary>Name of the local reflection probe added by the atmosphere.</summary>
         public const string ReflectionProbeName = "WarmBread_LocalReflections";
 
-        public static readonly Color FogColor = new(0.085f, 0.095f, 0.115f, 1f);
+        public static readonly Color FogColor = new(0.11f, 0.125f, 0.155f, 1f);
 
-        public const float FogDensity = 0.006f;
+        public const float FogDensity = 0.0048f;
 
-        public static readonly Color AmbientSkyColor = new(0.24f, 0.29f, 0.39f);
+        public static readonly Color AmbientSkyColor = new(0.31f, 0.35f, 0.44f);
 
-        public static readonly Color AmbientEquatorColor = new(0.16f, 0.14f, 0.12f);
+        public static readonly Color AmbientEquatorColor = new(0.21f, 0.18f, 0.16f);
 
-        public static readonly Color AmbientGroundColor = new(0.045f, 0.04f, 0.035f);
+        public static readonly Color AmbientGroundColor = new(0.07f, 0.06f, 0.055f);
 
-        public const float DirectionalShadowStrength = 0.88f;
+        public const float DirectionalShadowStrength = 0.76f;
 
         public const float DirectionalColorTemperature = 5100f;
 
-        public static readonly Vector3 PracticalLightPosition = new(0f, 2.15f, -0.65f);
+        public static readonly Vector3 PracticalLightPosition = new(0f, 2.2f, -0.65f);
 
-        public static readonly Color PracticalLightColor = new(1f, 0.53f, 0.27f);
+        public static readonly Color PracticalLightColor = new(1f, 0.6f, 0.34f);
 
-        public const float PracticalLightIntensity = 340f;
+        public const float PracticalLightIntensity = 420f;
 
-        public const float PracticalLightRange = 7.5f;
+        public const float PracticalLightRange = 8f;
 
-        public const float PracticalLightShadowStrength = 0.72f;
+        public const float PracticalLightShadowStrength = 0.62f;
 
         public static readonly Vector3 ReflectionProbePosition = new(0f, 2.4f, 0f);
 
@@ -58,7 +58,9 @@ namespace WarmBread
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Install()
         {
-            // Procedural atmosphere generation is disabled: configure the scene manually in the editor.
+            // Keep the runtime fallback in addition to the baked scene. This protects freshly
+            // generated scenes and guarantees the kiosk is never rendered as a flat, unlit box.
+            ApplyToScene(SceneManager.GetActiveScene());
         }
 
         private void OnEnable()
@@ -95,6 +97,7 @@ namespace WarmBread
             ApplyRenderSettings();
             ApplyDirectionalLights();
             EnsurePracticalLight(scene);
+            EnsureKioskFillLight(scene);
             EnsureReflectionProbe(scene);
         }
 
@@ -152,6 +155,27 @@ namespace WarmBread
             light.shadowStrength = PracticalLightShadowStrength;
 
             SceneManager.MoveGameObjectToScene(practical, scene);
+        }
+
+        private static void EnsureKioskFillLight(Scene scene)
+        {
+            const string fillName = "WarmBread_KioskFill";
+            if (ExistsInScene(scene, fillName))
+            {
+                return;
+            }
+
+            var fill = new GameObject(fillName);
+            fill.transform.position = new Vector3(0f, 1.7f, 1.15f);
+
+            var light = fill.AddComponent<Light>();
+            light.type = LightType.Point;
+            light.color = new Color(1f, 0.78f, 0.58f, 1f);
+            light.intensity = 115f;
+            light.range = 5.5f;
+            light.shadows = LightShadows.None;
+
+            SceneManager.MoveGameObjectToScene(fill, scene);
         }
 
         private static void EnsureReflectionProbe(Scene scene)

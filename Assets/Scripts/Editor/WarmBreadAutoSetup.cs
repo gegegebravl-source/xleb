@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 using System.Collections.Generic;
 using System.Linq;
 using UABPetelnia.GGJ2025.Runtime.Constants;
@@ -41,6 +41,8 @@ namespace UABPetelnia.GGJ2025.Editor
             ("Assets/Prefabs/UI/View_Delivery.prefab", "Shop/Build Delivery PC Menu"),
             ("Assets/Prefabs/UI/View_AchievementToast.prefab", "UI/Apply Warm Bread Theme"),
             ("Assets/Visuals/UI/Icons/UI_Icon_Journal.png", "Art/Import Kirill Art Pack"),
+            ("Assets/Visuals/Fonts/Font_Cyrillic_Fallback_SDF.asset", "Art/Fix Russian UI Font"),
+            ("Assets/Visuals/Materials/Backyard/Backyard_Asphalt.mat", "Art/Build 3D 2000s Backyard"),
             (LookArtifactPath, "Art/Bake Studio Look into Project"),
         };
 

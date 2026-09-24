@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 using UABPetelnia.GGJ2025.Runtime.Constants;
 using UABPetelnia.GGJ2025.Runtime.EditorTools;
 using UnityEditor;
@@ -30,16 +30,18 @@ namespace UABPetelnia.GGJ2025.Editor
                 return;
             }
 
-            RunStep("1/7 Арт-пак Кирилла", UserArtPackImporter.ImportArtPack);
-            RunStep("2/7 Главное меню", MainMenuPrefabBuilder.Rebuild);
-            RunStep("3/7 Стиль интерфейса", WarmBreadUiThemer.ApplyTheme);
-            RunStep("4/7 Киоск, товар и полки", KioskShopSetup.BuildShop);
-            RunStep("5/7 Меню заказов на ПК", DeliveryUiBuilder.Build);
-            RunStep("6/7 Декор сцены", KioskDecorBuilder.BuildDecor);
+            RunStep("1/9 Кириллица интерфейса", CyrillicFontFixer.Ensure);
+            RunStep("2/9 Арт-пак Кирилла", UserArtPackImporter.ImportArtPack);
+            RunStep("3/9 Главное меню", MainMenuPrefabBuilder.Rebuild);
+            RunStep("4/9 Стиль интерфейса", WarmBreadUiThemer.ApplyTheme);
+            RunStep("5/9 Киоск, товар и полки", KioskShopSetup.BuildShop);
+            RunStep("6/9 Меню заказов на ПК", DeliveryUiBuilder.Build);
+            RunStep("7/9 Декор киоска", KioskDecorBuilder.BuildDecor);
+            RunStep("8/9 Объёмный задний двор 2000-х", BackyardRealismBuilder.Build);
 
             // Last on purpose: the steps above create materials and prefabs, and this one is what
-            // gives them their surface detail and textures.
-            RunStep("7/7 Вид сцены: свет, отражения и текстуры", WarmBreadStudioLookBaker.BakeFromSetup);
+            // gives them their surface detail, normal maps and scene lighting.
+            RunStep("9/9 Вид сцены: свет, отражения и PBR-текстуры", WarmBreadStudioLookBaker.BakeFromSetup);
 
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
