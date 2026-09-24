@@ -50,7 +50,7 @@ namespace UABPetelnia.GGJ2025.Tests
                 product.PlaceOn(default);
 
                 Assert.That(shelf.IsFree, Is.True);
-                Assert.That(product.ShelfPoint, Is.False);
+                Assert.That(product.ShelfPoint == false, Is.True);
                 Assert.That(product.transform.parent, Is.Null);
             }
             finally
