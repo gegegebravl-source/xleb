@@ -108,6 +108,15 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
                 return;
             }
 
+            if (agent.pathStatus != NavMeshPathStatus.PathComplete)
+            {
+                // Do not strand a paid delivery forever on a partial/invalid path.
+                transform.position = destination;
+                hasArrived = true;
+                SetWalking(false);
+                return;
+            }
+
             if (agent.remainingDistance <= arriveDistance)
             {
                 hasArrived = true;

@@ -147,10 +147,19 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
                     return false;
                 }
 
-                var dist = agent.remainingDistance;
-                return float.IsPositiveInfinity(dist)
-                    || agent.pathStatus != NavMeshPathStatus.PathComplete
-                    || dist > 0.05f;
+                if (agent.pathPending)
+                {
+                    return true;
+                }
+
+                // Invalid/partial paths must not keep ShopperMoveState alive forever. The
+                // navigation fallback in Move handles scenes without a usable baked NavMesh.
+                if (agent.pathStatus != NavMeshPathStatus.PathComplete)
+                {
+                    return false;
+                }
+
+                return agent.remainingDistance > 0.05f;
             }
         }
 
