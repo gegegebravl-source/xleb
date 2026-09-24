@@ -301,13 +301,10 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Products
 
             // Проданный товар ушёл с полки покупателю: склад тут не при чём, его расходует
             // только выкладка из коробки.
-            var shelfPoint = product.ShelfPoint;
-
-            if (shelfPoint)
-            {
-                shelfPoint.Product = default;
-            }
-
+            // Clear the shelf reference and detach before Destroy. Destroy is deferred by Unity;
+            // leaving the product parented until the end of the frame lets the shelf discover it
+            // again and appear occupied after the item was already sold or picked up.
+            product.PlaceOn(default);
             Destroy(product.gameObject);
 
             // Manual restock only: after the sale the shelf stays empty until the player refills it.

@@ -33,6 +33,34 @@ namespace UABPetelnia.GGJ2025.Tests
         }
 
         [Test]
+        public void MovingProductOffShelfClearsSlotAndDetachesProduct()
+        {
+            var shelfObject = new GameObject("ShelfPoint");
+            var productObject = new GameObject("Product");
+            var item = ScriptableObject.CreateInstance<ItemData>();
+            productObject.transform.SetParent(shelfObject.transform);
+            var product = productObject.AddComponent<ProductActor>();
+            var shelf = shelfObject.AddComponent<ProductShelfPointActor>();
+
+            try
+            {
+                product.Initialize(item, shelf, snapToShelfPoint: false);
+                shelf.Product = product;
+
+                product.PlaceOn(default);
+
+                Assert.That(shelf.IsFree, Is.True);
+                Assert.That(product.ShelfPoint, Is.False);
+                Assert.That(product.transform.parent, Is.Null);
+            }
+            finally
+            {
+                Object.DestroyImmediate(shelfObject);
+                Object.DestroyImmediate(item);
+            }
+        }
+
+        [Test]
         public void ProductHeightIsClampedAtBothEdges()
         {
             var settings = ScriptableObject.CreateInstance<GameplaySettings>();

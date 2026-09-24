@@ -75,7 +75,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
                 magnetRoutine = null;
             }
 
-            productSystem?.Unregister(this);
+            ResolveProductSystem()?.Unregister(this);
         }
 
         private IProductSystem ResolveProductSystem()
@@ -117,7 +117,8 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
             {
                 // Товар расставлен в сцене вручную: сохраняем и позицию, и масштаб автора.
                 // Высота нужна только для отступа при выкладке на полку.
-                Height = Mathf.Max(0.01f, transform.localScale.x);
+                var authoredHeight = transform.localScale.x;
+                Height = IsFinite(authoredHeight) ? Mathf.Max(0.01f, authoredHeight) : 0.25f;
             }
             else
             {
@@ -253,13 +254,15 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
         {
             var system = ResolveProductSystem();
 
+            var radius = IsFinite(magnetRadius) ? Mathf.Max(0.05f, magnetRadius) : 0.3f;
+
             if (system != null
                 && system.TryFindFreeShelfPoint(
                     transform.position,
                     lookDirection,
-                    IsFinite(magnetRadius) ? Mathf.Max(0.05f, magnetRadius) : 0.3f,
+                    radius,
                     out var shelfPoint)
-                && IsGoodPlacement(shelfPoint, lookDirection))
+                && IsGoodPlacement(shelfPoint, lookDirection, radius))
             {
                 StartMagnet(shelfPoint);
 
@@ -273,7 +276,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
         /// <summary>
         /// Проверка посадки: слот под прицелом (не сбоку и не за спиной) и товар влезает по размеру.
         /// </summary>
-        private bool IsGoodPlacement(ProductShelfPointActor shelfPoint, Vector3 lookDirection)
+        private bool IsGoodPlacement(ProductShelfPointActor shelfPoint, Vector3 lookDirection, float radius)
         {
             if (shelfPoint == false || shelfPoint.IsFree == false || shelfPoint.CanFit(Height) == false)
             {
@@ -283,7 +286,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
             var toSlot = shelfPoint.Position - transform.position;
             var distance = toSlot.magnitude;
 
-            if (distance > magnetRadius)
+            if (distance > radius)
             {
                 return false;
             }

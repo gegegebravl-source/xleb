@@ -36,15 +36,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
                 return product;
             }
-            set
-            {
-                product = value;
-
-                if (product == false)
-                {
-                    product = FindChildProduct();
-                }
-            }
+            set => product = value;
         }
 
         /// <summary><c>true</c>, когда слот свободен и на него можно поставить товар.</summary>
@@ -70,21 +62,6 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
             return float.IsNaN(value) == false && float.IsInfinity(value) == false;
         }
 
-
-        private ProductActor FindChildProduct()
-        {
-            var products = GetComponentsInChildren<ProductActor>(true);
-
-            for (var index = 0; index < products.Length; index++)
-            {
-                if (products[index] != false)
-                {
-                    return products[index];
-                }
-            }
-
-            return default;
-        }
 
 
         private ProductActor FindChildProduct()
