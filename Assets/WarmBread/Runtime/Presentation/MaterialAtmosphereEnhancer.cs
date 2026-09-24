@@ -34,7 +34,7 @@ namespace WarmBread
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Install()
         {
-            // Procedural material enhancement is disabled: adjust materials and lighting manually in the editor.
+            Enhance(SceneManager.GetActiveScene());
         }
 
         private void OnEnable()

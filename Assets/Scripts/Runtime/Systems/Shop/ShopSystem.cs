@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
@@ -64,14 +64,14 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
         {
             get
             {
-                var total = 0;
+                long total = 0;
 
                 for (var index = 0; index < cart.Count; index++)
                 {
-                    total += cart[index].Quantity;
+                    total += Math.Max(0, cart[index]?.Quantity ?? 0);
                 }
 
-                return total;
+                return total > int.MaxValue ? int.MaxValue : (int)total;
             }
         }
 
@@ -79,14 +79,9 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
         {
             get
             {
-                var total = 0;
-
-                for (var index = 0; index < cart.Count; index++)
-                {
-                    total += cart[index].Cost;
-                }
-
-                return total;
+                return ShopOrderRules.TryCalculateTotal(cart, out var total, out _)
+                    ? total
+                    : 0;
             }
         }
 
@@ -147,6 +142,13 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
             for (var index = orders.Count - 1; index >= 0; index--)
             {
                 var order = orders[index];
+                if (order == null)
+                {
+                    orders.RemoveAt(index);
+                    hasArrived = true;
+                    continue;
+                }
+
                 if (order.SecondsLeft > 0f)
                 {
                     continue;
@@ -156,8 +158,13 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
                 for (var lineIndex = 0; lineIndex < order.Lines.Count; lineIndex++)
                 {
                     var line = order.Lines[lineIndex];
+                    if (line == null || line.Product == null || line.Quantity <= 0)
+                    {
+                        continue;
+                    }
+
                     line.Product.Stock += line.Quantity;
-                    line.Product.InTransit -= line.Quantity;
+                    line.Product.InTransit = Mathf.Max(0, line.Product.InTransit - line.Quantity);
                 }
 
                 orders.RemoveAt(index);
@@ -217,13 +224,19 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
             }
 
             var line = FindCartLine(product);
+            var currentQuantity = line != null ? line.Quantity : 0;
+            if (ShopOrderRules.TryAddQuantity(currentQuantity, quantity, out var newQuantity, out error) == false)
+            {
+                return false;
+            }
+
             if (line != null)
             {
-                line.Quantity += quantity;
+                line.Quantity = newQuantity;
             }
             else
             {
-                cart.Add(new ShopCartLine(product, quantity));
+                cart.Add(new ShopCartLine(product, newQuantity));
             }
 
             Changed?.Invoke();
@@ -234,6 +247,12 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
         public bool TryRemoveFromCart(ItemData item, int quantity, out string error)
         {
             error = default;
+
+            if (quantity <= 0)
+            {
+                error = "bad_quantity";
+                return false;
+            }
 
             if (TryGetProduct(item, out var product) == false)
             {
@@ -248,8 +267,13 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
                 return false;
             }
 
-            line.Quantity -= Mathf.Max(1, quantity);
-            if (line.Quantity <= 0)
+            if (ShopOrderRules.TryRemoveQuantity(line.Quantity, quantity, out var newQuantity, out error) == false)
+            {
+                return false;
+            }
+
+            line.Quantity = newQuantity;
+            if (newQuantity == 0)
             {
                 cart.Remove(line);
             }
@@ -292,10 +316,8 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
                 return false;
             }
 
-            var total = CartTotalCost;
-            if (total <= 0)
+            if (ShopOrderRules.TryCalculateTotal(cart, out var total, out error) == false)
             {
-                error = "bad_cost";
                 return false;
             }
 
@@ -385,8 +407,6 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
 
         private void RebuildCatalogue()
         {
-            isCatalogueBuilt = true;
-
             products.Clear();
             orders.Clear();
 
@@ -394,13 +414,20 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
 
             if (gameplaySettings == false)
             {
+                // Do not cache a failed build. A later catalogue request can then retry after
+                // scene/prefab wiring has supplied the settings asset.
+                isCatalogueBuilt = false;
                 return;
             }
 
+            isCatalogueBuilt = true;
+
             foreach (var item in gameplaySettings.AvailableItems)
             {
-                if (item == false)
+                if (item == false || item.Cents <= 0)
                 {
+                    // A zero/negative sale price cannot participate in a paid delivery and would
+                    // otherwise create stock that can never produce a valid sale.
                     continue;
                 }
 
@@ -408,7 +435,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
 
                 products.Add(new ShopProduct(item, purchasePrice)
                 {
-                    Stock = initialStock,
+                    Stock = Mathf.Max(0, initialStock),
                 });
             }
 

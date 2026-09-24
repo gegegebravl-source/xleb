@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
 using UABPetelnia.GGJ2025.Runtime.Actors;
@@ -38,7 +38,10 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Products
         public override void OnInitialized()
         {
             shopSystem = GameManager.GetSystem<IShopSystem>();
-            shopSystem.Changed += OnShopChanged;
+            if (shopSystem != null)
+            {
+                shopSystem.Changed += OnShopChanged;
+            }
 
             GameManager.AddListener<SceneLoadEnteredMessage>(OnSceneLoadEntered);
             GameManager.AddListener<SceneUnloadEnteredMessage>(OnSceneUnloadEntered);
@@ -160,7 +163,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Products
 
             foreach (var product in registeredProducts)
             {
-                if (product && product.Item == item)
+                if (product && product.ShelfPoint != false && product.Item == item)
                 {
                     count++;
                 }
@@ -225,7 +228,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Products
             // на одну полку, если игрок расставил товар вручную.
             foreach (var product in registeredProducts)
             {
-                if (product && product.Item == item)
+                if (product && product.ShelfPoint != false && product.Item == item)
                 {
                     return true;
                 }
@@ -267,7 +270,24 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Products
                 return false;
             }
 
-            SpawnProduct(item, shelfPoint);
+            if (shopSystem != null && shopSystem.TryTakeFromStock(item) == false)
+            {
+                return false;
+            }
+
+            var product = SpawnProduct(item, shelfPoint);
+            if (product == false)
+            {
+                // A missing prefab must not look like a successful restock. Restore the unit that
+                // was reserved above so a broken scene does not silently eat the delivery.
+                if (shopSystem != null && shopSystem.TryGetProduct(item, out var stockProduct))
+                {
+                    stockProduct.Stock++;
+                }
+
+                return false;
+            }
+
             return true;
         }
 
@@ -356,6 +376,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Products
         {
             shelfPoints.Clear();
             items.Clear();
+            registeredProducts.Clear();
 
             nextItemIndex = 0;
         }

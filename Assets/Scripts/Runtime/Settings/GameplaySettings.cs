@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UABPetelnia.GGJ2025.Runtime.Constants;
 using UnityEngine;
 
@@ -64,9 +64,9 @@ namespace UABPetelnia.GGJ2025.Runtime.Settings
         [SerializeField]
         private float maxProductHeight = 0.52f;
 
-        public IReadOnlyCollection<ShopperData> AvailableShoppers => availableShoppers;
+        public IReadOnlyCollection<ShopperData> AvailableShoppers => availableShoppers ?? System.Array.Empty<ShopperData>();
 
-        public IReadOnlyCollection<ItemData> AvailableItems => availableItems;
+        public IReadOnlyCollection<ItemData> AvailableItems => availableItems ?? System.Array.Empty<ItemData>();
 
         public float SpawnDelaySeconds => Random.Range(spawnDelayRange.x, spawnDelayRange.y);
 
@@ -85,7 +85,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Settings
         public float ShiftEndHour => shiftEndHour;
 
         /// <summary>Сколько игровых минут проходит за одну реальную секунду.</summary>
-        public float GameMinutesPerRealSecond => gameMinutesPerRealSecond;
+        public float GameMinutesPerRealSecond => Mathf.Max(0.1f, gameMinutesPerRealSecond);
 
         /// <summary>Общий множитель размера товара на полке.</summary>
         public float ProductSizeMultiplier => productSizeMultiplier;

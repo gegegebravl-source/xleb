@@ -39,6 +39,12 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Delivery
 
         private void OnDeliveryArrived(DeliveryArrivedMessage message)
         {
+            if (message.Order == null)
+            {
+                Debug.LogWarning("[Courier] Получена пустая доставка — курьер не создаётся.");
+                return;
+            }
+
             if (courierPrefab == false)
             {
                 Debug.LogWarning("[Courier] Префаб курьера не назначен — доставка приехала в пустоту.");

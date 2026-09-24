@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using CHARK.GameManagement;
@@ -61,7 +61,9 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shoppers
             }
         }
 
-        public IEnumerable<ItemData> AvailableItems => gameplaySettings.AvailableItems;
+        public IEnumerable<ItemData> AvailableItems => gameplaySettings != false
+            ? gameplaySettings.AvailableItems
+            : Array.Empty<ItemData>();
 
         public void AwaitItem(PurchaseRequest request)
         {
@@ -81,11 +83,13 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shoppers
         public override void OnInitialized()
         {
             GameManager.AddListener<SceneLoadEnteredMessage>(OnSceneLoadEntered);
+            GameManager.AddListener<SceneUnloadEnteredMessage>(OnSceneUnloadEntered);
         }
 
         public override void OnDisposed()
         {
             GameManager.RemoveListener<SceneLoadEnteredMessage>(OnSceneLoadEntered);
+            GameManager.RemoveListener<SceneUnloadEnteredMessage>(OnSceneUnloadEntered);
         }
 
         public bool TryGetShopper(out IShopperActor shopper)
@@ -102,15 +106,26 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shoppers
                 return false;
             }
 
-            var randomShopperData = availableShoppers.GetRandom();
-            var shopperPrefab = randomShopperData.ShopperPrefab;
+            while (availableShoppers.Count > 0)
+            {
+                var randomShopperData = availableShoppers.GetRandom();
+                availableShoppers.Remove(randomShopperData);
 
-            var shopperActor = Instantiate(shopperPrefab, position, Quaternion.identity);
-            shopperActor.Initialize(randomShopperData);
+                if (randomShopperData == null || randomShopperData.ShopperPrefab == false)
+                {
+                    continue;
+                }
 
-            shopper = shopperActor;
+                var shopperActor = Instantiate(randomShopperData.ShopperPrefab, position, Quaternion.identity);
+                shopperActor.Initialize(randomShopperData);
 
-            return true;
+                shopper = shopperActor;
+
+                return true;
+            }
+
+            shopper = default;
+            return false;
         }
 
         /// <summary>
@@ -149,7 +164,10 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shoppers
 
         public void RemoveAvailableShopper(IShopperActor shopper)
         {
-            availableShoppers.Remove(shopper.Data);
+            if (shopper != null)
+            {
+                availableShoppers.Remove(shopper.Data);
+            }
         }
 
         public void RemoveDestination(IDestinationActor destination)
@@ -157,10 +175,22 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shoppers
             destinations.Remove(destination);
         }
 
+        private void OnSceneUnloadEntered(SceneUnloadEnteredMessage message)
+        {
+            spawnedShoppers.Clear();
+            destinations.Clear();
+            StopAwaitingItem();
+        }
+
         private void OnSceneLoadEntered(SceneLoadEnteredMessage message)
         {
             availableShoppers.Clear();
-            availableShoppers = gameplaySettings.AvailableShoppers.Select(data => data.Copy()).ToList();
+            availableShoppers = gameplaySettings != false
+                ? gameplaySettings.AvailableShoppers
+                    .Where(data => data != null)
+                    .Select(data => data.Copy())
+                    .ToList()
+                : new List<ShopperData>();
 
             StopAwaitingItem();
         }

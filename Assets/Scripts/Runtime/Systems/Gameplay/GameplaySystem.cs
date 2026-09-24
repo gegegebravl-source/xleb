@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
 using UABPetelnia.GGJ2025.Runtime.Settings;
+using UABPetelnia.GGJ2025.Runtime.Systems.Clock;
+using UABPetelnia.GGJ2025.Runtime.Systems.Players;
 using UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States;
 using UABPetelnia.GGJ2025.Runtime.Systems.Scenes;
 using UnityEngine;
@@ -24,6 +26,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay
 
         private GameplayState startingState;
         private GameplayState currentState;
+        private bool shiftClosed;
         private readonly List<GameplayState> states = new();
 
         private GameplayState State
@@ -51,17 +54,19 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay
         {
             GameManager.AddListener<SceneLoadEnteredMessage>(OnSceneLoadEntered);
             GameManager.AddListener<SceneUnloadEnteredMessage>(OnSceneUnloadEntered);
+            GameManager.AddListener<ShiftClosedMessage>(OnShiftClosed);
         }
 
         public override void OnDisposed()
         {
             GameManager.RemoveListener<SceneLoadEnteredMessage>(OnSceneLoadEntered);
             GameManager.RemoveListener<SceneUnloadEnteredMessage>(OnSceneUnloadEntered);
+            GameManager.RemoveListener<ShiftClosedMessage>(OnShiftClosed);
         }
 
         public void OnUpdated(float deltaTime)
         {
-            if (State == default)
+            if (shiftClosed || State == default)
             {
                 return;
             }
@@ -71,7 +76,40 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay
 
         public void StartGameplay()
         {
+            shiftClosed = false;
             InitializeStateMachine();
+        }
+
+        private void OnShiftClosed(ShiftClosedMessage message)
+        {
+            if (shiftClosed)
+            {
+                return;
+            }
+
+            shiftClosed = true;
+            CleanupStateMachine();
+
+            var playerSystem = GameManager.GetSystem<IPlayerSystem>();
+            var sceneSystem = GameManager.GetSystem<ISceneSystem>();
+            var player = playerSystem != null ? playerSystem.Player : default;
+
+            if (sceneSystem == null || player == default)
+            {
+                return;
+            }
+
+            // Closing the shift is a terminal gameplay event. Previously the clock only displayed
+            // a message and the shopper state machine kept running forever, so a player could never
+            // reach the results scene unless health or money happened to trigger another state.
+            if (player.IsCentsGoalReached)
+            {
+                sceneSystem.LoadGameVictoryScene();
+            }
+            else
+            {
+                sceneSystem.LoadGameOverScene();
+            }
         }
 
         private void OnStateChanged(GameplayState oldState, GameplayState newState)

@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -85,9 +85,6 @@ namespace UABPetelnia.GGJ2025.Runtime.EditorTools
             priority = MenuItemConstants.BaseToolsItemPriority)]
         public static void BuildDecor()
         {
-            Debug.Log("[KioskDecor] Процедурная расстановка декора отключена: все объекты расставляйте вручную в сцене.");
-            return;
-
             if (Application.isBatchMode == false &&
                 EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo() == false)
             {

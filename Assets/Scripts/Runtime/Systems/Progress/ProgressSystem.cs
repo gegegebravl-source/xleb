@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
@@ -105,7 +105,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Progress
         {
             stats.UnitsSold++;
             stats.ShoppersServed++;
-            stats.CentsEarned += message.Cents;
+            stats.CentsEarned += Mathf.Max(0, message.Cents);
             stats.RegisterSale();
 
             var id = message.Item ? message.Item.Id : string.Empty;
@@ -224,7 +224,17 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Progress
             }
 
             var json = PlayerPrefs.GetString(SaveKey);
-            var save = JsonUtility.FromJson<ProgressSave>(json);
+            ProgressSave save;
+
+            try
+            {
+                save = JsonUtility.FromJson<ProgressSave>(json);
+            }
+            catch (Exception exception)
+            {
+                Debug.LogWarning($"[Progress] Не удалось загрузить сохранение: {exception.Message}");
+                return;
+            }
 
             if (save == null)
             {

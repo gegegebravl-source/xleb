@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Components.Input;
 using UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactables;
@@ -204,7 +204,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
             get => currentCents;
             set
             {
-                currentCents = value;
+                currentCents = Mathf.Max(0, value);
                 GameManager.Publish(new PlayerCentsChanged(this));
                 onCentsChanged?.Invoke();
             }
@@ -214,7 +214,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
         private void Awake()
         {
-            if (settings != false)
+            if (settings != false && settings.MaxHealth > 0)
             {
                 currentHealth = settings.MaxHealth;
             }
@@ -1271,11 +1271,6 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
             }
 
             if (shopperSystem == null || shopperSystem.IsAwaitingItem == false)
-            {
-                return false;
-            }
-
-            if (shopperSystem.IsItemWanted(item) == false)
             {
                 return false;
             }

@@ -192,6 +192,23 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
                 return;
             }
 
+            if (box.ContainsItem(item) == false)
+            {
+                view.SetStatus("Эта позиция уже забрана из коробки.");
+                return;
+            }
+
+            // The box and the back-room ledger must move together. A malformed or stale box must
+            // not let the player duplicate a delivery unit by taking it when the ledger is empty.
+            if (shopSystem != null
+                && (shopSystem.TryGetProduct(item, out var stockProduct) == false
+                    || stockProduct.Stock <= 0))
+            {
+                view.SetStatus("Этой позиции уже нет в учёте склада.");
+
+                return;
+            }
+
             if (player.TryCarryItem(item) == false)
             {
                 view.SetStatus("Этот товар уже в руках.");

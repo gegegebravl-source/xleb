@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UABPetelnia.GGJ2025.Runtime.Components.Interaction.Interactors;
 using UABPetelnia.GGJ2025.Runtime.Constants;
 using UnityEngine;
@@ -40,27 +40,29 @@ namespace UABPetelnia.GGJ2025.Runtime.Settings
         [SerializeField]
         private int goalCents = 100 * 100;
 
-        public int MaxHealth => healthStateTextures.Count;
+        public int MaxHealth => healthStateTextures?.Count ?? 0;
 
         public float ZoomInSpeed => zoomInSpeed;
 
         public float ZoomInFov => zoomInFov;
 
-        public float RaycastDistance => data.RaycastDistance;
+        public float RaycastDistance => data != null ? data.RaycastDistance : 0f;
 
-        public float RaycastRadius => data.RaycastRadius;
+        public float RaycastRadius => data != null ? data.RaycastRadius : 0f;
 
-        public LayerMask RaycastLayer => data.RaycastLayer;
+        public LayerMask RaycastLayer => data != null ? data.RaycastLayer : default;
 
-        public QueryTriggerInteraction QueryTriggerInteraction => data.QueryTriggerInteraction;
+        public QueryTriggerInteraction QueryTriggerInteraction => data != null
+            ? data.QueryTriggerInteraction
+            : QueryTriggerInteraction.Ignore;
 
-        public Color RaycastColor => data.RaycastColor;
+        public Color RaycastColor => data != null ? data.RaycastColor : Color.white;
 
         public Vector3 CameraShakeForce => cameraShakeForce;
 
         public float MoveSpeed => moveSpeed;
 
-        public int GoalCents => goalCents;
+        public int GoalCents => Mathf.Max(0, goalCents);
 
         public Texture2D GetHealthTexture(int health)
         {
@@ -69,7 +71,13 @@ namespace UABPetelnia.GGJ2025.Runtime.Settings
                 return default;
             }
 
-            return healthStateTextures[Mathf.Max(0, MaxHealth - health)];
+            if (healthStateTextures == null || healthStateTextures.Count == 0)
+            {
+                return default;
+            }
+
+            var index = Mathf.Clamp(MaxHealth - health, 0, healthStateTextures.Count - 1);
+            return healthStateTextures[index];
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using CHARK.GameManagement;
+using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Settings;
 using UABPetelnia.GGJ2025.Runtime.Systems.Shoppers;
 using UnityEngine;
@@ -29,7 +29,9 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States
 
         protected override void OnEntered(GameplayStateContext context)
         {
-            spawnTimeSeconds = Time.time + gameplaySettings.SpawnDelaySeconds;
+            spawnTimeSeconds = Time.time + (gameplaySettings != false
+                ? gameplaySettings.SpawnDelaySeconds
+                : 0f);
 
             // Первый заход тоже должен выдерживать задержку: иначе покупатель выскакивает
             // мгновенно при старте смены.
@@ -43,6 +45,12 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States
 
         protected override Status OnUpdated(GameplayStateContext context)
         {
+            if (shopperSystem == null)
+            {
+                NextState = default;
+                return Status.Completed;
+            }
+
             if (isSpawnedOnce && Time.time < spawnTimeSeconds)
             {
                 return Status.Working;

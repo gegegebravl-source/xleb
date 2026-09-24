@@ -1,4 +1,4 @@
-﻿using CHARK.GameManagement;
+using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Systems.Shoppers;
 
 namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States
@@ -31,7 +31,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States
         protected override void OnEntered(GameplayStateContext context)
         {
             var shopper = context.ActiveShopper;
-            if (shopper == default)
+            if (shopper == default || shopperSystem == null)
             {
                 return;
             }
@@ -62,7 +62,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States
         protected override Status OnUpdated(GameplayStateContext context)
         {
             var shopper = context.ActiveShopper;
-            if (shopper == default)
+            if (shopper == default || shopperSystem == null)
             {
                 return Status.Completed;
             }

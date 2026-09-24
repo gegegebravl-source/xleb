@@ -1,5 +1,6 @@
-﻿using CHARK.GameManagement;
+using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Systems.Players;
+using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States
 {
@@ -55,10 +56,11 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States
                 return;
             }
 
-            player.Cents += item.Cents;
+            var saleCents = Mathf.Max(0, item.Cents);
+            player.Cents += saleCents;
 
             // The journal and the achievements both hang off this.
-            GameManager.Publish(new SaleCompletedMessage(item, item.Cents));
+            GameManager.Publish(new SaleCompletedMessage(item, saleCents));
 
             context.CurrentItem = default;
         }

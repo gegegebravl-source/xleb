@@ -1,4 +1,4 @@
-﻿using CHARK.GameManagement;
+using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Actors;
 using UABPetelnia.GGJ2025.Runtime.Settings;
 using UABPetelnia.GGJ2025.Runtime.Systems.Players;
@@ -234,7 +234,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Gameplay.States
 
         private void OnItemHandedOver(ItemHandedOverMessage message)
         {
-            if (shopperSystem == null || shopperSystem.IsAwaitingItem == false)
+            if (isHandedOver || shopperSystem == null || shopperSystem.IsAwaitingItem == false)
             {
                 return;
             }

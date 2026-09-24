@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using CHARK.GameManagement;
 using CHARK.ScriptableAudio;
@@ -87,7 +87,10 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
         public ShopperData Data { get; private set; }
 
-        public bool IsContainsPurchases => Data.PurchaseCollection.Purchases.Count > 0;
+        public bool IsContainsPurchases => Data != null
+            && Data.PurchaseCollection != null
+            && Data.PurchaseCollection.Purchases != null
+            && Data.PurchaseCollection.Purchases.Count > 0;
 
         public bool IsBuying
         {
@@ -258,6 +261,15 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
         public PurchaseRequest PopPurchaseRequest()
         {
+            if (Data == null || Data.PurchaseCollection == null || Data.PurchaseCollection.Purchases == null)
+            {
+                return new PurchaseRequest(
+                    text: string.Empty,
+                    wantedItems: null,
+                    shopper: this
+                );
+            }
+
             var (purchase, keyword) = PopPurchaseLine(Data.PurchaseCollection.Purchases);
 
             // No lines at all left to say: the shopper just came to make a scene.
@@ -270,14 +282,17 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
                 );
             }
 
-            var requestText = purchase.TemplateText.Replace(keywordToken, keyword.Text);
+            var requestText = (purchase.TemplateText ?? string.Empty).Replace(
+                keywordToken,
+                keyword.Text ?? string.Empty
+            );
 
             // The shopper accepts any product named by the keyword, so a request that lists
             // several goods can be served with whichever of them the player picks up. A keyword
             // without items means the shopper only came to rant.
             return new PurchaseRequest(
                 text: requestText,
-                wantedItems: keyword.Items.Distinct().ToList(),
+                wantedItems: (keyword.Items ?? new List<ItemData>()).Distinct().ToList(),
                 shopper: this
             );
         }
@@ -290,7 +305,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
             IReadOnlyCollection<PurchaseCollection.Purchase> purchases,
             bool isRetry = false)
         {
-            if (purchases.Count <= 0)
+            if (purchases == null || purchases.Count <= 0)
             {
                 return default;
             }
@@ -299,9 +314,14 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
             foreach (var purchase in purchases)
             {
+                if (purchase == null || purchase.Keywords == null)
+                {
+                    continue;
+                }
+
                 foreach (var keyword in purchase.Keywords)
                 {
-                    if (keyword.IsUsed == false)
+                    if (keyword != null && keyword.IsUsed == false)
                     {
                         candidates.Add((purchase, keyword));
                     }
@@ -328,7 +348,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
         public void PlayBuyAnimation()
         {
-            OnBuyStart.Invoke();
+            OnBuyStart?.Invoke();
 
             if (buyAnimation == false)
             {
@@ -341,7 +361,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
         public void StopBuyAnimation()
         {
-            OnBuyStop.Invoke();
+            OnBuyStop?.Invoke();
 
             if (buyAnimation == false)
             {
@@ -353,7 +373,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
         public void PlayPunchAnimation()
         {
-            onPunchStart.Invoke();
+            onPunchStart?.Invoke();
 
             if (punchAnimation == false)
             {
@@ -366,7 +386,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
         public void StopPunchAnimation()
         {
-            onPunchStop.Invoke();
+            onPunchStop?.Invoke();
 
             if (punchAnimation == false)
             {
@@ -384,7 +404,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
                 walkAnimation.Play("Animation_Shooper_Walk_Jump", -1, 0f);
             }
 
-            OnMoveStart.Invoke();
+            OnMoveStart?.Invoke();
         }
 
         public void StopWalkAnimation()
@@ -396,7 +416,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
                 walkAnimation.enabled = false;
             }
 
-            OnMoveStop.Invoke();
+            OnMoveStop?.Invoke();
         }
 
         public void PlaySpeech()
@@ -424,11 +444,24 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
         /// </summary>
         private static void RefreshPurchaseLines(IReadOnlyCollection<PurchaseCollection.Purchase> purchases)
         {
+            if (purchases == null)
+            {
+                return;
+            }
+
             foreach (var purchase in purchases)
             {
+                if (purchase == null || purchase.Keywords == null)
+                {
+                    continue;
+                }
+
                 foreach (var keyword in purchase.Keywords)
                 {
-                    keyword.IsUsed = false;
+                    if (keyword != null)
+                    {
+                        keyword.IsUsed = false;
+                    }
                 }
             }
         }

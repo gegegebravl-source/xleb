@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using CHARK.GameManagement.Systems;
 using UABPetelnia.GGJ2025.Runtime.Settings;
@@ -27,7 +27,8 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
         public int SalePrice => Item ? Item.Cents : 0;
 
         /// <summary>
-        /// Units available for the shelves. Selling decrements it, a delivery replenishes it.
+        /// Units in the back room. Taking a delivered unit for manual restocking decrements it;
+        /// sales consume the physical shelf item instead.
         /// </summary>
         public int Stock { get; internal set; }
 

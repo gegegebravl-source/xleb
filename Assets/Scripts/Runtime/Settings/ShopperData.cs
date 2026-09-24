@@ -1,4 +1,4 @@
-﻿using UABPetelnia.GGJ2025.Runtime.Actors;
+using UABPetelnia.GGJ2025.Runtime.Actors;
 using UABPetelnia.GGJ2025.Runtime.Constants;
 using UnityEngine;
 
@@ -42,7 +42,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Settings
         public ShopperData Copy()
         {
             var copy = Instantiate(this);
-            copy.purchases = purchases.Copy();
+            copy.purchases = purchases != null ? purchases.Copy() : null;
             return copy;
         }
     }

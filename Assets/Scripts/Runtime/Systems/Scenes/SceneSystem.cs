@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
 using CHARK.ScriptableScenes;
@@ -29,11 +29,17 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Scenes
 
         private IPauseSystem pauseSystem;
 
-        public bool IsLoading => controller.IsLoading;
+        public bool IsLoading => controller != false && controller.IsLoading;
 
         public override void OnInitialized()
         {
             TryGetSystem(out pauseSystem);
+
+            if (controller == false || controller.CollectionEvents == null)
+            {
+                Debug.LogWarning("[Scenes] ScriptableSceneController is not assigned.", this);
+                return;
+            }
 
             controller.CollectionEvents.OnLoadEntered += OnLoadEntered;
             controller.CollectionEvents.OnLoadExited += OnLoadExited;
@@ -43,6 +49,11 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Scenes
 
         public override void OnDisposed()
         {
+            if (controller == false || controller.CollectionEvents == null)
+            {
+                return;
+            }
+
             controller.CollectionEvents.OnLoadEntered -= OnLoadEntered;
             controller.CollectionEvents.OnLoadExited -= OnLoadExited;
 
@@ -51,52 +62,71 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Scenes
 
         public bool TryGetLoadedCollection(out ScriptableSceneCollection collection)
         {
+            if (controller == false)
+            {
+                collection = default;
+                return false;
+            }
+
             return controller.TryGetLoadedSceneCollection(out collection);
         }
 
         public bool IsStartingScene(ScriptableSceneCollection collection)
         {
-            return startingSceneCollection == collection || menuSceneCollection == collection;
+            return collection != false
+                && (startingSceneCollection == collection || menuSceneCollection == collection);
+        }
+
+        public bool IsGameplayScene(ScriptableSceneCollection collection)
+        {
+            return collection != false && startingSceneCollection == collection;
         }
 
         public void LoadInitialScene()
         {
+            if (controller == false) return;
             PrepareForSceneLoad();
             controller.LoadInitialSceneCollection();
         }
 
         public void ReloadScene()
         {
+            if (controller == false) return;
             PrepareForSceneLoad();
             controller.ReloadLoadedSceneCollection();
         }
 
         public void LoadMenuScene()
         {
+            if (controller == false || menuSceneCollection == false) return;
             PrepareForSceneLoad();
             controller.LoadSceneCollection(menuSceneCollection);
         }
 
         public void LoadGameplayScene()
         {
+            if (controller == false || startingSceneCollection == false) return;
             PrepareForSceneLoad();
             controller.LoadSceneCollection(startingSceneCollection);
         }
 
         public void LoadScene(ScriptableSceneCollection collection)
         {
+            if (controller == false || collection == false) return;
             PrepareForSceneLoad();
             controller.LoadSceneCollection(collection);
         }
 
         public void LoadGameVictoryScene()
         {
+            if (controller == false || gameVictorySceneCollection == false) return;
             PrepareForSceneLoad();
             controller.LoadSceneCollection(gameVictorySceneCollection);
         }
 
         public void LoadGameOverScene()
         {
+            if (controller == false || gameOverSceneCollection == false) return;
             PrepareForSceneLoad();
             controller.LoadSceneCollection(gameOverSceneCollection);
         }

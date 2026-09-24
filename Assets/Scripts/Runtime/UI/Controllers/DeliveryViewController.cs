@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using CHARK.GameManagement;
 using CHARK.SimpleUI;
 using UABPetelnia.GGJ2025.Runtime.Actors;
@@ -6,6 +6,7 @@ using UABPetelnia.GGJ2025.Runtime.Systems.Cursors;
 using UABPetelnia.GGJ2025.Runtime.Systems.Input;
 using UABPetelnia.GGJ2025.Runtime.Systems.Pausing;
 using UABPetelnia.GGJ2025.Runtime.Systems.Players;
+using UABPetelnia.GGJ2025.Runtime.Systems.Products;
 using UABPetelnia.GGJ2025.Runtime.Systems.Progress;
 using UABPetelnia.GGJ2025.Runtime.Systems.Shop;
 using UABPetelnia.GGJ2025.Runtime.UI.Views;
@@ -37,6 +38,7 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
         private IInputSystem   inputSystem;
         private IShopSystem    shopSystem;
         private IPlayerSystem  playerSystem;
+        private IProductSystem productSystem;
         private ICursorSystem  cursorSystem;
         private IPauseSystem   pauseSystem;
         private IProgressSystem progressSystem;
@@ -79,6 +81,7 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
             GameManager.TryGetSystem(out inputSystem);
             GameManager.TryGetSystem(out shopSystem);
             GameManager.TryGetSystem(out playerSystem);
+            GameManager.TryGetSystem(out productSystem);
             GameManager.TryGetSystem(out cursorSystem);
             GameManager.TryGetSystem(out pauseSystem);
             GameManager.TryGetSystem(out progressSystem);
@@ -309,8 +312,6 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
             // и одна коробка со всеми позициями.
             if (shopSystem.TryAddToCart(product.Item, orderQuantity, out var error))
             {
-                progressSystem?.NotifyOrderPlaced();
-
                 var label = DeliveryRowView.Prettify(product.Item?.Id);
                 View.SetStatus($"В корзине: {label} — всего {shopSystem.CartTotalQuantity} шт.");
             }
@@ -333,8 +334,14 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
                 return;
             }
 
+            // The footer action is deliberately not a second "submit" button: its Russian label
+            // promises to order every item that is absent from the physical shelves. Existing cart
+            // lines are kept, then all missing catalogue entries get one unit before payment.
+            AddMissingProductsToCart();
+
             if (shopSystem.TrySubmitCart(out var error))
             {
+                progressSystem?.NotifyOrderPlaced();
                 View.SetStatus("Заказ оплачен: курьер уже в пути.");
             }
             else
@@ -343,6 +350,55 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
             }
 
             Refresh();
+        }
+
+        private int AddMissingProductsToCart()
+        {
+            if (productSystem == null)
+            {
+                View.SetStatus("Состояние полок недоступно: заказ не сформирован.");
+                return 0;
+            }
+
+            var added = 0;
+            var products = shopSystem.Products;
+
+            if (products == null)
+            {
+                return 0;
+            }
+
+            for (var index = 0; index < products.Count; index++)
+            {
+                var product = products[index];
+                if (product == null || product.Item == false || productSystem.IsOnShelf(product.Item))
+                {
+                    continue;
+                }
+
+                var alreadyInCart = false;
+                var cart = shopSystem.Cart;
+                for (var lineIndex = 0; cart != null && lineIndex < cart.Count; lineIndex++)
+                {
+                    if (cart[lineIndex] != null && cart[lineIndex].Product == product)
+                    {
+                        alreadyInCart = true;
+                        break;
+                    }
+                }
+
+                if (alreadyInCart)
+                {
+                    continue;
+                }
+
+                if (shopSystem.TryAddToCart(product.Item, 1, out _))
+                {
+                    added++;
+                }
+            }
+
+            return added;
         }
 
         #endregion
@@ -425,6 +481,7 @@ namespace UABPetelnia.GGJ2025.Runtime.UI.Controllers
                 "empty_cart"       => "Корзина пуста: сначала добавь товар.",
                 "not_in_cart"      => "Этого товара нет в корзине.",
                 "bad_quantity"     => "Неверное количество.",
+                "bad_cost"         => "Стоимость заказа некорректна.",
                 _                  => "Не удалось оформить заказ.",
             };
         }

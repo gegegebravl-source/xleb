@@ -1,4 +1,4 @@
-﻿using CHARK.GameManagement;
+using CHARK.GameManagement;
 using UABPetelnia.GGJ2025.Runtime.Systems.Products;
 using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UnityEngine;
@@ -18,9 +18,34 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
         public Quaternion Rotation => transform.rotation;
 
         /// <summary>
-        /// Product currently spawned on this slot, if any.
+        /// One representative product currently spawned on this shelf point, if any. A scene may
+        /// contain several authored products under one marker; when the representative is removed,
+        /// the next remaining child becomes the representative instead of leaving the point stuck
+        /// occupied or incorrectly free.
         /// </summary>
-        public ProductActor Product { get; set; }
+        private ProductActor product;
+
+        public ProductActor Product
+        {
+            get
+            {
+                if (product == false)
+                {
+                    product = FindChildProduct();
+                }
+
+                return product;
+            }
+            set
+            {
+                product = value;
+
+                if (product == false)
+                {
+                    product = FindChildProduct();
+                }
+            }
+        }
 
         /// <summary><c>true</c>, когда слот свободен и на него можно поставить товар.</summary>
         public bool IsFree => Product == false;
@@ -39,6 +64,22 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
 
         /// <summary>Максимальная высота товара для этого слота.</summary>
         public float Capacity => capacity;
+
+
+        private ProductActor FindChildProduct()
+        {
+            var products = GetComponentsInChildren<ProductActor>(true);
+
+            for (var index = 0; index < products.Length; index++)
+            {
+                if (products[index] != false)
+                {
+                    return products[index];
+                }
+            }
+
+            return default;
+        }
 
         private void Awake()
         {

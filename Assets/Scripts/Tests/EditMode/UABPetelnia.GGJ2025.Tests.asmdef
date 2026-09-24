@@ -1,0 +1,19 @@
+{
+    "name": "UABPetelnia.GGJ2025.Tests",
+    "rootNamespace": "UABPetelnia.GGJ2025.Tests",
+    "references": [
+        "GUID:69d1ad59ba444c13bfa908fdb8e85b37",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

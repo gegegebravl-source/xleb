@@ -1,4 +1,4 @@
-﻿using CHARK.GameManagement.Systems;
+using CHARK.GameManagement.Systems;
 using CHARK.ScriptableScenes;
 
 namespace UABPetelnia.GGJ2025.Runtime.Systems.Scenes
@@ -20,6 +20,9 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Scenes
         /// <c>false</c> otherwise.
         /// </returns>
         public bool IsStartingScene(ScriptableSceneCollection collection);
+
+        /// <summary><c>true</c> only for the gameplay collection, not the menu collection.</summary>
+        public bool IsGameplayScene(ScriptableSceneCollection collection);
 
         /// <summary>
         /// Load initial game scene.

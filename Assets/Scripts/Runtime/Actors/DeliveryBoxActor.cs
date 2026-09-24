@@ -57,6 +57,12 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
             }
         }
 
+        /// <summary>Проверить, что кнопка интерфейса ещё указывает на живую позицию.</summary>
+        public bool ContainsItem(ItemData item)
+        {
+            return item && contents.Contains(item);
+        }
+
         /// <summary>Убрать одну единицу товара из коробки.</summary>
         public bool TryRemoveItem(ItemData item)
         {

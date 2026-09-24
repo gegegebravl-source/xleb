@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -67,9 +67,6 @@ namespace UABPetelnia.GGJ2025.Editor
             priority = MenuItemConstants.BaseToolsItemPriority - 25)]
         public static void Bake()
         {
-            Debug.Log("[StudioLook] Процедурная подготовка вида сцены отключена: подгоняйте свет и материалы вручную в редакторе.");
-            return;
-
             Bake(interactive: true);
         }
 
@@ -78,9 +75,6 @@ namespace UABPetelnia.GGJ2025.Editor
         /// </summary>
         public static void BakeBatch()
         {
-            Debug.Log("[StudioLook] Batch-bake отключён: всё делается вручную.");
-            return;
-
             Bake(interactive: false);
         }
 
@@ -90,9 +84,6 @@ namespace UABPetelnia.GGJ2025.Editor
         /// </summary>
         internal static void BakeFromSetup()
         {
-            Debug.Log("[StudioLook] Setup-bake отключён: всё делается вручную.");
-            return;
-
             Bake(interactive: false);
         }
 

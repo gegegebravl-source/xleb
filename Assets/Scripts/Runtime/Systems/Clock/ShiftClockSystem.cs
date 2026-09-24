@@ -1,6 +1,7 @@
 using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
 using UABPetelnia.GGJ2025.Runtime.Settings;
+using UABPetelnia.GGJ2025.Runtime.Systems.Scenes;
 using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.Systems.Clock
@@ -21,6 +22,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Clock
         private int day = 1;
         private float hour;
         private bool isShiftOver;
+        private bool isGameplayScene;
         private int lastPublishedMinute = -1;
 
         public int Day => day;
@@ -57,11 +59,45 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Clock
         {
             hour = GetStartHour();
             lastPublishedMinute = Mathf.FloorToInt(hour * 60f);
+
+            GameManager.AddListener<SceneLoadEnteredMessage>(OnSceneLoadEntered);
+        }
+
+        public override void OnDisposed()
+        {
+            GameManager.RemoveListener<SceneLoadEnteredMessage>(OnSceneLoadEntered);
+        }
+
+        private void OnSceneLoadEntered(SceneLoadEnteredMessage message)
+        {
+            // The clock system survives collection changes. A finished shift must therefore be
+            // reset when the player starts the next gameplay collection, otherwise IsShiftOver
+            // remains true and the second run is frozen at the previous closing time.
+            if (GameManager.TryGetSystem<ISceneSystem>(out var sceneSystem) == false)
+            {
+                return;
+            }
+
+            isGameplayScene = sceneSystem.IsGameplayScene(message.Collection);
+            if (isGameplayScene == false)
+            {
+                return;
+            }
+
+            if (isShiftOver)
+            {
+                StartNextDay();
+                return;
+            }
+
+            hour = GetStartHour();
+            lastPublishedMinute = Mathf.FloorToInt(hour * 60f);
+            GameManager.Publish(new ShiftClockChangedMessage(day, hour));
         }
 
         public void OnUpdated(float deltaTime)
         {
-            if (isShiftOver || gameplaySettings == false)
+            if (isShiftOver || isGameplayScene == false || gameplaySettings == false)
             {
                 return;
             }
@@ -92,6 +128,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Clock
             day++;
             hour = GetStartHour();
             isShiftOver = false;
+            isGameplayScene = true;
 
             GameManager.Publish(new DayStartedMessage(day));
             PublishClock();

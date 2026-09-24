@@ -1,4 +1,4 @@
-﻿using CHARK.GameManagement;
+using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
 using UABPetelnia.GGJ2025.Runtime.Systems.Audio;
 using UABPetelnia.GGJ2025.Runtime.Systems.Cursors;
@@ -111,26 +111,26 @@ namespace UABPetelnia.GGJ2025.Runtime
         {
             base.OnStarted();
 
-            audioSystem.LoadBanks();
+            audioSystem?.LoadBanks();
 
 #if UNITY_WEBGL
             StartCoroutine(LoadGameRoutine());
 #else
-            sceneSystem.LoadInitialScene();
+            sceneSystem?.LoadInitialScene();
 #endif
         }
 
 #if UNITY_WEBGL
         private System.Collections.IEnumerator LoadGameRoutine()
         {
-            if (audioSystem.IsLoading)
+            if (audioSystem != false && audioSystem.IsLoading)
             {
                 yield return null;
             }
 
             // TODO: scuffed workaround for WebGL not playing audio in main menu, oh well...
             yield return new WaitForSeconds(1f);
-            sceneSystem.LoadInitialScene();
+            sceneSystem?.LoadInitialScene();
         }
 #endif
     }
