@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b72b675d-7900-49b1-8111-9e9dd22d4849}">
+		<property name="assetPath">
+			<value>Bottle_glass.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>40.672653061224487</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{cf624566-d76b-4885-b50d-9c777bec5cf2}</destination>
+		</relationship>
+	</object>
+</objects>

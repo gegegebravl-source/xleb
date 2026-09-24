@@ -1,0 +1,204 @@
+﻿[
+  {
+    "text": "Привет, дядя! Сегодня мама опять на работу не встала. ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Почему не остались ночевать?",
+        "items": []
+      },
+      {
+        "text": "Папа послал купить попить от похмелья",
+        "items": [
+          "Item_Alus",
+          "Item_Aspirin",
+          "Item_SodaVytautas",
+          "Item_Alita"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Здравствуйте. Хотел бы жвачку Dragon Ball Z. ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Дайте за всё, сколько получится",
+        "items": [
+          "Item_GumDbz"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Привет, дядя! Мама велела купить мыла. ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Надо посуду мыть, если останется — и брата помоем.",
+        "items": [
+          "Item_SoapUkinis"
+        ]
+      },
+      {
+        "text": "Не любого, а с пузырьками",
+        "items": [
+          "Item_Selita",
+          "Item_Alita",
+          "Item_Alus",
+          "Item_BubbleTubeBlower",
+          "Item_SodaBuratinas",
+          "Item_SodaVytautas"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Здравствуйте, дядя. Почему ларёк вчера не работал? ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Хотел бы подудеть. Кажется, я от этого зависимый",
+        "items": [
+          "Item_Balloon",
+          "Item_BubbleTubeBlower",
+          "Item_GumHubbaBubba",
+          "Item_GumLoveIs"
+        ]
+      },
+      {
+        "text": "Мама с папой вторые сутки с кровати не встают. Дали бумажку, что купить",
+        "items": [
+          "Item_Alus",
+          "Item_Aspirin",
+          "Item_SodaVytautas",
+          "Item_Alita"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Привет, дядя. Мне нужно ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Пять за рубль, одно с чесноком. Ароматом наполнит всю хату. Чесночное — чтобы дочери выходили замуж. Дегтярное — чтобы все любили. Скипидарное — чтобы моль меха не ела. Знаешь ли, милый ребёнок, чего тебе не хватает, что тебе нужно, чтобы вырасти здоровым мужиком.",
+        "items": [
+          "Item_SoapUkinis"
+        ]
+      },
+      {
+        "text": "- Здорово, мистер Лысый!",
+        "items": [
+          "Item_Colgate"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Куда уставился ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "на яблоко",
+        "items": []
+      },
+      {
+        "text": "в сопли",
+        "items": []
+      }
+    ]
+  },
+  {
+    "text": "Привет, дядя! Ещё не получил сегодня подзатыльник? ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Продай выпить — и бить не буду.",
+        "items": [
+          "Item_Alus",
+          "Item_Alita"
+        ]
+      },
+      {
+        "text": "Сейчас получишь",
+        "items": []
+      }
+    ]
+  },
+  {
+    "text": "Жаркий день, скажу я. Попить сегодня есть что-нибудь? ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Газировки?",
+        "items": [
+          "Item_Selita"
+        ]
+      },
+      {
+        "text": "Пива?",
+        "items": [
+          "Item_Alus"
+        ]
+      },
+      {
+        "text": "Шампанского??",
+        "items": [
+          "Item_Alita"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "А клей у вас есть? ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "А есть чем понюхать?",
+        "items": [
+          "Item_Zozole"
+        ]
+      },
+      {
+        "text": "А может, чем подудеть?",
+        "items": [
+          "Item_Balloon",
+          "Item_BubbleTubeBlower"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Добрый день с курочкой. Хотел бы сладкого ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Из Америки",
+        "items": [
+          "Item_GumHubbaBubba"
+        ]
+      },
+      {
+        "text": "Из Испании",
+        "items": [
+          "Item_CrazyDips"
+        ]
+      },
+      {
+        "text": "Из Польши",
+        "items": [
+          "Item_Zozole"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Доброе утро закрученное. Хотел бы ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "некалорийной жвачки",
+        "items": [
+          "Item_GumDbz"
+        ]
+      },
+      {
+        "text": "калорийной конфетки для настроения",
+        "items": [
+          "Item_Zozole",
+          "Item_CrazyDips"
+        ]
+      }
+    ]
+  }
+]

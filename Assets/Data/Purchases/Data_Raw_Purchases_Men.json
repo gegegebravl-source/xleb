@@ -1,0 +1,327 @@
+﻿[
+  {
+    "text": "Привет! Сегодня решил устроить ${KEYWORD}, потому что хотел сбежать от рутины. Увидел этот ларёк и подумал — может, куплю что-нибудь?",
+    "keywords": [
+      {
+        "text": "хороший вечер",
+        "items": [
+          "Item_Alita",
+          "Item_Alus",
+          "Item_Durex"
+        ]
+      },
+      {
+        "text": "вечер с женщиной",
+        "items": [
+          "Item_Durex",
+          "Item_Alita",
+          "Item_GumLoveIs"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Здравствуйте! Наглый таксист испортил день, хотел бы ${KEYWORD}. Есть что посоветовать?",
+    "keywords": [
+      {
+        "text": "успокоить нервы",
+        "items": [
+          "Item_Alita",
+          "Item_Alus"
+        ]
+      },
+      {
+        "text": "испортить ему настроение в ответ",
+        "items": [
+          "Item_Durex"
+        ]
+      },
+      {
+        "text": "скорости",
+        "items": [
+          "Item_Selita",
+          "Item_Aspirin"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Здарова! Я не местный и ${KEYWORD}. Есть что посоветовать?",
+    "keywords": [
+      {
+        "text": "пришлось долго ехать на автобусе",
+        "items": [
+          "Item_Colgate",
+          "Item_SoapUkinis"
+        ]
+      },
+      {
+        "text": "планирую сегодня вечером развлечься",
+        "items": [
+          "Item_Alita",
+          "Item_Durex",
+          "Item_Alus",
+          "Item_Selita"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Здравствуйте! Вчера была гулянка и ${KEYWORD}. Есть что посоветовать?",
+    "keywords": [
+      {
+        "text": "голова болит, голова болит!",
+        "items": [
+          "Item_Aspirin",
+          "Item_Alita",
+          "Item_Alus",
+          "Item_SodaVytautas"
+        ]
+      },
+      {
+        "text": "хочется сегодня снова разогнаться",
+        "items": [
+          "Item_Alus",
+          "Item_Alita",
+          "Item_Selita"
+        ]
+      },
+      {
+        "text": "похоже, через девять месяцев будут проблемы",
+        "items": [
+          "Item_Durex",
+          "Item_Balloon"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Здравствуйте. Вы работаете? Лопнула автомобильная шина и ${KEYWORD}. Есть что посоветовать?",
+    "keywords": [
+      {
+        "text": "нужно чем-нибудь заклеить",
+        "items": [
+          "Item_GumDbz",
+          "Item_GumHubbaBubba",
+          "Item_GumLoveIs"
+        ]
+      },
+      {
+        "text": "нервы не держат",
+        "items": [
+          "Item_Alus",
+          "Item_Alita"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Привет! Зашёл сюда совсем случайно, но почему-то ${KEYWORD}. Есть что посоветовать?",
+    "keywords": [
+      {
+        "text": "почувствовал себя ребёнком",
+        "items": [
+          "Item_BubbleTubeBlower",
+          "Item_GumHubbaBubba",
+          "Item_Balloon",
+          "Item_CrazyDips",
+          "Item_GumDbz",
+          "Item_GumLoveIs",
+          "Item_SodaBuratinas",
+          "Item_Zozole"
+        ]
+      },
+      {
+        "text": "хочу чего-нибудь поинтереснее на вечер",
+        "items": [
+          "Item_Alus",
+          "Item_Alita",
+          "Item_Durex",
+          "Item_Selita"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Здравствуйте! Утренняя планёрка прошла плохо, поэтому теперь ${KEYWORD}. Есть что посоветовать?",
+    "keywords": [
+      {
+        "text": "хочу развлечься",
+        "items": [
+          "Item_Alita",
+          "Item_Alus"
+        ]
+      },
+      {
+        "text": "нужно освежиться",
+        "items": [
+          "Item_SodaVytautas",
+          "Item_SodaBuratinas",
+          "Item_Alita",
+          "Item_Alus"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Здравствуйте! Накатался по городу и ${KEYWORD}. Есть что посоветовать?",
+    "keywords": [
+      {
+        "text": "нужно освежиться",
+        "items": [
+          "Item_SodaVytautas",
+          "Item_SodaBuratinas",
+          "Item_Alus",
+          "Item_Alita"
+        ]
+      },
+      {
+        "text": "пригодилось бы что-то практичное",
+        "items": [
+          "Item_SoapUkinis",
+          "Item_Colgate"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Добрый день! У друга день рождения на носу и ${KEYWORD}. Есть что посоветовать?",
+    "keywords": [
+      {
+        "text": "хочу удивить его мелочью. Если понимаете, о чём я",
+        "items": [
+          "Item_Durex",
+          "Item_GumLoveIs"
+        ]
+      },
+      {
+        "text": "нужно позаботиться о настроении вечера",
+        "items": [
+          "Item_Alita",
+          "Item_Alus",
+          "Item_Durex",
+          "Item_Selita"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Привет! Что-то бурлит внутри, а друзья говорят — лучше бурлить снаружи. Есть у вас ${KEYWORD}?",
+    "keywords": [
+      {
+        "text": "жидкость для пузырей",
+        "items": [
+          "Item_ACC",
+          "Item_Alita",
+          "Item_SodaBuratinas",
+          "Item_SodaVytautas",
+          "Item_BubbleTubeBlower",
+          "Item_Aspirin",
+          "Item_Selita"
+        ]
+      },
+      {
+        "text": "какая-нибудь жидкость от засора",
+        "items": [
+          "Item_SodaVytautas"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Здравствуйте! Девушка злится, что я вернулся без ничего интересного. Есть у вас ${KEYWORD}?",
+    "keywords": [
+      {
+        "text": "какой-нибудь посерьёзнее аргумент",
+        "items": [
+          "Item_Durex",
+          "Item_Alita",
+          "Item_Alus"
+        ]
+      },
+      {
+        "text": "что-нибудь сладкое",
+        "items": [
+          "Item_Zozole",
+          "Item_GumLoveIs",
+          "Item_GumHubbaBubba",
+          "Item_CrazyDips"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Что-то сегодня всё валится из рук, да ещё и ${KEYWORD}. Есть что-нибудь помогающее?",
+    "keywords": [
+      {
+        "text": "голова трещит",
+        "items": [
+          "Item_Aspirin"
+        ]
+      },
+      {
+        "text": "жена злится",
+        "items": [
+          "Item_Alita",
+          "Item_Alus"
+        ]
+      },
+      {
+        "text": "чувствую, нужна профилактика",
+        "items": [
+          "Item_Colgate",
+          "Item_SoapUkinis"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Я Виталий, мне двадцать. Люблю чешу девчонок. Если девчонка страшная — хоть побазарим. Ну что, малая, сейчас спою ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Ку Ка Ре Ки",
+        "items": [
+          "Item_Aspirin"
+        ]
+      },
+      {
+        "text": "Ы га га",
+        "items": [
+          "Item_Aspirin"
+        ]
+      },
+      {
+        "text": "Муууууууу",
+        "items": [
+          "Item_Aspirin"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Я ничего не пил. ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "На работе, чуть-чуть, самую малость выпил и поехал домой. И водку выпил, и вино, и чекушку одну",
+        "items": [
+          "Item_Alus",
+          "Item_Alita"
+        ]
+      },
+      {
+        "text": "Совсем бы чего-нибудь сладкого",
+        "items": [
+          "Item_SodaBuratinas",
+          "Item_Selita",
+          "Item_Alita"
+        ]
+      },
+      {
+        "text": "А есть что-нибудь мужское?",
+        "items": [
+          "Item_Alus"
+        ]
+      }
+    ]
+  }
+]

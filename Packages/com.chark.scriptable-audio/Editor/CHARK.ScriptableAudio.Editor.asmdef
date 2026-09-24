@@ -1,0 +1,20 @@
+{
+    "name": "CHARK.ScriptableAudio.Editor",
+    "rootNamespace": "CHARK.ScriptableAudio",
+    "references": [
+        "FMODUnity",
+        "FMODUnityEditor",
+        "CHARK.ScriptableAudio"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

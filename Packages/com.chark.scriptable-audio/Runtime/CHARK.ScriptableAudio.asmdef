@@ -1,0 +1,16 @@
+{
+    "name": "CHARK.ScriptableAudio",
+    "rootNamespace": "CHARK.ScriptableAudio",
+    "references": [
+        "FMODUnity"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

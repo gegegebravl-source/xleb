@@ -1,0 +1,17 @@
+{
+  "name": "com.chark.simple-ui",
+  "displayName": "Simple UI",
+  "author": {
+    "name": "CHARK",
+    "url": "https://chark.io"
+  },
+  "version": "0.0.1",
+  "unity": "2022.3",
+  "description": "Scripts to quickly create UIs",
+  "keywords": [
+    "unity",
+    "ui"
+  ],
+  "samples": [
+  ]
+}

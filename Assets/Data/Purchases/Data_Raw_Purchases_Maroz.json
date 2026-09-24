@@ -1,0 +1,73 @@
+﻿[
+  {
+    "text": "Чё, братишка? ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Давай сбрось чего-нибудь, заглушить пожар в глотке",
+        "items": [
+          "Item_Alus",
+          "Item_Alita"
+        ]
+      },
+      {
+        "text": "Надо горло залить",
+        "items": [
+          "Item_Alus",
+          "Item_Alita"
+        ]
+      },
+      {
+        "text": "Сладкого давай, надо в бак подкинуть",
+        "items": [
+          "Item_GumDbz",
+          "Item_CrazyDips",
+          "Item_GumLoveIs",
+          "Item_Zozole"
+        ]
+      },
+      {
+        "text": "Давай всё своё барахло, хз чего хочу",
+        "items": [
+          "Item_Aspirin",
+          "Item_Selita",
+          "Item_ACC",
+          "Item_Alita",
+          "Item_Alus",
+          "Item_Balloon",
+          "Item_BubbleTubeBlower",
+          "Item_Colgate",
+          "Item_CrazyDips",
+          "Item_Durex",
+          "Item_GumDbz",
+          "Item_GumHubbaBubba",
+          "Item_GumLoveIs",
+          "Item_SoapUkinis",
+          "Item_SodaBuratinas",
+          "Item_SodaVytautas",
+          "Item_Zozole"
+        ]
+      },
+      {
+        "text": "Турбо похмелье, надо загасить бак",
+        "items": [
+          "Item_SodaVytautas",
+          "Item_Aspirin"
+        ]
+      },
+      {
+        "text": "Слезь с кед!!!",
+        "items": []
+      },
+      {
+        "text": "Спортивный разворот от петуха",
+        "items": []
+      },
+      {
+        "text": "Бодун замучил, надо сбить перегар",
+        "items": [
+          "Item_Durex"
+        ]
+      }
+    ]
+  }
+]

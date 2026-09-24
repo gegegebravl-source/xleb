@@ -1,0 +1,10 @@
+{
+  "name": "Тёплый хлеб",
+  "short_name": "Тёплый хлеб",
+  "lang": "ru",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#17100c",
+  "theme_color": "#17100c",
+  "icons": []
+}

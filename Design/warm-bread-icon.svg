@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#173f2d"/><stop offset="1" stop-color="#07140f"/></linearGradient>
+    <linearGradient id="bread" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd68b"/><stop offset="1" stop-color="#c9792e"/></linearGradient>
+    <filter id="shadow"><feGaussianBlur stdDeviation="22"/></filter>
+  </defs>
+  <rect width="1024" height="1024" rx="190" fill="url(#bg)"/>
+  <circle cx="512" cy="425" r="320" fill="#000" opacity=".28" filter="url(#shadow)"/>
+  <path d="M220 530c0-176 105-292 292-292s292 116 292 292v151c0 60-49 109-109 109H329c-60 0-109-49-109-109z" fill="url(#bread)" stroke="#ffe2aa" stroke-width="18"/>
+  <path d="M375 302c-44 78-48 152-13 220M520 268c-39 86-39 168 0 245M665 304c-43 78-47 151-13 218" fill="none" stroke="#a95d26" stroke-width="28" stroke-linecap="round" opacity=".82"/>
+  <path d="M254 642h516" stroke="#8d4d25" stroke-width="24" opacity=".55"/>
+  <text x="512" y="860" text-anchor="middle" fill="#fff1d0" font-family="DejaVu Sans, sans-serif" font-size="86" font-weight="700" letter-spacing="7">ТЁПЛЫЙ ХЛЕБ</text>
+</svg>

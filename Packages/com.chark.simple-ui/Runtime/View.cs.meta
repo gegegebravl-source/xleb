@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ee409916459743c4a55c8395f072d884
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - canvasGroup: {instanceID: 0}
+  - showAnimationAsset: {fileID: 11400000, guid: de9457f11e484a24d9d1d499c14b918e, type: 2}
+  - hideAnimationAsset: {fileID: 11400000, guid: 7b30760a6aac782479ae2e2daf65fe70, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2f7362d7d140a8813617b29c68b8d0, type: 3}
+  m_Name: Data_Item_Hleb09
+  m_EditorClassIdentifier: UABPetelnia.GGJ2025::UABPetelnia.GGJ2025.Runtime.Settings.ItemData
+  price: 250
+  displayName: "\u0425\u043B\u0435\u0431 09"
+  image: {fileID: 2800000, guid: 40a1d6d85eed24d44b9fd53b8e52cba3, type: 3}
+  displayHeight: 0.16

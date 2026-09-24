@@ -1,0 +1,556 @@
+UNUSED  Assets\Art\Kirill\анимации для тамагочи плеера и тд полноценные
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\анимации для тамагочи плеера и тд полноценные\загрузка пейджера.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\анимации для тамагочи плеера и тд полноценные\зарядка проценты вариация.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\анимации для тамагочи плеера и тд полноценные\звонок анимация.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\анимации для тамагочи плеера и тд полноценные\письмо в экранчике.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\анимации для тамагочи плеера и тд полноценные\письмо на пейджер вариация.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\анимации для тамагочи плеера и тд полноценные\радио ловит волну.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\анимации для тамагочи плеера и тд полноценные\тамагочи грустный.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\анимации для тамагочи плеера и тд полноценные\тамагочи кушает.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\анимации для тамагочи плеера и тд полноценные\тамагочи радуется.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\анимации для тамагочи плеера и тд полноценные\тамагочи скучает.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\анимации для тамагочи плеера и тд полноценные\тетрис анимация.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\00_КАТАЛОГ
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\00_КАТАЛОГ\MANIFEST_ALL_FILES.csv
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\00_КАТАЛОГ\README_RU.txt
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\00_КАТАЛОГ\КАТАЛОГ_30_ЭЛЕМЕНТОВ.csv
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\00_КАТАЛОГ\СТАТИСТИКА.txt
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\asphalt_cracked_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\asphalt_cracked_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\asphalt_cracked_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\asphalt_cracked_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\dirty_snow_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\dirty_snow_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\dirty_snow_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\paving_old_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\paving_old_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\paving_old_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\paving_old_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\puddle_reflection_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\puddle_reflection_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\puddle_reflection_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\puddle_reflection_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\tram_rails_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\tram_rails_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\01_ПОКРЫТИЯ_И_РЕЛЬСЫ\tram_rails_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ\bench_old_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ\bench_old_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ\bench_old_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ\bench_old_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ\bin_metal_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ\bin_metal_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ\bin_metal_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ\bin_metal_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ\dumpster_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ\dumpster_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ\dumpster_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ\dumpster_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ\street_lamp_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ\street_lamp_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ\street_lamp_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\02_ФОНАРИ_СКАМЕЙКИ_УРНЫ_КОНТЕЙНЕРЫ\street_lamp_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\entrance_door_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\entrance_door_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\entrance_door_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\entrance_door_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\mailbox_blue_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\mailbox_blue_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\mailbox_blue_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\mailbox_blue_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\overhead_wires_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\overhead_wires_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\overhead_wires_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\overhead_wires_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\phone_booth_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\phone_booth_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\phone_booth_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\phone_booth_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\poster_pole_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\poster_pole_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\poster_pole_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\03_ПРОВОДА_БУДКИ_ПОЧТА_СТОЛБЫ_ДВЕРИ\poster_pole_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ\balcony_old_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ\balcony_old_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ\balcony_old_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ\balcony_old_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ\bus_stop_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ\bus_stop_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ\bus_stop_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ\bus_stop_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ\news_kiosk_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ\news_kiosk_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ\news_kiosk_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ\news_kiosk_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ\shop_sign_blank_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ\shop_sign_blank_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ\shop_sign_blank_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\04_КИОСКИ_ОСТАНОВКИ_БАЛКОНЫ_ВЫВЕСКИ\shop_sign_blank_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ\autumn_tree_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ\autumn_tree_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ\autumn_tree_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ\autumn_tree_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ\bush_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ\bush_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ\bush_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ\bush_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ\flower_bed_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ\flower_bed_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ\flower_bed_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ\flower_bed_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ\metal_fence_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ\metal_fence_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ\metal_fence_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\05_РАСТИТЕЛЬНОСТЬ_КЛУМБЫ_ЗАБОРЫ\metal_fence_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\bicycle_old_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\bicycle_old_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\bicycle_old_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\bicycle_old_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\car_2000s_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\car_2000s_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\car_2000s_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\car_2000s_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\car_2000s_v05.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v05.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v06.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v07.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v08.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v09.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v10.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v11.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v12.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v13.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v14.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v15.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v16.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v17.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v18.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v19.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\06_МАШИНЫ_ВЕЛОСИПЕДЫ_ГАРАЖИ\garage_metal_v20.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\dog_leash_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\dog_leash_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\dog_leash_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\dog_leash_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\pigeons_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\pigeons_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\pigeons_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\pigeons_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\pigeons_v05.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\playground_climber_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\playground_sandbox_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\playground_slide_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\playground_swings_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\street_cat_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\street_cat_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\street_cat_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\07_ПЛОЩАДКА_ГОЛУБИ_КОТЫ_СОБАКИ\street_cat_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\graffiti_wall_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\graffiti_wall_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\graffiti_wall_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\graffiti_wall_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\graffiti_wall_v05.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\graffiti_wall_v06.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\old_wall_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\old_wall_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\old_wall_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\old_wall_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\poster_wall_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\poster_wall_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\poster_wall_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\poster_wall_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\shop_sign_blank_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\shop_sign_blank_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\shop_sign_blank_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\shop_sign_blank_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\shop_sign_blank_v05.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\08_ВЫВЕСКИ_ГРАФФИТИ_ОБЪЯВЛЕНИЯ_СТЕНЫ\shop_sign_blank_v06.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\autumn_leaf_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\autumn_leaf_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\autumn_leaf_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\autumn_leaf_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\autumn_leaf_v05.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\autumn_leaf_v06.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\autumn_leaf_v07.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\autumn_leaf_v08.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\autumn_leaf_v09.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\autumn_leaf_v10.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\autumn_leaf_v11.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\autumn_leaf_v12.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\dust_particles_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\dust_particles_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\dust_particles_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\dust_particles_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\dust_particles_v05.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\fog_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\fog_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\fog_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\fog_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\fog_v05.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\puddle_ripple_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\puddle_ripple_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\puddle_ripple_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\puddle_ripple_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\puddle_ripple_v05.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\puddle_ripple_v06.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\rain_overlay_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\rain_overlay_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\rain_overlay_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\rain_overlay_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\rain_overlay_v05.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\rain_overlay_v06.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\snow_overlay_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\snow_overlay_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\snow_overlay_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\snow_overlay_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\snow_overlay_v05.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\snow_overlay_v06.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\steam_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\steam_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\steam_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\steam_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\09_ПОГОДА_И_ЭФФЕКТЫ\steam_v05.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v01.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v02.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v03.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v04.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v05.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v06.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v07.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v08.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v09.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v10.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v11.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v12.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v13.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v14.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v15.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v16.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v17.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v18.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v19.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v20.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v21.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v22.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v23.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v24.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v25.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v26.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v27.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v28.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v29.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v30.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v31.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v32.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v33.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v34.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v35.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v36.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v37.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v38.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v39.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v40.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\10_ЗИМА_ДОПОЛНИТЕЛЬНО\winter_extra_v41.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\90_ИСХОДНЫЕ_СПРАЙТ_ЛИСТЫ
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\90_ИСХОДНЫЕ_СПРАЙТ_ЛИСТЫ\01_покрытия_лужи_снег_рельсы.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\90_ИСХОДНЫЕ_СПРАЙТ_ЛИСТЫ\02_фонари_скамейки_урны_контейнеры.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\90_ИСХОДНЫЕ_СПРАЙТ_ЛИСТЫ\03_провода_будки_почта_столбы_двери.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\90_ИСХОДНЫЕ_СПРАЙТ_ЛИСТЫ\04_киоски_остановки_балконы_вывески.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\90_ИСХОДНЫЕ_СПРАЙТ_ЛИСТЫ\05_растительность_клумбы_заборы.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\90_ИСХОДНЫЕ_СПРАЙТ_ЛИСТЫ\06_транспорт_велосипеды_гаражи.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\90_ИСХОДНЫЕ_СПРАЙТ_ЛИСТЫ\07_площадка_животные.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\90_ИСХОДНЫЕ_СПРАЙТ_ЛИСТЫ\08_вывески_граффити_объявления_стены.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\90_ИСХОДНЫЕ_СПРАЙТ_ЛИСТЫ\09_погода_эффекты.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\90_ИСХОДНЫЕ_СПРАЙТ_ЛИСТЫ\10_зима_дополнительное.png
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\99_ПРЕВЬЮ
+UNUSED  Assets\Art\Kirill\ассеты и спрайты для улицы и атмосферы\99_ПРЕВЬЮ\00_общее_превью_30_элементов.png
+UNUSED  Assets\Art\Kirill\зеркало фоторамка и отражение меня в зеркале
+USED  Assets\Visuals\Objects\Materials\Decor_зеркало.mat  Assets\Art\Kirill\зеркало фоторамка и отражение меня в зеркале\зеркало.png
+USED  Assets\Visuals\Objects\Materials\Decor_фоторамка.mat  Assets\Art\Kirill\зеркало фоторамка и отражение меня в зеркале\фоторамка.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\зеркало фоторамка и отражение меня в зеркале\человечек для отражения меня в зеркале.png
+UNUSED  Assets\Art\Kirill\иконки главного меню
+UNUSED  Assets\Art\Kirill\иконки главного меню\README.txt
+UNUSED  Assets\Art\Kirill\иконки главного меню\icons
+UNUSED  Assets\Art\Kirill\иконки главного меню\icons\01_new_game.png
+UNUSED  Assets\Art\Kirill\иконки главного меню\icons\02_continue.png
+UNUSED  Assets\Art\Kirill\иконки главного меню\icons\03_settings.png
+UNUSED  Assets\Art\Kirill\иконки главного меню\icons\04_journal.png
+UNUSED  Assets\Art\Kirill\иконки главного меню\icons\05_achievements.png
+UNUSED  Assets\Art\Kirill\иконки главного меню\icons\06_exit.png
+UNUSED  Assets\Art\Kirill\коробка картонная
+USED  Assets\Data\Items\Data_Item_Korobka.asset  Assets\Art\Kirill\коробка картонная\korobka.png
+UNUSED  Assets\Art\Kirill\люди
+UNUSED  Assets\Art\Kirill\люди\01_student
+UNUSED  Assets\Art\Kirill\люди\01_student\README_RU.txt
+UNUSED  Assets\Art\Kirill\люди\01_student\manifest.json
+UNUSED  Assets\Art\Kirill\люди\01_student\native
+UNUSED  Assets\Art\Kirill\люди\01_student\native\view_01.png
+UNUSED  Assets\Art\Kirill\люди\01_student\native\view_02.png
+UNUSED  Assets\Art\Kirill\люди\01_student\native\view_03.png
+UNUSED  Assets\Art\Kirill\люди\01_student\native\view_04.png
+UNUSED  Assets\Art\Kirill\люди\01_student\native\view_05.png
+UNUSED  Assets\Art\Kirill\люди\01_student\native\view_06.png
+UNUSED  Assets\Art\Kirill\люди\01_student\preview.png
+UNUSED  Assets\Art\Kirill\люди\01_student\reference_original.png
+UNUSED  Assets\Art\Kirill\люди\01_student\sheet_3x2.png
+UNUSED  Assets\Art\Kirill\люди\01_student\source_sheet.png
+UNUSED  Assets\Art\Kirill\люди\01_student\sprites_1024
+USED  Assets\Data\Shoppers\Data_Shopper_Kirill_01_student.asset  Assets\Art\Kirill\люди\01_student\sprites_1024\view_01.png
+UNUSED  Assets\Art\Kirill\люди\01_student\sprites_1024\view_02.png
+UNUSED  Assets\Art\Kirill\люди\01_student\sprites_1024\view_03.png
+UNUSED  Assets\Art\Kirill\люди\01_student\sprites_1024\view_04.png
+UNUSED  Assets\Art\Kirill\люди\01_student\sprites_1024\view_05.png
+UNUSED  Assets\Art\Kirill\люди\01_student\sprites_1024\view_06.png
+UNUSED  Assets\Art\Kirill\люди\02_grandmother
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\README_RU.txt
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\manifest.json
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\native
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\native\view_01.png
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\native\view_02.png
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\native\view_03.png
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\native\view_04.png
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\native\view_05.png
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\native\view_06.png
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\preview.png
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\reference_original.png
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\sheet_3x2.png
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\source_sheet.png
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\sprites_1024
+USED  Assets\Data\Shoppers\Data_Shopper_Kirill_02_grandmother.asset  Assets\Art\Kirill\люди\02_grandmother\sprites_1024\view_01.png
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\sprites_1024\view_02.png
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\sprites_1024\view_03.png
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\sprites_1024\view_04.png
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\sprites_1024\view_05.png
+UNUSED  Assets\Art\Kirill\люди\02_grandmother\sprites_1024\view_06.png
+UNUSED  Assets\Art\Kirill\люди\03_worker
+UNUSED  Assets\Art\Kirill\люди\03_worker\README_RU.txt
+UNUSED  Assets\Art\Kirill\люди\03_worker\manifest.json
+UNUSED  Assets\Art\Kirill\люди\03_worker\native
+UNUSED  Assets\Art\Kirill\люди\03_worker\native\view_01.png
+UNUSED  Assets\Art\Kirill\люди\03_worker\native\view_02.png
+UNUSED  Assets\Art\Kirill\люди\03_worker\native\view_03.png
+UNUSED  Assets\Art\Kirill\люди\03_worker\native\view_04.png
+UNUSED  Assets\Art\Kirill\люди\03_worker\native\view_05.png
+UNUSED  Assets\Art\Kirill\люди\03_worker\native\view_06.png
+UNUSED  Assets\Art\Kirill\люди\03_worker\preview.png
+UNUSED  Assets\Art\Kirill\люди\03_worker\reference_original.png
+UNUSED  Assets\Art\Kirill\люди\03_worker\sheet_3x2.png
+UNUSED  Assets\Art\Kirill\люди\03_worker\source_sheet.png
+UNUSED  Assets\Art\Kirill\люди\03_worker\sprites_1024
+USED  Assets\Data\Shoppers\Data_Shopper_Kirill_03_worker.asset  Assets\Art\Kirill\люди\03_worker\sprites_1024\view_01.png
+UNUSED  Assets\Art\Kirill\люди\03_worker\sprites_1024\view_02.png
+UNUSED  Assets\Art\Kirill\люди\03_worker\sprites_1024\view_03.png
+UNUSED  Assets\Art\Kirill\люди\03_worker\sprites_1024\view_04.png
+UNUSED  Assets\Art\Kirill\люди\03_worker\sprites_1024\view_05.png
+UNUSED  Assets\Art\Kirill\люди\03_worker\sprites_1024\view_06.png
+UNUSED  Assets\Art\Kirill\люди\04_mother_child
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\README_RU.txt
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\manifest.json
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\native
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\native\view_01.png
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\native\view_02.png
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\native\view_03.png
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\native\view_04.png
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\native\view_05.png
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\native\view_06.png
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\preview.png
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\reference_original.png
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\sheet_3x2.png
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\source_sheet.png
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\sprites_1024
+USED  Assets\Data\Shoppers\Data_Shopper_Kirill_04_mother_child.asset  Assets\Art\Kirill\люди\04_mother_child\sprites_1024\view_01.png
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\sprites_1024\view_02.png
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\sprites_1024\view_03.png
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\sprites_1024\view_04.png
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\sprites_1024\view_05.png
+UNUSED  Assets\Art\Kirill\люди\04_mother_child\sprites_1024\view_06.png
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\README_RU.txt
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\manifest.json
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\native
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\native\view_01.png
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\native\view_02.png
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\native\view_03.png
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\native\view_04.png
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\native\view_05.png
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\native\view_06.png
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\preview.png
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\reference_original.png
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\sheet_3x2.png
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\source_sheet.png
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\sprites_1024
+USED  Assets\Data\Shoppers\Data_Shopper_Kirill_05_tracksuit.asset  Assets\Art\Kirill\люди\05_tracksuit\sprites_1024\view_01.png
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\sprites_1024\view_02.png
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\sprites_1024\view_03.png
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\sprites_1024\view_04.png
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\sprites_1024\view_05.png
+UNUSED  Assets\Art\Kirill\люди\05_tracksuit\sprites_1024\view_06.png
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\README_RU.txt
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\manifest.json
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\native
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\native\view_01.png
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\native\view_02.png
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\native\view_03.png
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\native\view_04.png
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\native\view_05.png
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\native\view_06.png
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\preview.png
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\reference_original.png
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\sheet_3x2.png
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\source_sheet.png
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\sprites_1024
+USED  Assets\Data\Shoppers\Data_Shopper_Kirill_06_shopkeeper.asset  Assets\Art\Kirill\люди\06_shopkeeper\sprites_1024\view_01.png
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\sprites_1024\view_02.png
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\sprites_1024\view_03.png
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\sprites_1024\view_04.png
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\sprites_1024\view_05.png
+UNUSED  Assets\Art\Kirill\люди\06_shopkeeper\sprites_1024\view_06.png
+UNUSED  Assets\Art\Kirill\люди\07_musician
+UNUSED  Assets\Art\Kirill\люди\07_musician\README_RU.txt
+UNUSED  Assets\Art\Kirill\люди\07_musician\manifest.json
+UNUSED  Assets\Art\Kirill\люди\07_musician\native
+UNUSED  Assets\Art\Kirill\люди\07_musician\native\view_01.png
+UNUSED  Assets\Art\Kirill\люди\07_musician\native\view_02.png
+UNUSED  Assets\Art\Kirill\люди\07_musician\native\view_03.png
+UNUSED  Assets\Art\Kirill\люди\07_musician\native\view_04.png
+UNUSED  Assets\Art\Kirill\люди\07_musician\native\view_05.png
+UNUSED  Assets\Art\Kirill\люди\07_musician\native\view_06.png
+UNUSED  Assets\Art\Kirill\люди\07_musician\preview.png
+UNUSED  Assets\Art\Kirill\люди\07_musician\reference_original.png
+UNUSED  Assets\Art\Kirill\люди\07_musician\sheet_3x2.png
+UNUSED  Assets\Art\Kirill\люди\07_musician\source_sheet.png
+UNUSED  Assets\Art\Kirill\люди\07_musician\sprites_1024
+USED  Assets\Data\Shoppers\Data_Shopper_Kirill_07_musician.asset  Assets\Art\Kirill\люди\07_musician\sprites_1024\view_01.png
+UNUSED  Assets\Art\Kirill\люди\07_musician\sprites_1024\view_02.png
+UNUSED  Assets\Art\Kirill\люди\07_musician\sprites_1024\view_03.png
+UNUSED  Assets\Art\Kirill\люди\07_musician\sprites_1024\view_04.png
+UNUSED  Assets\Art\Kirill\люди\07_musician\sprites_1024\view_05.png
+UNUSED  Assets\Art\Kirill\люди\07_musician\sprites_1024\view_06.png
+UNUSED  Assets\Art\Kirill\люди\08_office_worker
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\README_RU.txt
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\manifest.json
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\native
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\native\view_01.png
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\native\view_02.png
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\native\view_03.png
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\native\view_04.png
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\native\view_05.png
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\native\view_06.png
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\preview.png
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\reference_original.png
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\sheet_3x2.png
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\source_sheet.png
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\sprites_1024
+USED  Assets\Data\Shoppers\Data_Shopper_Kirill_08_office_worker.asset  Assets\Art\Kirill\люди\08_office_worker\sprites_1024\view_01.png
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\sprites_1024\view_02.png
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\sprites_1024\view_03.png
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\sprites_1024\view_04.png
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\sprites_1024\view_05.png
+UNUSED  Assets\Art\Kirill\люди\08_office_worker\sprites_1024\view_06.png
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\README_RU.txt
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\manifest.json
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\native
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\native\view_01.png
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\native\view_02.png
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\native\view_03.png
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\native\view_04.png
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\native\view_05.png
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\native\view_06.png
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\preview.png
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\reference_original.png
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\sheet_3x2.png
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\source_sheet.png
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\sprites_1024
+USED  Assets\Data\Shoppers\Data_Shopper_Kirill_09_schoolboy.asset  Assets\Art\Kirill\люди\09_schoolboy\sprites_1024\view_01.png
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\sprites_1024\view_02.png
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\sprites_1024\view_03.png
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\sprites_1024\view_04.png
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\sprites_1024\view_05.png
+UNUSED  Assets\Art\Kirill\люди\09_schoolboy\sprites_1024\view_06.png
+UNUSED  Assets\Art\Kirill\люди\10_courier
+UNUSED  Assets\Art\Kirill\люди\10_courier\README_RU.txt
+UNUSED  Assets\Art\Kirill\люди\10_courier\manifest.json
+UNUSED  Assets\Art\Kirill\люди\10_courier\native
+UNUSED  Assets\Art\Kirill\люди\10_courier\native\view_01.png
+UNUSED  Assets\Art\Kirill\люди\10_courier\native\view_02.png
+UNUSED  Assets\Art\Kirill\люди\10_courier\native\view_03.png
+UNUSED  Assets\Art\Kirill\люди\10_courier\native\view_04.png
+UNUSED  Assets\Art\Kirill\люди\10_courier\native\view_05.png
+UNUSED  Assets\Art\Kirill\люди\10_courier\native\view_06_original_reference.png
+UNUSED  Assets\Art\Kirill\люди\10_courier\preview.png
+UNUSED  Assets\Art\Kirill\люди\10_courier\reference_original.png
+UNUSED  Assets\Art\Kirill\люди\10_courier\sheet_3x2.png
+UNUSED  Assets\Art\Kirill\люди\10_courier\source_sheet.png
+UNUSED  Assets\Art\Kirill\люди\10_courier\sprites_1024
+USED  Assets\Data\Shoppers\Data_Shopper_Kirill_10_courier.asset  Assets\Art\Kirill\люди\10_courier\sprites_1024\view_01.png
+UNUSED  Assets\Art\Kirill\люди\10_courier\sprites_1024\view_02.png
+UNUSED  Assets\Art\Kirill\люди\10_courier\sprites_1024\view_03.png
+UNUSED  Assets\Art\Kirill\люди\10_courier\sprites_1024\view_04.png
+UNUSED  Assets\Art\Kirill\люди\10_courier\sprites_1024\view_05.png
+UNUSED  Assets\Art\Kirill\люди\10_courier\sprites_1024\view_06_original_reference.png
+UNUSED  Assets\Art\Kirill\люди\PACK_INDEX.json
+UNUSED  Assets\Art\Kirill\люди\README_RU.txt
+UNUSED  Assets\Art\Kirill\напитки 2д спрайты
+USED  Assets\Data\Items\Data_Item_ButylkaKvasa.asset  Assets\Art\Kirill\напитки 2д спрайты\бутылка кваса.png
+USED  Assets\Data\Items\Data_Item_KruzhkaChaya.asset  Assets\Art\Kirill\напитки 2д спрайты\кружка чая.png
+USED  Assets\Data\Items\Data_Item_LimonadBuratino.asset  Assets\Art\Kirill\напитки 2д спрайты\лимонад буратино.png
+USED  Assets\Data\Items\Data_Item_Mors.asset  Assets\Art\Kirill\напитки 2д спрайты\морс.png
+UNUSED  Assets\Art\Kirill\пк и заказ
+UNUSED  Assets\Art\Kirill\пк и заказ\НЕ ВСТАВЛЯТЬ ЭТО ИМЕННО ПРИМЕР КАК ВЫГЛЯДЕТЬ ИНТЕРФЕЙС ТОГО ПК ДОЛЖЕН.png
+USED  Assets\Prefabs\UI\View_Delivery.prefab  Assets\Art\Kirill\пк и заказ\баланс иконка.png
+USED  Assets\Prefabs\UI\View_Delivery.prefab  Assets\Art\Kirill\пк и заказ\доставка иконка.png
+USED  Assets\Prefabs\UI\View_Delivery.prefab  Assets\Art\Kirill\пк и заказ\заказать иконка листик с заказом.png
+USED  Assets\Prefabs\UI\View_Delivery.prefab  Assets\Art\Kirill\пк и заказ\иконка склада.png
+UNUSED  Assets\Art\Kirill\пк и заказ\иконка шестеренки настроек.png
+UNUSED  Assets\Art\Kirill\пк и заказ\пк для азказов и тд.png
+USED  Assets\Prefabs\UI\View_Delivery.prefab  Assets\Art\Kirill\пк и заказ\список заказов иконка.png
+UNUSED  Assets\Art\Kirill\предметы 2000 годов для вайба
+USED  Assets\Data\Items\Data_Item_DvdDisk.asset  Assets\Art\Kirill\предметы 2000 годов для вайба\двд диск.png
+USED  Assets\Data\Items\Data_Item_DiskiStaryeDisketta.asset  Assets\Art\Kirill\предметы 2000 годов для вайба\диски старые дискетта.png
+USED  Assets\Data\Items\Data_Item_Peydzher.asset  Assets\Art\Kirill\предметы 2000 годов для вайба\пейджер.png
+USED  Assets\Data\Items\Data_Item_PlakatRokGruppy.asset  Assets\Art\Kirill\предметы 2000 годов для вайба\плакат рок группы.png
+USED  Assets\Data\Items\Data_Item_PleerSNaushnikami.asset  Assets\Art\Kirill\предметы 2000 годов для вайба\плеер с наушниками.png
+USED  Assets\Data\Items\Data_Item_StaryeKassety.asset  Assets\Art\Kirill\предметы 2000 годов для вайба\старые кассеты.png
+USED  Assets\Data\Items\Data_Item_StaryyTelefon.asset  Assets\Art\Kirill\предметы 2000 годов для вайба\старый телефон.png
+USED  Assets\Data\Items\Data_Item_Tamagochi.asset  Assets\Art\Kirill\предметы 2000 годов для вайба\тамагочи.png
+USED  Assets\Data\Items\Data_Item_Tetris.asset  Assets\Art\Kirill\предметы 2000 годов для вайба\тетрис.png
+UNUSED  Assets\Art\Kirill\сигареты
+USED  Assets\Data\Items\Data_Item_Zazhigalka.asset  Assets\Art\Kirill\сигареты\зажигалка.png
+USED  Assets\Data\Items\Data_Item_MyatayaPachkaSigaretPrima.asset  Assets\Art\Kirill\сигареты\мятая пачка сигарет прима.png
+USED  Assets\Data\Items\Data_Item_PachkaSigaretYava.asset  Assets\Art\Kirill\сигареты\пачка сигарет ява.png
+USED  Assets\Data\Items\Data_Item_Sigareta.asset  Assets\Art\Kirill\сигареты\сигарета.png
+UNUSED  Assets\Art\Kirill\телевизор
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\телевизор\вращение свет символа на телевизор.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\телевизор\мультик том и джери на телевизор.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\телевизор\новости на телевизор.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\телевизор\прогноз погоды на телевизор.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\телевизор\реклама газировки на телевизор.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\телевизор\рок концерт на телевизор.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\телевизор\телевизор включается.png
+USED  Assets\Scenes\Scene_Gameplay.unity  Assets\Art\Kirill\телевизор\телевизор выключенный.png
+UNUSED  Assets\Art\Kirill\хлеб и выпечка
+USED  Assets\Data\Items\Data_Item_Hleb01.asset  Assets\Art\Kirill\хлеб и выпечка\hleb_01.png
+USED  Assets\Data\Items\Data_Item_Hleb02.asset  Assets\Art\Kirill\хлеб и выпечка\hleb_02.png
+USED  Assets\Data\Items\Data_Item_Hleb03.asset  Assets\Art\Kirill\хлеб и выпечка\hleb_03.png
+USED  Assets\Data\Items\Data_Item_Hleb04.asset  Assets\Art\Kirill\хлеб и выпечка\hleb_04.png
+USED  Assets\Data\Items\Data_Item_Hleb05.asset  Assets\Art\Kirill\хлеб и выпечка\hleb_05.png
+USED  Assets\Data\Items\Data_Item_Hleb06.asset  Assets\Art\Kirill\хлеб и выпечка\hleb_06.png
+USED  Assets\Data\Items\Data_Item_Hleb07.asset  Assets\Art\Kirill\хлеб и выпечка\hleb_07.png
+USED  Assets\Data\Items\Data_Item_Hleb08.asset  Assets\Art\Kirill\хлеб и выпечка\hleb_08.png
+USED  Assets\Data\Items\Data_Item_Hleb09.asset  Assets\Art\Kirill\хлеб и выпечка\hleb_09.png
+USED  Assets\Data\Items\Data_Item_Hleb10.asset  Assets\Art\Kirill\хлеб и выпечка\hleb_10.png

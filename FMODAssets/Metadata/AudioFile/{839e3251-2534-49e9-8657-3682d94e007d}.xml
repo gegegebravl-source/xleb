@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{839e3251-2534-49e9-8657-3682d94e007d}">
+		<property name="assetPath">
+			<value>S_GeCa_EngineRevHigh_01.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>28</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{cf624566-d76b-4885-b50d-9c777bec5cf2}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{8c999ec1-d3bf-4a62-b8a0-29a92b63ff20}">
+		<property name="name">
+			<value>LowPacedLFO</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9f73514a-424d-42cf-b95f-9aaada27cefb}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{e0186768-b754-4ce6-9497-7f5a30529f5f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{e0186768-b754-4ce6-9497-7f5a30529f5f}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{c7f09956-a8cb-4268-b1fa-69e72c45351b}</destination>
+		</relationship>
+	</object>
+	<object class="LFOModulator" id="{c7f09956-a8cb-4268-b1fa-69e72c45351b}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>cursorPosition</value>
+		</property>
+		<property name="rate">
+			<value>0.049999997</value>
+		</property>
+		<property name="depth">
+			<value>37.5</value>
+		</property>
+	</object>
+</objects>

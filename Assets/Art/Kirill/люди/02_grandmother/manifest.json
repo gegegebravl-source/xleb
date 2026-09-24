@@ -1,0 +1,143 @@
+{
+  "character": "Бабушка с авоськой",
+  "status": "draft",
+  "generated_view_count": 6,
+  "canvas_size": [
+    1024,
+    1024
+  ],
+  "source_sheet_size": [
+    828,
+    202
+  ],
+  "source": "generated sheet; cropped and rescaled, not native 1024-pixel renders",
+  "orientation": "source order; no exact yaw angles assigned",
+  "views": [
+    {
+      "index": 1,
+      "file": "view_01.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        0,
+        0,
+        170,
+        202
+      ],
+      "native_size": [
+        178,
+        207
+      ],
+      "scale_to_frame": 4.328502,
+      "frame_position": [
+        127,
+        64
+      ],
+      "cleanup": "Removed faint separator lines and small detached crop fragments"
+    },
+    {
+      "index": 2,
+      "file": "view_02.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        170,
+        0,
+        293,
+        202
+      ],
+      "native_size": [
+        107,
+        205
+      ],
+      "scale_to_frame": 4.370732,
+      "frame_position": [
+        278,
+        64
+      ],
+      "cleanup": "Removed faint separator lines and small detached crop fragments"
+    },
+    {
+      "index": 3,
+      "file": "view_03.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        293,
+        0,
+        424,
+        202
+      ],
+      "native_size": [
+        139,
+        206
+      ],
+      "scale_to_frame": 4.349515,
+      "frame_position": [
+        209,
+        64
+      ],
+      "cleanup": "Removed faint separator lines and small detached crop fragments"
+    },
+    {
+      "index": 4,
+      "file": "view_04.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        424,
+        0,
+        554,
+        202
+      ],
+      "native_size": [
+        138,
+        206
+      ],
+      "scale_to_frame": 4.349515,
+      "frame_position": [
+        212,
+        64
+      ],
+      "cleanup": "Removed faint separator lines and small detached crop fragments"
+    },
+    {
+      "index": 5,
+      "file": "view_05.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        554,
+        0,
+        687,
+        202
+      ],
+      "native_size": [
+        141,
+        206
+      ],
+      "scale_to_frame": 4.349515,
+      "frame_position": [
+        205,
+        64
+      ],
+      "cleanup": "Removed faint separator lines and small detached crop fragments"
+    },
+    {
+      "index": 6,
+      "file": "view_06.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        687,
+        0,
+        828,
+        202
+      ],
+      "native_size": [
+        149,
+        206
+      ],
+      "scale_to_frame": 4.349515,
+      "frame_position": [
+        188,
+        64
+      ],
+      "cleanup": "Removed faint separator lines and small detached crop fragments"
+    }
+  ]
+}

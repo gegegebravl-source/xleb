@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c632977b578246bcbc00fdfbe078c483, type: 3}
+  m_Name: Data_Shopper_Skibidi
+  m_EditorClassIdentifier: 
+  shopperPrefab: {fileID: 1568678881271510012, guid: 3d395686e39d15d47aceda40eea162b3, type: 3}
+  image: {fileID: 2800000, guid: dc3e4b99ba10dde4483be78d0f12d8a6, type: 3}
+  purchases: {fileID: 11400000, guid: 68b37121e76ce1e4d80c5c493e21809e, type: 2}

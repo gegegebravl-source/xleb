@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14ae577063c44c19b953d1bcaa2f3ab, type: 3}
+  m_Name: ScriptableSceneCollection_GameOver
+  m_EditorClassIdentifier: 
+  guid: 4fce4cfed7f2c18449a8c0da96c35cad
+  prettyName: Game Over
+  transition: {fileID: 11400000, guid: eaa263b0af0ed8c44b6f7da23d499677, type: 2}
+  scriptableScenes:
+  - {fileID: 11400000, guid: a0c841af53f515044875484412b79b64, type: 2}
+  collectionEvents:
+    onLoadEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onLoadExited:
+      m_PersistentCalls:
+        m_Calls: []
+    onLoadProgress:
+      m_PersistentCalls:
+        m_Calls: []
+    onUnloadEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onUnloadExited:
+      m_PersistentCalls:
+        m_Calls: []
+    onShowTransitionEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onShowTransitionExited:
+      m_PersistentCalls:
+        m_Calls: []
+    onHideTransitionEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onHideTransitionExited:
+      m_PersistentCalls:
+        m_Calls: []
+  sceneEvents:
+    onLoadEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onLoadExited:
+      m_PersistentCalls:
+        m_Calls: []
+    onLoadProgress:
+      m_PersistentCalls:
+        m_Calls: []
+    onUnloadEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onUnloadExited:
+      m_PersistentCalls:
+        m_Calls: []
+    onActivateEntered:
+      m_PersistentCalls:
+        m_Calls: []
+    onActivateExited:
+      m_PersistentCalls:
+        m_Calls: []

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c632977b578246bcbc00fdfbe078c483, type: 3}
+  m_Name: Data_Shopper_Kirill_04_mother_child
+  m_EditorClassIdentifier: UABPetelnia.GGJ2025::UABPetelnia.GGJ2025.Runtime.Settings.ShopperData
+  shopperPrefab: {fileID: 7521200843629131009, guid: d7df9776e0969cc4f9f4f520ad8d97cd, type: 3}
+  image: {fileID: 2800000, guid: 3514d23828a75f54bb803566f7f6a452, type: 3}
+  purchases: {fileID: 11400000, guid: 1b53028e5dd80244f9ffbc52396a92ff, type: 2}

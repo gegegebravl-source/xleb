@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b4dc58d0-d0af-4f6c-9992-adf50db5eb30}">
+		<property name="assetPath">
+			<value>Woman_walk_02.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.2024489795918374</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{cf624566-d76b-4885-b50d-9c777bec5cf2}</destination>
+		</relationship>
+	</object>
+</objects>

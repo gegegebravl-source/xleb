@@ -1,0 +1,139 @@
+﻿[
+  {
+    "text": "Дикий зелёный гоблин объявился. ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Он хочет любви",
+        "items": [
+          "Item_GumLoveIs",
+          "Item_Durex"
+        ]
+      },
+      {
+        "text": "Он хочет чего-нибудь пососать",
+        "items": [
+          "Item_Zozole",
+          "Item_ACC",
+          "Item_CrazyDips",
+          "Item_GumLoveIs"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Дикий зелёный гоблин объявился. ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Угадай, чего он хочет.",
+        "items": [
+          "Item_Aspirin",
+          "Item_Selita",
+          "Item_ACC",
+          "Item_Alita",
+          "Item_Alus",
+          "Item_Balloon",
+          "Item_BubbleTubeBlower",
+          "Item_Colgate",
+          "Item_CrazyDips",
+          "Item_Durex",
+          "Item_GumDbz",
+          "Item_GumHubbaBubba",
+          "Item_GumLoveIs",
+          "Item_SoapUkinis",
+          "Item_SodaBuratinas",
+          "Item_SodaVytautas",
+          "Item_Zozole"
+        ]
+      },
+      {
+        "text": "Он хочет надувного друга.",
+        "items": [
+          "Item_Balloon",
+          "Item_Durex"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Дикий зелёный гоблин объявился. ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Зелёный, но не трава, с хвостом, но не мышь.",
+        "items": [
+          "Item_Durex"
+        ]
+      },
+      {
+        "text": "Если у тебя зелено в глазах, это ещё не значит, что пришла весна.",
+        "items": [
+          "Item_Aspirin",
+          "Item_Selita",
+          "Item_ACC",
+          "Item_Alita",
+          "Item_Alus",
+          "Item_Balloon",
+          "Item_BubbleTubeBlower",
+          "Item_Colgate",
+          "Item_CrazyDips",
+          "Item_Durex",
+          "Item_GumDbz",
+          "Item_GumHubbaBubba",
+          "Item_GumLoveIs",
+          "Item_SoapUkinis",
+          "Item_SodaBuratinas",
+          "Item_SodaVytautas",
+          "Item_Zozole"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Дикий зелёный гоблин объявился. ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Хехехехе",
+        "items": [
+          "Item_Aspirin",
+          "Item_Selita",
+          "Item_ACC",
+          "Item_Alita",
+          "Item_Alus",
+          "Item_Balloon",
+          "Item_BubbleTubeBlower",
+          "Item_Colgate",
+          "Item_CrazyDips",
+          "Item_Durex",
+          "Item_GumDbz",
+          "Item_GumHubbaBubba",
+          "Item_GumLoveIs",
+          "Item_SoapUkinis",
+          "Item_SodaBuratinas",
+          "Item_SodaVytautas",
+          "Item_Zozole"
+        ]
+      },
+      {
+        "text": "Я огурец.",
+        "items": [
+          "Item_Aspirin",
+          "Item_Selita",
+          "Item_ACC",
+          "Item_Alita",
+          "Item_Alus",
+          "Item_Balloon",
+          "Item_BubbleTubeBlower",
+          "Item_Colgate",
+          "Item_CrazyDips",
+          "Item_Durex",
+          "Item_GumDbz",
+          "Item_GumHubbaBubba",
+          "Item_GumLoveIs",
+          "Item_SoapUkinis",
+          "Item_SodaBuratinas",
+          "Item_SodaVytautas",
+          "Item_Zozole"
+        ]
+      }
+    ]
+  }
+]

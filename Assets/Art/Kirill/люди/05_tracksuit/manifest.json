@@ -1,0 +1,143 @@
+{
+  "character": "Парень в спортивном костюме",
+  "status": "draft",
+  "generated_view_count": 6,
+  "canvas_size": [
+    1024,
+    1024
+  ],
+  "source_sheet_size": [
+    700,
+    211
+  ],
+  "source": "generated sheet; cropped and rescaled, not native 1024-pixel renders",
+  "orientation": "source order; no exact yaw angles assigned",
+  "views": [
+    {
+      "index": 1,
+      "file": "view_01.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        0,
+        0,
+        140,
+        211
+      ],
+      "native_size": [
+        95,
+        219
+      ],
+      "scale_to_frame": 4.091324,
+      "frame_position": [
+        317,
+        64
+      ],
+      "cleanup": "Removed faint separator lines and small detached crop fragments"
+    },
+    {
+      "index": 2,
+      "file": "view_02.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        140,
+        0,
+        256,
+        211
+      ],
+      "native_size": [
+        102,
+        219
+      ],
+      "scale_to_frame": 4.091324,
+      "frame_position": [
+        303,
+        64
+      ],
+      "cleanup": "Removed faint separator lines and small detached crop fragments"
+    },
+    {
+      "index": 3,
+      "file": "view_03.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        256,
+        0,
+        361,
+        211
+      ],
+      "native_size": [
+        71,
+        219
+      ],
+      "scale_to_frame": 4.091324,
+      "frame_position": [
+        367,
+        64
+      ],
+      "cleanup": "Removed faint separator lines and small detached crop fragments"
+    },
+    {
+      "index": 4,
+      "file": "view_04.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        361,
+        0,
+        458,
+        211
+      ],
+      "native_size": [
+        69,
+        219
+      ],
+      "scale_to_frame": 4.091324,
+      "frame_position": [
+        371,
+        64
+      ],
+      "cleanup": "Removed faint separator lines and small detached crop fragments"
+    },
+    {
+      "index": 5,
+      "file": "view_05.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        458,
+        0,
+        573,
+        211
+      ],
+      "native_size": [
+        93,
+        219
+      ],
+      "scale_to_frame": 4.091324,
+      "frame_position": [
+        322,
+        64
+      ],
+      "cleanup": "Removed faint separator lines and small detached crop fragments"
+    },
+    {
+      "index": 6,
+      "file": "view_06.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        573,
+        0,
+        700,
+        211
+      ],
+      "native_size": [
+        83,
+        219
+      ],
+      "scale_to_frame": 4.091324,
+      "frame_position": [
+        342,
+        64
+      ],
+      "cleanup": "Removed faint separator lines and small detached crop fragments"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "status": "draft",
+  "generated_views": 59,
+  "original_reference_slots": 1,
+  "packs": [
+    {
+      "slug": "01_student",
+      "title": "Студентка с CD-плеером",
+      "path": "/mnt/data/01_student_draft.zip",
+      "filename": "01_student_draft.zip",
+      "size_bytes": 8976332,
+      "generated_views": 6,
+      "frame_count": 6
+    },
+    {
+      "slug": "02_grandmother",
+      "title": "Бабушка с авоськой",
+      "path": "/mnt/data/02_grandmother_draft.zip",
+      "filename": "02_grandmother_draft.zip",
+      "size_bytes": 6204081,
+      "generated_views": 6,
+      "frame_count": 6
+    },
+    {
+      "slug": "03_worker",
+      "title": "Рабочий в кепке",
+      "path": "/mnt/data/03_worker_draft.zip",
+      "filename": "03_worker_draft.zip",
+      "size_bytes": 5405704,
+      "generated_views": 6,
+      "frame_count": 6
+    },
+    {
+      "slug": "04_mother_child",
+      "title": "Мама с ребёнком",
+      "path": "/mnt/data/04_mother_child_draft.zip",
+      "filename": "04_mother_child_draft.zip",
+      "size_bytes": 6537061,
+      "generated_views": 6,
+      "frame_count": 6
+    },
+    {
+      "slug": "05_tracksuit",
+      "title": "Парень в спортивном костюме",
+      "path": "/mnt/data/05_tracksuit_draft.zip",
+      "filename": "05_tracksuit_draft.zip",
+      "size_bytes": 4842992,
+      "generated_views": 6,
+      "frame_count": 6
+    },
+    {
+      "slug": "06_shopkeeper",
+      "title": "Продавщица",
+      "path": "/mnt/data/06_shopkeeper_draft.zip",
+      "filename": "06_shopkeeper_draft.zip",
+      "size_bytes": 4910938,
+      "generated_views": 6,
+      "frame_count": 6
+    },
+    {
+      "slug": "07_musician",
+      "title": "Музыкант с гитарой",
+      "path": "/mnt/data/07_musician_draft.zip",
+      "filename": "07_musician_draft.zip",
+      "size_bytes": 5985524,
+      "generated_views": 6,
+      "frame_count": 6
+    },
+    {
+      "slug": "08_office_worker",
+      "title": "Офисный работник",
+      "path": "/mnt/data/08_office_worker_draft.zip",
+      "filename": "08_office_worker_draft.zip",
+      "size_bytes": 5198812,
+      "generated_views": 6,
+      "frame_count": 6
+    },
+    {
+      "slug": "09_schoolboy",
+      "title": "Школьник с рюкзаком",
+      "path": "/mnt/data/09_schoolboy_draft.zip",
+      "filename": "09_schoolboy_draft.zip",
+      "size_bytes": 5111158,
+      "generated_views": 6,
+      "frame_count": 6
+    },
+    {
+      "slug": "10_courier",
+      "title": "Курьер с велосипедом",
+      "path": "/mnt/data/10_courier_draft.zip",
+      "filename": "10_courier_draft.zip",
+      "size_bytes": 11840589,
+      "generated_views": 5,
+      "frame_count": 6
+    }
+  ]
+}

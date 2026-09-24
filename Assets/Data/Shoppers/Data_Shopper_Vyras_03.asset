@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c632977b578246bcbc00fdfbe078c483, type: 3}
+  m_Name: Data_Shopper_Vyras_03
+  m_EditorClassIdentifier: 
+  shopperPrefab: {fileID: 3549596928905085241, guid: 32a73753c307b0a4da63f87e0cc4a9a3, type: 3}
+  image: {fileID: 2800000, guid: aa49469ecd99af643818be4b768b4579, type: 3}
+  purchases: {fileID: 11400000, guid: 08ed61097c9070d49b93ee4e0d2a0773, type: 2}

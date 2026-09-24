@@ -1,0 +1,20 @@
+{
+    "name": "UABPetelnia.GGJ2025.Editor",
+    "rootNamespace": "UABPetelnia.GGJ2025",
+    "references": [
+        "GUID:69d1ad59ba444c13bfa908fdb8e85b37",
+        "GUID:25d450bec9ae260468287206ac6939a5",
+        "GUID:a63b19d400000055c7e258f0d14ab900"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

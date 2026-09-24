@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c632977b578246bcbc00fdfbe078c483, type: 3}
+  m_Name: Data_Shopper_Vaikas_05
+  m_EditorClassIdentifier: 
+  shopperPrefab: {fileID: 9122599103005972324, guid: 607f67979d674034fae4d314b561ff68, type: 3}
+  image: {fileID: 2800000, guid: 1897d210417f8044b969c245f1959626, type: 3}
+  purchases: {fileID: 11400000, guid: 242b71be86321f04aba9bb4fdbaec2d4, type: 2}

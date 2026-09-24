@@ -1,0 +1,229 @@
+﻿[
+  {
+    "text": "Здорово! Смотрела вчера «Дикарку»? Боже, представь: Росаура входит в поместье Аристименди прямо с Панорамы. Волосы — идеально прямые, макияж роскошный, а платье — настоящая стилевая бомба! Аристименди застыли, Луис Марио чуть не плачет от шока. Росаура бросает холодный взгляд: теперь командую я, а вы? Вы — никто. ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Жвачку мне",
+        "items": [
+          "Item_GumLoveIs",
+          "Item_GumHubbaBubba"
+        ]
+      },
+      {
+        "text": "Конфету мне",
+        "items": [
+          "Item_Zozole"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Привет! Не понимаю, какой идиот может смотреть эту «Дикарку». Росаура вечно играет напыщенную жертву, а вся драма — нереалистичная и слишком театральная. Её месть и любовь… очень дешёвого уровня. ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Некалорийную жвачку мне",
+        "items": [
+          "Item_GumDbz"
+        ]
+      },
+      {
+        "text": "Леденцы мне",
+        "items": [
+          "Item_CrazyDips"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Светит? Светит? ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Светит? Светит?",
+        "items": [
+          "Item_Alita"
+        ]
+      },
+      {
+        "text": "Светит? Ха-ха. Красиво светит",
+        "items": [
+          "Item_Alita"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Здорово. Иду на день рождения к подруге, ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "может, посоветуете, что взять в подарок?",
+        "items": [
+          "Item_Alita",
+          "Item_Balloon",
+          "Item_Zozole",
+          "Item_GumLoveIs"
+        ]
+      },
+      {
+        "text": "может, посоветуете что-нибудь смешное в подарок?",
+        "items": [
+          "Item_Colgate",
+          "Item_SoapUkinis"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Здорово. Вчера пробовала такой интересный коктейль. Спрайт и сироп от кашля. ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Может, посоветуете что-нибудь похожее?",
+        "items": [
+          "Item_Alita",
+          "Item_Selita",
+          "Item_Aspirin",
+          "Item_ACC",
+          "Item_SodaBuratinas"
+        ]
+      },
+      {
+        "text": "А можно аспирин?",
+        "items": [
+          "Item_Aspirin"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Привет. Говорят, у TicTac всего две калории. Хотелось бы чего-нибудь посытнее, ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Может, есть что-нибудь на 5-15 калорий?",
+        "items": [
+          "Item_GumDbz"
+        ]
+      },
+      {
+        "text": "Может, есть что-нибудь на 10-20 калорий?",
+        "items": [
+          "Item_GumLoveIs"
+        ]
+      },
+      {
+        "text": "Может, есть что-нибудь на 25-30 калорий?",
+        "items": [
+          "Item_GumHubbaBubba"
+        ]
+      },
+      {
+        "text": "может, есть что-нибудь на 50-70 калорий?",
+        "items": [
+          "Item_CrazyDips",
+          "Item_Zozole"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Привет. Знаешь, вчера читала свой гороскоп и поняла, что обязана кое-что купить. Я ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Рак.",
+        "items": [
+          "Item_GumLoveIs",
+          "Item_Selita",
+          "Item_Durex"
+        ]
+      },
+      {
+        "text": "Скорпион.",
+        "items": [
+          "Item_Durex",
+          "Item_Alus",
+          "Item_Alita"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Здорово. Выгнала мужа из дома. ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Может, зайдёшь?",
+        "items": [
+          "Item_Durex",
+          "Item_Alita"
+        ]
+      },
+      {
+        "text": "Голова болит, настроение в вафлю.",
+        "items": [
+          "Item_Aspirin",
+          "Item_Alus"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Проблема. Застряла на рынке ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "и мужу ничего не приготовлено",
+        "items": [
+          "Item_Alus",
+          "Item_Durex"
+        ]
+      },
+      {
+        "text": "и детям, блин, ничего не купила",
+        "items": [
+          "Item_Balloon",
+          "Item_GumDbz",
+          "Item_BubbleTubeBlower",
+          "Item_CrazyDips",
+          "Item_GumHubbaBubba",
+          "Item_GumLoveIs",
+          "Item_SodaBuratinas",
+          "Item_Zozole"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Здорово. Придёшь на собрание подъезда? ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "Мыло кончилось",
+        "items": [
+          "Item_SoapUkinis"
+        ]
+      },
+      {
+        "text": "Я по тебе скучаю",
+        "items": [
+          "Item_Durex",
+          "Item_GumLoveIs"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Ну кошмар, свидание коту под хвост, ${KEYWORD}",
+    "keywords": [
+      {
+        "text": "сказал, что изо рта несёт",
+        "items": [
+          "Item_SoapUkinis",
+          "Item_Colgate"
+        ]
+      },
+      {
+        "text": "может, хоть кого-нибудь утешу...",
+        "items": [
+          "Item_Durex",
+          "Item_Alita",
+          "Item_Alus"
+        ]
+      }
+    ]
+  }
+]

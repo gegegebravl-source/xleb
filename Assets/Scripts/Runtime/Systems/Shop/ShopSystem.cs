@@ -1,0 +1,420 @@
+﻿using System;
+using System.Collections.Generic;
+using CHARK.GameManagement;
+using CHARK.GameManagement.Systems;
+using UABPetelnia.GGJ2025.Runtime.Settings;
+using UABPetelnia.GGJ2025.Runtime.Systems.Delivery;
+using UABPetelnia.GGJ2025.Runtime.Systems.Players;
+using UABPetelnia.GGJ2025.Runtime.Systems.Scenes;
+using UnityEngine;
+
+namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
+{
+    /// <summary>
+    /// The kiosk economy. The catalogue comes from <see cref="GameplaySettings.AvailableItems"/>,
+    /// buying in costs a fraction of the sale price and everything arrives after a short delay, so
+    /// the shelves are limited by what the shopkeeper has actually ordered.
+    /// </summary>
+    internal sealed class ShopSystem : MonoSystem, IShopSystem, IUpdateListener
+    {
+        [Header("Data")]
+        [SerializeField]
+        private GameplaySettings gameplaySettings;
+
+        [Header("Stock")]
+        [Min(0)]
+        [SerializeField]
+        private int initialStock = 6;
+
+        [Header("Deliveries")]
+        [Min(0f)]
+        [SerializeField]
+        private float deliveryTravelSeconds = 25f;
+
+        [Min(0f)]
+        [SerializeField]
+        [Range(0.05f, 1f)]
+        private float purchasePriceFactor = 0.5f;
+
+        private readonly List<ShopProduct> products = new();
+        private readonly List<ShopDeliveryOrder> orders = new();
+        private readonly List<ShopCartLine> cart = new();
+
+        private IPlayerSystem playerSystem;
+        private int nextOrderId;
+        private bool isCatalogueBuilt;
+
+        public IReadOnlyList<ShopProduct> Products
+        {
+            get
+            {
+                EnsureCatalogue();
+
+                return products;
+            }
+        }
+
+        public IReadOnlyList<ShopDeliveryOrder> Orders => orders;
+
+        public IReadOnlyList<ShopCartLine> Cart => cart;
+
+        public int Balance => playerSystem?.Player?.Cents ?? 0;
+
+        public int CartTotalQuantity
+        {
+            get
+            {
+                var total = 0;
+
+                for (var index = 0; index < cart.Count; index++)
+                {
+                    total += cart[index].Quantity;
+                }
+
+                return total;
+            }
+        }
+
+        public int CartTotalCost
+        {
+            get
+            {
+                var total = 0;
+
+                for (var index = 0; index < cart.Count; index++)
+                {
+                    total += cart[index].Cost;
+                }
+
+                return total;
+            }
+        }
+
+        public float SecondsToNextArrival
+        {
+            get
+            {
+                if (orders.Count <= 0)
+                {
+                    return 0f;
+                }
+
+                var seconds = float.MaxValue;
+
+                for (var index = 0; index < orders.Count; index++)
+                {
+                    var order = orders[index];
+                    if (order == null)
+                    {
+                        continue;
+                    }
+
+                    if (order.SecondsLeft < seconds)
+                    {
+                        seconds = order.SecondsLeft;
+                    }
+                }
+
+                return seconds == float.MaxValue ? 0f : seconds;
+            }
+        }
+
+        public float DeliveryTravelSeconds => deliveryTravelSeconds;
+
+        public event Action Changed;
+
+        public override void OnInitialized()
+        {
+            playerSystem = GameManager.GetSystem<IPlayerSystem>();
+
+            GameManager.AddListener<SceneLoadEnteredMessage>(OnSceneLoadEntered);
+        }
+
+        public override void OnDisposed()
+        {
+            GameManager.RemoveListener<SceneLoadEnteredMessage>(OnSceneLoadEntered);
+        }
+
+        public void OnUpdated(float deltaTime)
+        {
+            if (orders.Count <= 0)
+            {
+                return;
+            }
+
+            var hasArrived = false;
+
+            for (var index = orders.Count - 1; index >= 0; index--)
+            {
+                var order = orders[index];
+                if (order.SecondsLeft > 0f)
+                {
+                    continue;
+                }
+
+                // Товар приехал: он лежит в коробке курьера и на полки сам не попадает.
+                for (var lineIndex = 0; lineIndex < order.Lines.Count; lineIndex++)
+                {
+                    var line = order.Lines[lineIndex];
+                    line.Product.Stock += line.Quantity;
+                    line.Product.InTransit -= line.Quantity;
+                }
+
+                orders.RemoveAt(index);
+
+                GameManager.Publish(new DeliveryArrivedMessage(order));
+
+                hasArrived = true;
+            }
+
+            if (hasArrived)
+            {
+                Changed?.Invoke();
+            }
+        }
+
+        public bool TryGetProduct(ItemData item, out ShopProduct product)
+        {
+            product = default;
+
+            if (item == false)
+            {
+                return false;
+            }
+
+            EnsureCatalogue();
+
+            foreach (var candidate in products)
+            {
+                if (candidate.Item == item)
+                {
+                    product = candidate;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Положить товар в корзину. Деньги не списываются: заказ оплачивается целиком
+        /// кнопкой «Заказать» в ПК, чтобы курьер приехал один раз с одной коробкой.
+        /// </summary>
+        public bool TryAddToCart(ItemData item, int quantity, out string error)
+        {
+            error = default;
+
+            if (quantity <= 0)
+            {
+                error = "bad_quantity";
+                return false;
+            }
+
+            if (TryGetProduct(item, out var product) == false)
+            {
+                error = "unknown_product";
+                return false;
+            }
+
+            var line = FindCartLine(product);
+            if (line != null)
+            {
+                line.Quantity += quantity;
+            }
+            else
+            {
+                cart.Add(new ShopCartLine(product, quantity));
+            }
+
+            Changed?.Invoke();
+
+            return true;
+        }
+
+        public bool TryRemoveFromCart(ItemData item, int quantity, out string error)
+        {
+            error = default;
+
+            if (TryGetProduct(item, out var product) == false)
+            {
+                error = "unknown_product";
+                return false;
+            }
+
+            var line = FindCartLine(product);
+            if (line == null)
+            {
+                error = "not_in_cart";
+                return false;
+            }
+
+            line.Quantity -= Mathf.Max(1, quantity);
+            if (line.Quantity <= 0)
+            {
+                cart.Remove(line);
+            }
+
+            Changed?.Invoke();
+
+            return true;
+        }
+
+        public void ClearCart()
+        {
+            if (cart.Count <= 0)
+            {
+                return;
+            }
+
+            cart.Clear();
+
+            Changed?.Invoke();
+        }
+
+        /// <summary>
+        /// Оплатить корзину: списать деньги и отправить один заказ. Один заказ — один курьер
+        /// и одна коробка со всеми позициями.
+        /// </summary>
+        public bool TrySubmitCart(out string error)
+        {
+            error = default;
+
+            if (cart.Count <= 0)
+            {
+                error = "empty_cart";
+                return false;
+            }
+
+            var player = playerSystem?.Player;
+            if (player == null)
+            {
+                error = "no_player";
+                return false;
+            }
+
+            var total = CartTotalCost;
+            if (total <= 0)
+            {
+                error = "bad_cost";
+                return false;
+            }
+
+            if (player.Cents < total)
+            {
+                error = "not_enough_money";
+                return false;
+            }
+
+            player.Cents -= total;
+
+            var lines = new List<ShopDeliveryLine>(cart.Count);
+
+            foreach (var cartLine in cart)
+            {
+                cartLine.Product.InTransit += cartLine.Quantity;
+                lines.Add(new ShopDeliveryLine(cartLine.Product, cartLine.Quantity));
+            }
+
+            cart.Clear();
+
+            orders.Add(
+                new ShopDeliveryOrder(
+                    id: $"order-{nextOrderId++}",
+                    lines: lines,
+                    cost: total,
+                    arrivalTimeSeconds: Time.time + deliveryTravelSeconds
+                )
+            );
+
+            Changed?.Invoke();
+
+            return true;
+        }
+
+        private ShopCartLine FindCartLine(ShopProduct product)
+        {
+            for (var index = 0; index < cart.Count; index++)
+            {
+                if (cart[index].Product == product)
+                {
+                    return cart[index];
+                }
+            }
+
+            return default;
+        }
+
+        public bool TryTakeFromStock(ItemData item)
+        {
+            if (TryGetProduct(item, out var product) == false || product.Stock <= 0)
+            {
+                return false;
+            }
+
+            product.Stock--;
+
+            Changed?.Invoke();
+
+            return true;
+        }
+
+        private void OnSceneLoadEntered(SceneLoadEnteredMessage message)
+        {
+            // Каталог строится один раз и НЕ пересобирается на каждой загрузке сцены:
+            // иначе оплаченные доставки в пути и остатки склада стираются.
+            EnsureCatalogue();
+        }
+
+        /// <summary>
+        /// Build the catalogue if nobody has asked for it yet.
+        /// </summary>
+        /// <remarks>
+        /// Shelf slots fill themselves while a scene is still loading, which can be earlier than
+        /// the scene load message. Reading the catalogue before it was built would answer "unknown
+        /// product" to every item and leave the kiosk open with empty shelves.
+        /// </remarks>
+        private void EnsureCatalogue()
+        {
+            if (isCatalogueBuilt)
+            {
+                return;
+            }
+
+            RebuildCatalogue();
+        }
+
+        private void RebuildCatalogue()
+        {
+            isCatalogueBuilt = true;
+
+            products.Clear();
+            orders.Clear();
+
+            nextOrderId = 0;
+
+            if (gameplaySettings == false)
+            {
+                return;
+            }
+
+            foreach (var item in gameplaySettings.AvailableItems)
+            {
+                if (item == false)
+                {
+                    continue;
+                }
+
+                var purchasePrice = Mathf.Max(1, Mathf.RoundToInt(item.Cents * purchasePriceFactor));
+
+                products.Add(new ShopProduct(item, purchasePrice)
+                {
+                    Stock = initialStock,
+                });
+            }
+
+            Debug.Log($"[Shop] Каталог собран: товаров {products.Count}, запас по {initialStock} шт.");
+
+            Changed?.Invoke();
+        }
+    }
+}

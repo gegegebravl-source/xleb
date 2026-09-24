@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2f7362d7d140a8813617b29c68b8d0, type: 3}
+  m_Name: Data_Item_KruzhkaChaya
+  m_EditorClassIdentifier: UABPetelnia.GGJ2025::UABPetelnia.GGJ2025.Runtime.Settings.ItemData
+  price: 500
+  displayName: "\u041A\u0440\u0443\u0436\u043A\u0430 \u0447\u0430\u044F"
+  image: {fileID: 2800000, guid: 57c5755e4fe3cf643af585654c5bca49, type: 3}
+  displayHeight: 0.16

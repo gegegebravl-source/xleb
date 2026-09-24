@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45155a9e630c4927ada817847d40c564, type: 3}
+  m_Name: Settings_Gameplay
+  m_EditorClassIdentifier: 
+  availableShoppers:
+  - {fileID: 11400000, guid: 14afea4d2fa34ec44a0e38247332e876, type: 2}
+  - {fileID: 11400000, guid: 5c07c7c434bda484197a207be874aca6, type: 2}
+  - {fileID: 11400000, guid: 5a53d9cc2c309574b99241b66659a70a, type: 2}
+  - {fileID: 11400000, guid: ef4ab7fad3380dd4ea4f3116c85c1283, type: 2}
+  - {fileID: 11400000, guid: ade73752d9eb7694c8bbe240fe795618, type: 2}
+  - {fileID: 11400000, guid: d4d4f5f89f038c14fa59f5ccae16e59d, type: 2}
+  - {fileID: 11400000, guid: 1eea772aabf7b6546933f545ee8eb90e, type: 2}
+  - {fileID: 11400000, guid: 4f8e7788e25f66249bc362ace98d9b41, type: 2}
+  - {fileID: 11400000, guid: a7f6dcc5de41aa74c9220cb807005314, type: 2}
+  - {fileID: 11400000, guid: e88ff5e51e316884d96b50ae1bdf119c, type: 2}
+  availableItems:
+  - {fileID: 11400000, guid: 72020ec0dfe286a429a66e4a2e94ee62, type: 2}
+  - {fileID: 11400000, guid: ce3cbe4343c90ee4485704202b12d020, type: 2}
+  - {fileID: 11400000, guid: 2d273ff84cb579548baa8e619de975db, type: 2}
+  - {fileID: 11400000, guid: 2a3629b18e96c9044aa19fcc5d8e3892, type: 2}
+  - {fileID: 11400000, guid: cc8debb0c78630c409b8981a3f871247, type: 2}
+  - {fileID: 11400000, guid: 4ccaf46165f472e4299669290d88a41d, type: 2}
+  - {fileID: 11400000, guid: ea65881a8ba18f04cbe706e7ac7e4458, type: 2}
+  - {fileID: 11400000, guid: 6728c2cb1e80d7845b9607613420df69, type: 2}
+  - {fileID: 11400000, guid: 384e0a13927803f46bd3943a3f8ee317, type: 2}
+  - {fileID: 11400000, guid: 991c5a7d90ea3894d8f9d2e34245e903, type: 2}
+  - {fileID: 11400000, guid: 9fc2dd80897834440a05db55254b115e, type: 2}
+  - {fileID: 11400000, guid: 04fcf23ca0a9cbe458eb42e6f9338b1a, type: 2}
+  - {fileID: 11400000, guid: 359ee535b4d02194eab0ae7d01dad32d, type: 2}
+  - {fileID: 11400000, guid: 9b4bda098ea53224ba2474e72c92c44e, type: 2}
+  - {fileID: 11400000, guid: 8023b9585305f5e44880ea79b48cd89b, type: 2}
+  - {fileID: 11400000, guid: b221a383fdb858548b47265abe5f242d, type: 2}
+  - {fileID: 11400000, guid: 01909233e3340f242affdc824f410b46, type: 2}
+  - {fileID: 11400000, guid: 820a064bd446b174c914e082ca18aa0c, type: 2}
+  - {fileID: 11400000, guid: 4afa76aff01557b459fe3ce8d2963681, type: 2}
+  - {fileID: 11400000, guid: 13eea9ccb1d8f81478003a8da4f016ae, type: 2}
+  - {fileID: 11400000, guid: 1cac5432d2f9718448ef9c46ffb0ce39, type: 2}
+  - {fileID: 11400000, guid: c50ff5af948dc2e48835a87420cc70cb, type: 2}
+  - {fileID: 11400000, guid: c499ab930999db7429c8d6da5b4c5d0d, type: 2}
+  - {fileID: 11400000, guid: f1c4c6ef4d598074d89c4b363a15eb60, type: 2}
+  - {fileID: 11400000, guid: cb1b48ffe7d78774eaf120733b179d1f, type: 2}
+  - {fileID: 11400000, guid: a7921f6f604706b4aaa72d0ef7312d1f, type: 2}
+  - {fileID: 11400000, guid: e9dae3439a5eaba4db0e8692c8f52b20, type: 2}
+  - {fileID: 11400000, guid: be93e27db315b7341a2de8cbf9c7f5d5, type: 2}
+  - {fileID: 11400000, guid: c2b20fb9905fc2d42aa1d124dc015f65, type: 2}
+  - {fileID: 11400000, guid: 88811fe3ad064f04cad99ce87afeff12, type: 2}
+  - {fileID: 11400000, guid: 2acadc075a97723418f45dc4dfbe12ad, type: 2}
+  - {fileID: 11400000, guid: b5d310181741d524b903a859bb89f843, type: 2}
+  - {fileID: 11400000, guid: e989407a44900a24484c9796db302619, type: 2}
+  - {fileID: 11400000, guid: 67e1971df701cfd4093100b86bb1541c, type: 2}
+  - {fileID: 11400000, guid: 413728ead4360cc43a4661a5cc0355fc, type: 2}
+  - {fileID: 11400000, guid: 111cd051c46dce747a25ae6a96eee347, type: 2}
+  - {fileID: 11400000, guid: 9675abd1d194b4a4688c1242ebdb07c6, type: 2}
+  - {fileID: 11400000, guid: 0835d38d261861a49854cdb2dab97f70, type: 2}
+  - {fileID: 11400000, guid: 79e5fe41eab6a9d4ba68b99908caf92c, type: 2}
+  - {fileID: 11400000, guid: 641c97cfecdc1644890385fb06eb914d, type: 2}
+  - {fileID: 11400000, guid: aa26a0a72f73ce043a2f907c57a753b0, type: 2}
+  - {fileID: 11400000, guid: 8818d5e367d3c7240809f339aa543fc0, type: 2}
+  - {fileID: 11400000, guid: 4b102eaf284a7964492036abb2d9e7cf, type: 2}
+  spawnDelayRange: {x: 1, y: 3}
+  rantDurationRange: {x: 1.5, y: 3}
+  patienceDurationSeconds: 20
+  shiftStartHour: 9
+  shiftEndHour: 20
+  gameMinutesPerRealSecond: 2
+  productSizeMultiplier: 1.7
+  minProductHeight: 0.26
+  maxProductHeight: 0.52

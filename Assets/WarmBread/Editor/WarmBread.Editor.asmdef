@@ -1,0 +1,6 @@
+{
+  "name": "WarmBread.Editor",
+  "references": ["WarmBread.Runtime"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

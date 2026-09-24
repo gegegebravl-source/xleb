@@ -1,0 +1,35 @@
+{
+  "name": "com.luca3317.tmpeffects",
+  "description": "Easily animate text and apply other kinds of effects to your TextMeshPro texts using custom tags",
+  "version": "0.2.1",
+  "unity": "2021.3",
+  "displayName": "TMPEffects",
+  "author": { "name": "Luca3317", "url": "https://github.com/Luca3317" },
+  "dependencies": {
+    "com.unity.textmeshpro": "3.0.6"
+  },
+  "documentationUrl": "https://luca3317.github.io/TMPEffects-Pages",
+  "license": "MIT",
+  "keywords": [
+    "textmeshpro",
+    "text",
+    "tmp",
+    "animation",
+    "writer",
+    "effect",
+    "tags",
+    "custom-tags"
+  ],
+  "samples": [
+    {
+      "displayName": "Example Scene Animations",
+      "description": "Contains exemplary scene animations",
+      "path": "Samples~/Example SceneAnimations"
+    },
+    {
+      "displayName": "Example Scenes",
+      "description": "Example Scenes",
+      "path": "Samples~/Example Scenes"
+    }
+  ]
+}

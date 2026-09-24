@@ -1,0 +1,7 @@
+{
+  "name": "WarmBread.Runtime",
+  "rootNamespace": "WarmBread",
+  "references": ["Unity.Newtonsoft.Json", "Unity.TextMeshPro", "UnityEngine.UI"],
+  "autoReferenced": true,
+  "noEngineReferences": false
+}

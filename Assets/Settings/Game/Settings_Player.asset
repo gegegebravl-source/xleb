@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79fe642011dc4bf4a9a62b45432de49e, type: 3}
+  m_Name: Settings_Player
+  m_EditorClassIdentifier: 
+  zoomInSpeed: 7
+  zoomInFov: 40
+  cameraShakeForce: {x: 0, y: 0, z: -0.3}
+  data:
+    raycastDistance: 5
+    raycastRadius: 0.14
+    raycastLayer:
+      serializedVersion: 2
+      m_Bits: 64
+    queryTriggerInteraction: 1
+    raycastColor: {r: 1, g: 0, b: 0, a: 1}
+  healthStateTextures:
+  - {fileID: 2800000, guid: e9e7e5b237cc9a64cb8cf5d07c337a85, type: 3}
+  - {fileID: 2800000, guid: ff9ff36bc2d81f34a87009bf7f4207cd, type: 3}
+  - {fileID: 2800000, guid: f58d2c9aedd88fd4eb5d38bd4df4912a, type: 3}
+  - {fileID: 2800000, guid: 65a2d72eb6cb15841bed198c5062a99d, type: 3}
+  moveSpeed: 5
+  goalCents: 10000

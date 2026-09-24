@@ -1,0 +1,131 @@
+{
+  "character": "Курьер с велосипедом",
+  "status": "draft",
+  "generated_view_count": 5,
+  "canvas_size": [
+    1024,
+    1024
+  ],
+  "source_sheet_size": [
+    828,
+    185
+  ],
+  "source": "generated sheet; cropped and rescaled, not native 1024-pixel renders",
+  "orientation": "source order; no exact yaw angles assigned",
+  "views": [
+    {
+      "index": 1,
+      "file": "view_01.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        0,
+        0,
+        170,
+        185
+      ],
+      "native_size": [
+        157,
+        181
+      ],
+      "scale_to_frame": 4.950276,
+      "frame_position": [
+        123,
+        64
+      ]
+    },
+    {
+      "index": 2,
+      "file": "view_02.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        170,
+        0,
+        316,
+        185
+      ],
+      "native_size": [
+        143,
+        182
+      ],
+      "scale_to_frame": 4.923077,
+      "frame_position": [
+        160,
+        64
+      ]
+    },
+    {
+      "index": 3,
+      "file": "view_03.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        316,
+        0,
+        482,
+        185
+      ],
+      "native_size": [
+        147,
+        181
+      ],
+      "scale_to_frame": 4.950276,
+      "frame_position": [
+        148,
+        64
+      ]
+    },
+    {
+      "index": 4,
+      "file": "view_04.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        482,
+        0,
+        647,
+        185
+      ],
+      "native_size": [
+        160,
+        181
+      ],
+      "scale_to_frame": 4.950276,
+      "frame_position": [
+        116,
+        64
+      ]
+    },
+    {
+      "index": 5,
+      "file": "view_05.png",
+      "source": "generated_sheet_crop",
+      "source_crop": [
+        647,
+        0,
+        828,
+        185
+      ],
+      "native_size": [
+        166,
+        182
+      ],
+      "scale_to_frame": 4.923077,
+      "frame_position": [
+        103,
+        64
+      ]
+    },
+    {
+      "index": 6,
+      "file": "view_06_original_reference.png",
+      "source": "original_reference_not_new_generation",
+      "native_size": [
+        1187,
+        1262
+      ],
+      "scale_to_frame": 0.709984,
+      "frame_position": [
+        90,
+        64
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "com.chark.scriptable-scenes",
+  "displayName": "Scriptable Scenes",
+  "author": {
+    "name": "CHARK",
+    "url": "https://chark.io"
+  },
+  "version": "0.0.10",
+  "unity": "2022.3",
+  "description": "Simple scene loading and management system for Unity Engine, implemented via scriptable objects.",
+  "keywords": [
+    "scenes",
+    "scriptableobject",
+    "unity",
+    "architecture"
+  ],
+  "samples": [
+    {
+      "displayName": "Defaults",
+      "description": "Sample which can be used as a starting point for this package.\n\nMake sure to update Build Settings with the following Scenes:\n • SetupScene (0)\n • PlayScene (1)",
+      "path": "Samples~/Defaults"
+    },
+    {
+      "displayName": "Multiple Scenes",
+      "description": "Complete sample which demonstrates on how to prepare multiple Collections with a loading Screen.\n\nMake sure to update Build Settings with the following Scenes:\n • SetupScene (0)\n • MenuScene (1)\n • PlayScene (2)",
+      "path": "Samples~/MultipleScenes"
+    }
+  ]
+}

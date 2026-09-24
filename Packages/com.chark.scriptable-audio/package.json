@@ -1,0 +1,19 @@
+{
+  "name": "com.chark.scriptable-audio",
+  "displayName": "Scriptable Audio",
+  "author": {
+    "name": "CHARK",
+    "url": "https://chark.io"
+  },
+  "version": "0.0.1",
+  "unity": "2020.3",
+  "description": "Audio system using Scriptable Objects",
+  "keywords": [
+    "audio",
+    "scriptableobject",
+    "unity",
+    "architecture"
+  ],
+  "samples": [
+  ]
+}

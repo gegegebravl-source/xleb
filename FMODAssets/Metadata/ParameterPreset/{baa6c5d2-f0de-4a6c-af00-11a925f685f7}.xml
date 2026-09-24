@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{baa6c5d2-f0de-4a6c-af00-11a925f685f7}">
+		<property name="name">
+			<value>FastPacedLFO</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9f73514a-424d-42cf-b95f-9aaada27cefb}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{78fbcab7-6442-41cb-87a8-c2a084406325}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{78fbcab7-6442-41cb-87a8-c2a084406325}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{6915324f-4796-431b-ba43-b027391db152}</destination>
+		</relationship>
+	</object>
+	<object class="LFOModulator" id="{6915324f-4796-431b-ba43-b027391db152}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>cursorPosition</value>
+		</property>
+		<property name="shape">
+			<value>6</value>
+		</property>
+		<property name="rate">
+			<value>1.60000002</value>
+		</property>
+		<property name="depth">
+			<value>14.5</value>
+		</property>
+		<property name="direction">
+			<value>100</value>
+		</property>
+		<relationship name="automators">
+			<destination>{6ad8415d-7967-4caa-be15-4f48029d314b}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{6ad8415d-7967-4caa-be15-4f48029d314b}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>depth</value>
+		</property>
+		<relationship name="automationCurves">
+			<destination>{3bd8683a-78e6-4261-950e-01acdfa67187}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationCurve" id="{3bd8683a-78e6-4261-950e-01acdfa67187}">
+		<relationship name="parameter">
+			<destination>{e0186768-b754-4ce6-9497-7f5a30529f5f}</destination>
+		</relationship>
+		<relationship name="automationPoints">
+			<destination>{bd92cd16-4c65-4a87-9857-f0aba92197b3}</destination>
+			<destination>{cabf08e7-6dd7-4117-81b5-50488b2f184a}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationPoint" id="{bd92cd16-4c65-4a87-9857-f0aba92197b3}">
+		<property name="position">
+			<value>0.0070621468926553672</value>
+		</property>
+		<property name="value">
+			<value>14.5</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{cabf08e7-6dd7-4117-81b5-50488b2f184a}">
+		<property name="position">
+			<value>1</value>
+		</property>
+		<property name="value">
+			<value>100</value>
+		</property>
+	</object>
+</objects>

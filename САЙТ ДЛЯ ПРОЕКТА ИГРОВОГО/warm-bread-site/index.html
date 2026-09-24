@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#17100c">
+  <meta name="color-scheme" content="light">
+  <title>Тёплый хлеб — туда, где тебя помнят</title>
+  <meta name="description" content="Тёплый хлеб — атмосферная игра о маленьком хлебном ларьке, живом районе и России начала 2000-х. Продажи, поставки, склад, отношения, истории и одна длинная смена с 06:00 до 20:00.">
+  <meta property="og:title" content="Тёплый хлеб — туда, где тебя помнят">
+  <meta property="og:description" content="Один маленький ларёк. Одна длинная смена. И целый район по ту сторону окошка.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/hero-bread.webp">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="assets/hero-door.webp" as="image" type="image/webp">
+  <link rel="preload" href="assets/hero-bread.webp" as="image" type="image/webp">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Перейти к содержимому</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="paper-noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Тёплый хлеб — на главную">
+      <span class="brand-seal" aria-hidden="true">✦</span>
+      <span class="brand-copy"><b>ТЁПЛЫЙ ХЛЕБ</b><small>туда, где тебя помнят</small></span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Основная навигация">
+      <a href="#about">Об игре</a>
+      <a href="#gameplay">Смена</a>
+      <a href="#people">Люди</a>
+      <a href="#era">2000-е</a>
+      <a href="#gallery">Галерея</a>
+    </nav>
+    <button class="cta header-cta js-store">В желаемое</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main id="content">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-haze" aria-hidden="true"></div>
+      <div class="hero-grid section-shell">
+        <div class="hero-copy reveal">
+          <div class="kicker"><span class="live-dot"></span> Игра в разработке · Россия, 2000</div>
+          <h1 id="heroTitle">Тёплый <span>хлеб</span></h1>
+          <p class="hero-tagline">Туда, где тебя помнят.</p>
+          <p class="hero-lead">Один маленький хлебный ларёк. Одна длинная смена. И целый район по ту сторону окошка — со своими привычками, просьбами, разговорами и маленькими историями.</p>
+          <div class="hero-actions">
+            <a class="cta cta-primary" href="#about"><span>Открыть ларёк</span><i>→</i></a>
+            <button class="cta cta-ghost js-store"><span>Страница игры</span><i>↗</i></button>
+          </div>
+          <div class="hero-facts" aria-label="Ключевые особенности игры">
+            <div><strong>06:00—20:00</strong><span>живая смена и расписания</span></div>
+            <div><strong>Район</strong><span>отношения и постоянные покупатели</span></div>
+            <div><strong>2000-е</strong><span>предметы, техника и настроение эпохи</span></div>
+          </div>
+        </div>
+
+        <div class="hero-scene reveal delay-1" aria-label="Атмосферная композиция с хлебом и входом в ларёк">
+          <div class="hero-orbit orbit-1" aria-hidden="true"></div>
+          <div class="hero-orbit orbit-2" aria-hidden="true"></div>
+          <div class="sun-disc" aria-hidden="true"></div>
+          <img class="hero-door parallax" data-depth="12" src="assets/hero-door.webp" alt="Тёпло освещённая дверь небольшого хлебного ларька">
+          <img class="hero-bread parallax" data-depth="20" src="assets/hero-bread.webp" alt="Свежая буханка хлеба на деревянной доске">
+          <div class="steam steam-1" aria-hidden="true"></div>
+          <div class="steam steam-2" aria-hidden="true"></div>
+          <div class="steam steam-3" aria-hidden="true"></div>
+          <div class="hero-ticket">
+            <small>12.04.2000</small>
+            <b>СВЕЖЕЕ ПОСТУПЛЕНИЕ</b>
+            <span>к открытию · 06:00</span>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Прокрутить к описанию игры"><span></span>листайте ниже</a>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>СВЕЖИЙ ХЛЕБ</span><i>✦</i><span>ЗНАКОМЫЕ ЛИЦА</span><i>✦</i><span>ДОЖДЬ ЗА ОКНОМ</span><i>✦</i><span>СТАРЫЙ CRT</span><i>✦</i><span>ПЕРВАЯ СДАЧА</span><i>✦</i><span>СВЕЖИЙ ХЛЕБ</span><i>✦</i><span>ЗНАКОМЫЕ ЛИЦА</span><i>✦</i><span>ДОЖДЬ ЗА ОКНОМ</span><i>✦</i><span>СТАРЫЙ CRT</span><i>✦</i><span>ПЕРВАЯ СДАЧА</span><i>✦</i>
+      </div>
+    </div>
+
+    <section class="story section-pad" id="about">
+      <div class="section-shell story-grid">
+        <figure class="story-visual reveal">
+          <div class="photo-board">
+            <img src="assets/photo.webp" alt="Старая фотография автомобиля во дворе, вставленная в потёртую рамку" loading="lazy">
+            <span class="tape tape-a" aria-hidden="true"></span>
+            <span class="tape tape-b" aria-hidden="true"></span>
+          </div>
+          <figcaption>Вещи остаются. Люди меняются. Район помнит.</figcaption>
+        </figure>
+        <div class="story-copy reveal delay-1">
+          <div class="section-label">Не просто симулятор кассы</div>
+          <h2>Это история <em>места</em>, которое знает район по именам.</h2>
+          <p class="lead">Вы открываете ларёк утром, принимаете поставки, следите за остатками, продаёте хлеб и слушаете тех, кто заходит по дороге на работу, домой или просто поговорить.</p>
+          <p>Смена собирается из мелочей: дождь задержал курьера, привычный батон закончился раньше времени, покупатель вспомнил прошлый разговор, очередь заметила вашу ошибку. Экономика, репутация, истории и отношения постепенно переплетаются.</p>
+          <blockquote>«В такие места приходили не только за хлебом.»</blockquote>
+          <div class="story-signature"><span>маленький ларёк</span><i></i><span>большая человеческая история</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pillars section-pad" id="gameplay" aria-labelledby="pillarsTitle">
+      <div class="section-shell">
+        <div class="section-head reveal">
+          <div><span class="section-label">Всё связано</span><h2 id="pillarsTitle">Маленький киоск — <span>большая система.</span></h2></div>
+          <p>Торговля, поставки, склад, деньги, журнал, отношения, погода и течение дня работают вместе — так, чтобы обычная смена ощущалась живой.</p>
+        </div>
+        <div class="pillar-grid">
+          <article class="pillar-card reveal"><span class="card-num">01</span><img src="assets/order.webp" alt="" loading="lazy"><h3>Продажа</h3><p>Собирайте заказ, следите за ценами и правильно считайте сдачу в час пик.</p><b>заказ · сдача · очередь</b></article>
+          <article class="pillar-card reveal delay-1"><span class="card-num">02</span><img src="assets/delivery.webp" alt="" loading="lazy"><h3>Поставки</h3><p>Планируйте закупки и встречайте курьера, пока район живёт своим расписанием.</p><b>заказ · дорога · прибытие</b></article>
+          <article class="pillar-card reveal"><span class="card-num">03</span><img src="assets/warehouse.webp" alt="" loading="lazy"><h3>Склад</h3><p>Пустая полка меняет не только цифры — она меняет то, что произойдёт у окошка.</p><b>остатки · списания · дефицит</b></article>
+          <article class="pillar-card reveal delay-1"><span class="card-num">04</span><img src="assets/balance.webp" alt="" loading="lazy"><h3>Экономика</h3><p>Продажи, закупки, возвраты и ошибки складываются в итог каждой смены.</p><b>выручка · расходы · баланс</b></article>
+          <article class="pillar-card reveal"><span class="card-num">05</span><img src="assets/journal.webp" alt="" loading="lazy"><h3>Истории</h3><p>Журнал открывает новые записи и помогает не потерять нити районных историй.</p><b>журнал · флаги · отношения</b></article>
+          <article class="pillar-card reveal delay-1"><span class="card-num">06</span><img src="assets/achievements.webp" alt="" loading="lazy"><h3>Репутация</h3><p>Люди замечают вашу работу, возвращаются и постепенно начинают доверять.</p><b>память · прогресс · достижения</b></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="day-section" aria-labelledby="dayTitle">
+      <div class="section-shell day-inner">
+        <div class="day-head reveal">
+          <span class="section-label light">Одна смена</span>
+          <h2 id="dayTitle">С 06:00 до 20:00 — <span>целая маленькая жизнь.</span></h2>
+          <p>Потяните ползунок и посмотрите, как меняется ритм дня.</p>
+        </div>
+        <div class="day-simulator reveal delay-1">
+          <div class="day-sky" id="daySky" aria-hidden="true"><span class="sky-sun"></span><span class="sky-horizon"></span></div>
+          <div class="day-panel">
+            <div class="day-clock"><small>Текущее время</small><strong id="dayTime">06:00</strong><span id="dayPhase">Открытие</span></div>
+            <div class="day-copy"><h3 id="dayHeading">Свет включается первым</h3><p id="dayDescription">Поднять ставни, проверить остатки, включить компьютер и успеть сделать первый чай до ранних покупателей.</p></div>
+            <div class="day-metrics" aria-label="Состояние смены"><div><span>Очередь</span><b id="metricQueue">низкая</b></div><div><span>Ритм</span><b id="metricTempo">тихий</b></div><div><span>Свет</span><b id="metricLight">рассвет</b></div></div>
+          </div>
+          <div class="range-wrap">
+            <input id="dayRange" type="range" min="0" max="4" step="1" value="0" aria-label="Время смены">
+            <div class="range-labels" aria-hidden="true"><span>06:00</span><span>09:30</span><span>13:00</span><span>17:40</span><span>20:00</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="manager section-pad" aria-labelledby="managerTitle">
+      <div class="section-shell manager-grid">
+        <div class="manager-copy reveal">
+          <span class="section-label">Рабочий компьютер</span>
+          <h2 id="managerTitle">Управление — будто <span>снова 2000-й.</span></h2>
+          <p>Заказы, доставка, выручка, склад, отчёт и настройки собраны в интерфейсе, который будто жил на старом CRT рядом с накладными и стаканом чая.</p>
+          <ul class="clean-list"><li>Заказывать товар и отслеживать доставку</li><li>Следить за остатками и ценами</li><li>Смотреть выручку и итог смены</li><li>Менять настройки без выхода из игры</li></ul>
+          <img class="pc-prop parallax" data-depth="8" src="assets/pc.webp" alt="Старый компьютер с CRT-монитором, клавиатурой и мышью" loading="lazy">
+        </div>
+
+        <div class="retro-wrap reveal delay-1">
+          <div class="retro-shadow" aria-hidden="true"></div>
+          <div class="retro-window" aria-label="Интерактивное превью интерфейса управления">
+            <div class="retro-titlebar"><span class="retro-app-icon">🍞</span><b>Тёплый хлеб — Управление</b><div class="window-buttons" aria-hidden="true"><i>_</i><i>□</i><i>×</i></div></div>
+            <div class="retro-body">
+              <div class="retro-sidebar" role="tablist" aria-label="Разделы управления">
+                <button class="retro-tab active" role="tab" aria-selected="true" data-panel="order"><img src="assets/order.webp" alt="">Заказ</button>
+                <button class="retro-tab" role="tab" aria-selected="false" data-panel="delivery"><img src="assets/delivery.webp" alt="">Доставка</button>
+                <button class="retro-tab" role="tab" aria-selected="false" data-panel="revenue"><img src="assets/balance.webp" alt="">Выручка</button>
+                <button class="retro-tab" role="tab" aria-selected="false" data-panel="stock"><img src="assets/warehouse.webp" alt="">Склад</button>
+                <button class="retro-tab" role="tab" aria-selected="false" data-panel="report"><img src="assets/report-icon.webp" alt="">Отчёт</button>
+                <button class="retro-tab" role="tab" aria-selected="false" data-panel="settings"><img src="assets/settings-icon.webp" alt="">Настройки</button>
+              </div>
+              <div class="retro-content">
+                <section class="retro-panel active" data-name="order">
+                  <fieldset class="win-group"><legend>Новый заказ</legend><label>Товар:<span>Хлеб пшеничный ▾</span></label><label>Количество:<span>3</span></label><label>Цена:<span>32,00 руб.</span></label><button type="button">Оформить заказ</button></fieldset>
+                  <div class="win-table"><b>№</b><b>Наименование</b><b>Кол-во</b><b>Сумма</b><div>1</div><div>Хлеб пшеничный</div><div>3</div><div>96,00</div><div>2</div><div>Батон нарезной</div><div>1</div><div>42,00</div><div>3</div><div>Ржаной хлеб</div><div>2</div><div>56,00</div></div>
+                </section>
+                <section class="retro-panel" data-name="delivery"><h3>Доставка</h3><p>Заказы в пути и ожидаемое время прибытия.</p><div class="old-progress"><span style="width:68%"></span></div><ul><li><span>Хлеб пшеничный</span><b>в пути · 13:20</b></li><li><span>Квас</span><b>ожидает подтверждения</b></li><li><span>Батон нарезной</span><b>доставлен · 09:04</b></li></ul></section>
+                <section class="retro-panel" data-name="revenue"><h3>Выручка за смену</h3><div class="big-number">1 284,00 ₽</div><div class="mini-chart" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p>Продажи, закупки и возвраты — в одном отчёте.</p></section>
+                <section class="retro-panel" data-name="stock"><h3>Склад</h3><div class="stock-list"><span>Хлеб пшеничный <b>12</b></span><span>Ржаной <b>8</b></span><span>Батон <b>5</b></span><span>Квас <b>7</b></span><span>Лимонад <b>4</b></span></div></section>
+                <section class="retro-panel" data-name="report"><h3>Отчёт смены</h3><p>Маржа, средний чек, списания, ошибки сдачи и очередь — всё, что пережила смена.</p><div class="report-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="report-stats"><span>Покупателей <b>47</b></span><span>Средний чек <b>31,20</b></span></div></section>
+                <section class="retro-panel" data-name="settings"><h3>Настройки</h3><div class="check-list"><label><input type="checkbox" checked> Субтитры</label><label><input type="checkbox" checked> Плёночное зерно</label><label><input type="checkbox"> Motion blur</label><label class="range-setting">Громкость радио <input type="range" value="72"></label></div></section>
+              </div>
+            </div>
+            <div class="retro-status"><span>12.04.2000</span><span class="green-bars">▮▮▮▮▮▮</span><span>Данные загружены</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="people section-pad" id="people" aria-labelledby="peopleTitle">
+      <div class="section-shell">
+        <div class="section-head reveal">
+          <div><span class="section-label">Люди района</span><h2 id="peopleTitle">Не «NPC». <span>Соседи.</span></h2></div>
+          <p>Кто-то появляется каждое утро. Кто-то — раз в неделю. У каждого свой темп, настроение и причины остановиться у окошка.</p>
+        </div>
+        <div class="people-track" id="peopleTrack">
+          <article class="person-card reveal featured"><div class="person-image"><span class="person-index">01</span><img src="assets/char-courier.webp" alt="Курьер с велосипедом и коробкой" loading="lazy"></div><div class="person-copy"><span>Доставка</span><h3>Курьер на велосипеде</h3><p>Спешит, но всегда знает, что происходит в соседних дворах.</p><b>появляется днём</b></div></article>
+          <article class="person-card reveal"><div class="person-image"><span class="person-index">02</span><img src="assets/char-student.png" alt="Студентка с CD-плеером" loading="lazy"></div><div class="person-copy"><span>Постоянная покупательница</span><h3>Студентка с CD-плеером</h3><p>Новые песни, старые диски и привычный батон после пар.</p><b>запоминает разговоры</b></div></article>
+          <article class="person-card reveal"><div class="person-image"><span class="person-index">03</span><img src="assets/char-grandma.png" alt="Пожилая покупательница с сумкой" loading="lazy"></div><div class="person-copy"><span>Утренний визит</span><h3>Соседка из дома напротив</h3><p>Помнит, кто работал здесь ещё до вас.</p><b>приходит рано</b></div></article>
+          <article class="person-card reveal"><div class="person-image"><span class="person-index">04</span><img src="assets/char-worker.png" alt="Работница магазина" loading="lazy"></div><div class="person-copy"><span>Район</span><h3>Знакомое лицо</h3><p>Иногда за хлебом. Иногда — просто спросить, как дела.</p><b>отношение меняется</b></div></article>
+          <article class="person-card reveal"><div class="person-image"><span class="person-index">05</span><img src="assets/char-musician.png" alt="Уличный музыкант с гитарой" loading="lazy"></div><div class="person-copy"><span>Вечер</span><h3>Музыкант у перехода</h3><p>Появляется, когда на улице уже зажигаются фонари.</p><b>своя сюжетная нить</b></div></article>
+          <article class="person-card reveal"><div class="person-image"><span class="person-index">06</span><img src="assets/char-business.png" alt="Деловой мужчина с портфелем" loading="lazy"></div><div class="person-copy"><span>Час пик</span><h3>Всегда спешит</h3><p>У него ровно две минуты — и привычный заказ.</p><b>не любит ждать</b></div></article>
+        </div>
+        <div class="people-hint" aria-hidden="true"><span>←</span> листайте персонажей <span>→</span></div>
+      </div>
+    </section>
+
+    <section class="era section-pad" id="era" aria-labelledby="eraTitle">
+      <div class="section-shell era-grid">
+        <div class="era-copy reveal">
+          <span class="section-label light">Россия начала 2000-х</span>
+          <h2 id="eraTitle">Не фильтр ретро.<br><span>Среда, в которой живёшь.</span></h2>
+          <p>Пейджер, дискеты, CD, старый системник, бутылка кваса, бумажные объявления, телевизор с помехами, рок-плакат на стене. Вещи здесь не декорируют эпоху — они собирают её из узнаваемых деталей.</p>
+          <div class="era-tags"><span>CRT</span><span>CD</span><span>Дискеты</span><span>Квас</span><span>Пейджер</span><span>Радио</span></div>
+        </div>
+        <div class="object-stage reveal delay-1" aria-label="Предметы эпохи">
+          <div class="object-halo" aria-hidden="true"></div>
+          <img class="era-object pager parallax" data-depth="7" src="assets/pager.webp" alt="Пейджер" loading="lazy">
+          <img class="era-object dvd parallax" data-depth="10" src="assets/dvd.webp" alt="Компакт-диски" loading="lazy">
+          <img class="era-object floppy parallax" data-depth="6" src="assets/floppy.webp" alt="Дискеты" loading="lazy">
+          <img class="era-object kvass parallax" data-depth="14" src="assets/kvass.webp" alt="Бутылка кваса" loading="lazy">
+          <img class="era-object soda parallax" data-depth="9" src="assets/buratino.webp" alt="Бутылка лимонада" loading="lazy">
+          <img class="era-object poster parallax" data-depth="4" src="assets/rock-poster.webp" alt="Старый рок-плакат" loading="lazy">
+          <img class="era-object lighter parallax" data-depth="5" src="assets/lighter.webp" alt="Старая зажигалка" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="tv-section section-pad" aria-labelledby="tvTitle">
+      <div class="section-shell tv-grid">
+        <div class="tv-copy reveal">
+          <span class="section-label">Телевизор в углу</span>
+          <h2 id="tvTitle">Канал шипит. <span>Район слушает.</span></h2>
+          <p>Старый телевизор живёт вместе со сменой: новости, прогноз погоды, реклама и концерт. Переключите канал прямо здесь.</p>
+          <div class="channel-buttons" role="group" aria-label="Каналы телевизора">
+            <button class="channel active" data-channel="news"><span>01</span> Новости</button>
+            <button class="channel" data-channel="weather"><span>02</span> Погода</button>
+            <button class="channel" data-channel="soda"><span>03</span> Реклама</button>
+            <button class="channel" data-channel="rock"><span>04</span> Рок</button>
+          </div>
+          <div class="tv-meta"><span class="red-led"></span><b id="tvMeta">ЭФИР · 18:42</b><small>аналоговый сигнал</small></div>
+        </div>
+        <div class="tv-stage reveal delay-1">
+          <div class="tv-aura" aria-hidden="true"></div>
+          <div class="tv-screen" id="tvScreen" aria-label="Анимированный экран телевизора"></div>
+          <img class="tv-shell" src="assets/tv-off.webp" alt="Старый CRT-телевизор" loading="lazy">
+          <div class="tv-reflection" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery section-pad" id="gallery" aria-labelledby="galleryTitle">
+      <div class="section-shell">
+        <div class="section-head light reveal">
+          <div><span class="section-label light">То, ради чего заходят</span><h2 id="galleryTitle">Хлеб должен выглядеть так, <span>будто он ещё тёплый.</span></h2></div>
+          <p>Ассортимент становится частью ритма смены: простые буханки, батоны и выпечка — узнаваемые, разные, живые.</p>
+        </div>
+        <div class="bread-grid">
+          <figure class="bread-card reveal"><div><img src="assets/bread-rye.webp" alt="Ржаной хлеб" loading="lazy"><span class="bread-badge">01</span></div><figcaption><b>Ржаной</b><span>тёмный, плотный, привычный</span></figcaption></figure>
+          <figure class="bread-card reveal delay-1"><div><img src="assets/bread-white.webp" alt="Пшеничный хлеб" loading="lazy"><span class="bread-badge">02</span></div><figcaption><b>Пшеничный</b><span>на каждый день</span></figcaption></figure>
+          <figure class="bread-card reveal"><div><img src="assets/bread-baguette.webp" alt="Багет" loading="lazy"><span class="bread-badge">03</span></div><figcaption><b>Багет</b><span>хрустящая корка</span></figcaption></figure>
+          <figure class="bread-card reveal delay-1"><div><img src="assets/bread-croissant.webp" alt="Слойка" loading="lazy"><span class="bread-badge">04</span></div><figcaption><b>Слойка</b><span>к чаю на ходу</span></figcaption></figure>
+          <figure class="bread-card reveal"><div><img src="assets/bread-poppy.webp" alt="Рогалик с маком" loading="lazy"><span class="bread-badge">05</span></div><figcaption><b>С маком</b><span>вечная классика</span></figcaption></figure>
+          <figure class="bread-card reveal delay-1"><div><img src="assets/bread-braid.webp" alt="Плетёный хлеб" loading="lazy"><span class="bread-badge">06</span></div><figcaption><b>Плетёнка</b><span>к выходному столу</span></figcaption></figure>
+          <figure class="bread-card reveal"><div><img src="assets/bread-festive.webp" alt="Праздничный каравай" loading="lazy"><span class="bread-badge">07</span></div><figcaption><b>Каравай</b><span>для особого случая</span></figcaption></figure>
+          <figure class="bread-card reveal delay-1"><div><img src="assets/bread-rustic.webp" alt="Домашняя буханка" loading="lazy"><span class="bread-badge">08</span></div><figcaption><b>Домашний</b><span>толстая корка, мягкий мякиш</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="journal-section section-pad" aria-labelledby="journalTitle">
+      <div class="section-shell journal-grid">
+        <div class="journal-art reveal">
+          <div class="journal-glow" aria-hidden="true"></div>
+          <img src="assets/journal.webp" alt="Старый кожаный журнал" loading="lazy">
+        </div>
+        <div class="journal-copy reveal delay-1">
+          <span class="section-label">Истории остаются</span>
+          <h2 id="journalTitle">Запоминайте не цифры.<br><span>Запоминайте людей.</span></h2>
+          <p>Журнал хранит открытые истории и прогресс сюжетных нитей. Отношения с постоянными покупателями и события района постепенно превращают рабочие дни в личную историю.</p>
+          <div class="journal-entries">
+            <article><time>День 3</time><div><b>«Она снова спросила про тот самый ржаной.»</b><span>отношение изменилось</span></div></article>
+            <article><time>День 8</time><div><b>«Курьер опоздал из-за дождя. Очередь запомнила.»</b><span>событие района</span></div></article>
+            <article><time>День 14</time><div><b>«Музыкант оставил у окна старый диск.»</b><span>новая сюжетная нить</span></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="promise section-pad" aria-labelledby="promiseTitle">
+      <div class="section-shell promise-inner reveal">
+        <div class="promise-copy"><span class="section-label light">Главное ощущение</span><h2 id="promiseTitle">Не спасти мир.<br><span>Прожить один обычный день — и запомнить его.</span></h2></div>
+        <div class="promise-grid">
+          <div><b>01</b><h3>Тактильная рутина</h3><p>Касса, товар, компьютер, поставки и ритм рабочего места.</p></div>
+          <div><b>02</b><h3>Живые последствия</h3><p>Ошибки, дефицит, погода и очередь меняют то, как проходит смена.</p></div>
+          <div><b>03</b><h3>Человеческие истории</h3><p>Диалоги, отношения и повторные встречи делают район знакомым.</p></div>
+          <div><b>04</b><h3>Ностальгия без пародии</h3><p>Эпоха ощущается через вещи, звук, интерфейсы и бытовые детали.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="finalTitle">
+      <div class="section-shell final-grid reveal">
+        <div class="final-art"><div class="final-glow" aria-hidden="true"></div><img src="assets/cafe-door.webp" alt="Открытая дверь с тёплым светом" loading="lazy"></div>
+        <div class="final-copy">
+          <span class="section-label light">Свет ещё горит</span>
+          <h2 id="finalTitle">Зайдёте<br><span>за хлебом?</span></h2>
+          <p>«Тёплый хлеб — туда, где тебя помнят» — атмосферная игра о смене в маленьком ларьке, людях района и тёплом свете в окошке, который ждёт тебя завтра.</p>
+          <div class="final-actions"><button class="cta cta-primary js-store"><span>Добавить в желаемое</span><i>↗</i></button><a class="cta cta-ghost" href="#gallery"><span>Смотреть галерею</span><i>↓</i></a></div>
+          <div class="final-note"><span class="live-dot"></span> Страница магазина подключается одной ссылкой перед публикацией</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-inner">
+      <a class="brand" href="#top"><span class="brand-seal" aria-hidden="true">✦</span><span class="brand-copy"><b>ТЁПЛЫЙ ХЛЕБ</b><small>туда, где тебя помнят</small></span></a>
+      <p>Игра в разработке · все материалы на странице — превью проекта.</p>
+      <nav aria-label="Ссылки в подвале"><a href="#about">Об игре</a><a href="#gallery">Галерея</a><a href="#top">Наверх ↑</a></nav>
+    </div>
+  </footer>
+
+  <dialog class="store-modal" id="storeModal">
+    <button class="modal-close" aria-label="Закрыть окно">×</button>
+    <div class="modal-seal">🍞</div>
+    <span class="section-label light">Релизная заглушка магазина</span>
+    <h2>Страница игры пока не подключена.</h2>
+    <p>Сайт полностью работает автономно. Когда появится ссылка на Steam, VK Play или другую страницу, вставьте её в константу <code>STORE_URL</code> в файле <code>script.js</code>.</p>
+    <button class="cta cta-primary modal-ok">Понятно</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

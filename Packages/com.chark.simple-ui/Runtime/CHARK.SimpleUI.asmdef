@@ -1,0 +1,28 @@
+{
+    "name": "CHARK.SimpleUI",
+    "rootNamespace": "CHARK.SimpleUI",
+    "references": [
+        "GUID:8385320429c486a43b60a28c0e76d606",
+        "GUID:80ecb87cae9c44d19824e70ea7229748"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.chark.scriptable-settings",
+            "expression": "0.0.1",
+            "define": "SCRIPTABLE_SETTINGS_INSTALLED"
+        },
+        {
+            "name": "com.kyrylokuzyk.primetween",
+            "expression": "1.0.0",
+            "define": "PRIME_TWEEN_INSTALLED"
+        }
+    ],
+    "noEngineReferences": false
+}
