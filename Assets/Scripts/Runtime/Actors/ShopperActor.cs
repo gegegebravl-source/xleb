@@ -263,6 +263,10 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
         {
             if (agent == false || agent.enabled == false || agent.isOnNavMesh == false)
             {
+                // Keep the gameplay loop usable in an incompletely baked scene. Without this
+                // fallback ShopperMoveState reports completion while the shopper stays at spawn,
+                // making the customer impossible to serve.
+                transform.position = position;
                 return;
             }
 

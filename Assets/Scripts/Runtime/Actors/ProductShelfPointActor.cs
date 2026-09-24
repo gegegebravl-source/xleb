@@ -29,6 +29,13 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
         {
             get
             {
+                if (product != false
+                    && product.ShelfPoint != this
+                    && product.transform.IsChildOf(transform) == false)
+                {
+                    product = null;
+                }
+
                 if (product == false)
                 {
                     product = FindChildProduct();

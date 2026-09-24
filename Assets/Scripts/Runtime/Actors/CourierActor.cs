@@ -71,7 +71,14 @@ namespace UABPetelnia.GGJ2025.Runtime.Actors
             if (agent != false && agent.enabled && agent.isOnNavMesh)
             {
                 agent.SetDestination(position);
+                return;
             }
+
+            // A delivery must still be retrievable when a scene was authored without a baked
+            // NavMesh. Teleport to the kiosk instead of leaving the box stranded at the spawn.
+            transform.position = position;
+            hasArrived = true;
+            SetWalking(false);
         }
 
         private void Update()
