@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UABPetelnia.GGJ2025.Runtime.Settings;
 using UABPetelnia.GGJ2025.Runtime.Systems.Settings;
 using UnityEngine;
@@ -94,7 +95,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Input
 
         public override void OnInitialized()
         {
-            GameManager.TryGetSystem(out settingsSystem);
+            SystemsUtility.TryGetSystem(out settingsSystem);
 
             if (playerInput != false)
             {

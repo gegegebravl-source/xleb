@@ -1,6 +1,7 @@
 using System;
 using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using CHARK.ScriptableAudio;
 using FMODUnity;
 using UABPetelnia.GGJ2025.Runtime.Settings;
@@ -84,7 +85,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Audio
         {
             base.OnInitialized();
             EnsureAudioListener();
-            GameManager.TryGetSystem(out settingsSystem);
+            SystemsUtility.TryGetSystem(out settingsSystem);
         }
 
         private void Start()

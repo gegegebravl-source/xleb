@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UABPetelnia.GGJ2025.Runtime.Actors;
 using UABPetelnia.GGJ2025.Runtime.Settings;
 using UABPetelnia.GGJ2025.Runtime.Systems.Scenes;
@@ -37,7 +38,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Products
 
         public override void OnInitialized()
         {
-            GameManager.TryGetSystem(out shopSystem);
+            SystemsUtility.TryGetSystem(out shopSystem);
             if (shopSystem != null)
             {
                 shopSystem.Changed += OnShopChanged;

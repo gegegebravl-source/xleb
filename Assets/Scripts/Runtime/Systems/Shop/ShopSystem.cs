@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UABPetelnia.GGJ2025.Runtime.Settings;
 using UABPetelnia.GGJ2025.Runtime.Systems.Delivery;
 using UABPetelnia.GGJ2025.Runtime.Systems.Players;
@@ -122,7 +123,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Shop
 
         public override void OnInitialized()
         {
-            GameManager.TryGetSystem(out playerSystem);
+            SystemsUtility.TryGetSystem(out playerSystem);
 
             GameManager.AddListener<SceneLoadEnteredMessage>(OnSceneLoadEntered);
         }

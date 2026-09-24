@@ -1,9 +1,9 @@
-using System;
 using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
 using CHARK.ScriptableScenes;
 using CHARK.ScriptableScenes.Events;
 using UABPetelnia.GGJ2025.Runtime.Systems.Pausing;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 using UnityEngine;
 
 namespace UABPetelnia.GGJ2025.Runtime.Systems.Scenes
@@ -33,7 +33,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Scenes
 
         public override void OnInitialized()
         {
-            TryGetSystem(out pauseSystem);
+            SystemsUtility.TryGetSystem(out pauseSystem);
 
             if (controller == false || controller.CollectionEvents == null)
             {
@@ -163,18 +163,6 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Scenes
         {
             var message = new SceneLoadEnteredMessage(args.Collection);
             GameManager.Publish(message);
-        }
-
-        private static void TryGetSystem<TSystem>(out TSystem system) where TSystem : ISystem
-        {
-            try
-            {
-                GameManager.TryGetSystem(out system);
-            }
-            catch (Exception)
-            {
-                system = default;
-            }
         }
 
         private void OnLoadExited(CollectionLoadEventArgs args)

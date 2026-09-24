@@ -3,6 +3,7 @@ using CHARK.GameManagement;
 using CHARK.GameManagement.Systems;
 using UABPetelnia.GGJ2025.Runtime.Actors;
 using UABPetelnia.GGJ2025.Runtime.Systems.Players;
+using UABPetelnia.GGJ2025.Runtime.Utilities;
 
 namespace UABPetelnia.GGJ2025.Runtime.Systems.Saves
 {
@@ -112,7 +113,7 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Saves
                 return;
             }
 
-            if (TryGetSystem(out IPlayerSystem playerSystem) &&
+            if (SystemsUtility.TryGetSystem(out IPlayerSystem playerSystem) &&
                 playerSystem.TryGetPlayer(out var player))
             {
                 SaveRun(ActiveSlot, player);
@@ -195,58 +196,6 @@ namespace UABPetelnia.GGJ2025.Runtime.Systems.Saves
             GameManager.DeleteData(GetSlotPath(slot));
             slots[slot] = default;
             isSlotOccupied[slot] = false;
-        }
-
-        private static bool TryGetSystem<TSystem>(out TSystem system) where TSystem : ISystem
-        {
-            try
-            {
-                return GameManager.TryGetSystem(out system);
-            }
-            catch (Exception)
-            {
-                system = default;
-                return false;
-            }
-        }
-
-        private int FindFreeSlot()
-        {
-            for (var slot = 0; slot < SlotCountConstant; slot++)
-            {
-                if (isSlotOccupied[slot] == false)
-                {
-                    return slot;
-                }
-            }
-
-            var oldestSlot = 0;
-            var oldestTicks = long.MaxValue;
-
-            for (var slot = 0; slot < SlotCountConstant; slot++)
-            {
-                if (slots[slot].SavedAtUtcTicks >= oldestTicks)
-                {
-                    continue;
-                }
-
-                oldestTicks = slots[slot].SavedAtUtcTicks;
-                oldestSlot = slot;
-            }
-
-            return oldestSlot;
-        }
-
-        private static bool IsValidSlot(int slot)
-        {
-            return slot >= 0 && slot < SlotCountConstant;
-        }
-
-        private static bool IsValidSave(SaveData data)
-        {
-            return data.Cents >= 0
-                && data.Health > 0
-                && data.SavedAtUtcTicks > 0;
         }
 
         private static string GetSlotPath(int slot)
